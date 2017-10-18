@@ -14,6 +14,7 @@ class Home extends CI_Controller {
 	{
 		$this->load->view('header');
 		$this->load->view('contacto');
+        $this->load->view('formularios/contacto');
 		$this->load->view('login');
 		$this->load->view('navbar');
 		$this->load->view('contenido');
@@ -21,6 +22,12 @@ class Home extends CI_Controller {
 		$this->load->view('footer');
 	}
 
+    public function contacto()
+    {
+        $this->load->view('header');
+        $this->load->view('contacto_formulario');
+
+    }
 
 	public function cascos()
 	{
