@@ -22,12 +22,24 @@ class Home extends CI_Controller {
 		$this->load->view('footer');
 	}
 
+
     public function contacto()
     {
         $this->load->view('header');
         $this->load->view('contacto_formulario');
-
     }
+
+
+	public function enviar()
+	{
+		$data['nombre']=$this->input->post('nombre');
+		$data['mail']=$this->input->post('mail');
+		$data['telefono']=$this->input->post('telefono');
+		$data['categoria']=$this->input->post('categoria');
+		$data['consulta']=$this->input->post('consulta');
+		$this->load->view('formularios/send', $data);
+	}
+
 
 	public function cascos()
 	{

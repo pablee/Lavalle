@@ -26,6 +26,7 @@
             <br>
             <div style="margin-left: 40px;">
                 <img src="<?php echo base_url(); ?>assets/img/marcas/triunfo_seguros.png" alt="facebook" height="90px" width="90px">
+                <img src="<?php echo base_url(); ?>assets/img/marcas/moto_auxilio.png" alt="facebook" height="90px" width="90px">
             </div>
         </div>
 
