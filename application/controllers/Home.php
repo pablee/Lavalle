@@ -38,6 +38,7 @@ class Home extends CI_Controller {
 		$data['categoria']=$this->input->post('categoria');
 		$data['consulta']=$this->input->post('consulta');
 		$this->load->view('formularios/send', $data);
+        $this->index();
 	}
 
 

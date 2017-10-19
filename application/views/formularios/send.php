@@ -1,7 +1,7 @@
 <?php
 
     //$to = $categoria;
-    $to="tcpipablo@gmail.com";
+    $to="pgarcia@grimoldi.com";
     $subject = "Consulta";
 
     $message = '<html>

@@ -1,0 +1,31 @@
+## miniRelay Server Mail File (Type 1.01) ##
+1
+pgarcia@grimoldi.com
+Original
+Received: from localhost ([127.0.0.1]) by 
+          localhost (miniRelay v0.9.77d) 
+          with SMTP id W76KNUSD; Thu, 19 Oct 2017 10:30:30 +0300
+Date: Thu, 19 Oct 2017 15:30:30 +0200
+Subject: Consulta
+To: pgarcia@grimoldi.com
+X-PHP-Originating-Script: 0:send.php
+MIME-Version: 1.0
+Content-type:text/html;charset=UTF-8
+From: pgarcia@grimoldi.com
+
+<html>
+                 <head>
+                  <title>Consulta</title>
+                 </head>
+                 <body>
+                  <p>Nombre</p>
+                  Pablo Garcia
+                  <p>Telefono</p>
+                  111
+                  <p>Consulta</p>
+                   adsadsadasasdasdasdasd
+                 </body>
+                </html>
+                
+.
+
