@@ -15,7 +15,7 @@
 </style>
 
 <!-- Modal -->
-<div class="modal fade" id="contacto" role="dialog">
+<div class="modal fade" id="post_venta" role="dialog">
     <div class="modal-dialog">
 
         <!-- Modal content-->
@@ -41,26 +41,19 @@
                         <input type="text" class="form-control" name="telefono" placeholder="Telefono"> </input>
                     </div>
 
+                    <input type="hidden" class="form-control" name="para" value="postventa@lavallemotos.com.ar"></input>
                     <div class="form-group">
-                        <div>
-                            <label>Categoria</label>
-                        </div>
-                        <label class="radio-inline">
-                            <input type="radio" name="para" value="centralventas@lavallemotos.com.ar"> Motos
-                        </label>
-                        <label class="radio-inline">
-                            <input type="radio" name="para" value="tiendaweb@lavallemotos.com.ar"> Accesorios
-                        </label>
+                        <label> Consulta</label>
+                        <textarea type="text" class="form-control" name="consulta"> </textarea>
                     </div>
 
-                    <label> Consulta</label>
-                    <textarea type="text" class="form-control" name="consulta"> </textarea>
-                    <br>
-                    <button type="submit" class="btn btn-danger btn-default pull-right btn-block">Enviar</button>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-danger btn-default btn-block">Enviar</button>
+                    </div>
                 </form>
             </div>
             <div class="modal-footer">
-
+                <p class="pull-left">Teléfono: 0261 4315476</p>
             </div>
         </div>
 

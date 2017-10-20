@@ -15,14 +15,14 @@
 </style>
 
 <!-- Modal -->
-<div class="modal fade" id="contacto" role="dialog">
+<div class="modal fade" id="rrhh" role="dialog">
     <div class="modal-dialog">
 
         <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Escribinos tu consulta y te responderemos a la brevedad!</h4>
+                <h4 class="modal-title">Formá parte del equipo de Lavalle Motos </h4>
             </div>
             <div class="modal-body">
                 <form role="form" method="post" action="enviar">
@@ -41,22 +41,15 @@
                         <input type="text" class="form-control" name="telefono" placeholder="Telefono"> </input>
                     </div>
 
+                    <input type="hidden" class="form-control" name="para" value="rh@lavallemotos.com.ar"></input>
                     <div class="form-group">
-                        <div>
-                            <label>Categoria</label>
-                        </div>
-                        <label class="radio-inline">
-                            <input type="radio" name="para" value="centralventas@lavallemotos.com.ar"> Motos
-                        </label>
-                        <label class="radio-inline">
-                            <input type="radio" name="para" value="tiendaweb@lavallemotos.com.ar"> Accesorios
-                        </label>
+                        <label> Consulta</label>
+                        <textarea type="text" class="form-control" name="consulta"> </textarea>
                     </div>
 
-                    <label> Consulta</label>
-                    <textarea type="text" class="form-control" name="consulta"> </textarea>
-                    <br>
-                    <button type="submit" class="btn btn-danger btn-default pull-right btn-block">Enviar</button>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-danger btn-default btn-block">Enviar</button>
+                    </div>
                 </form>
             </div>
             <div class="modal-footer">

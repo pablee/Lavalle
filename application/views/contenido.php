@@ -58,7 +58,7 @@
                             <img src="<?php echo base_url(); ?>assets/img/iconos/retiro.png" alt="retiro" height="35px" width="auto">
                         </div>
                         <div class="col-md-10 text-left link-checkout">
-                            <a href="#"><b> Retirá en nuestras sucursales</b></a>
+                            <a href="#" data-toggle="modal" data-target="#sucursales"><b> Retirá en nuestras sucursales</b></a>
                         </div>
                     </div>
                 </div>
@@ -157,10 +157,10 @@
                                 <img src="<?php echo base_url(); ?>assets/img/categorias/cascos_moto_cross.jpg" alt="cascos">
                                 <a href="cascos">
                                     <div class="row caption caption-tag">
-                                        <div class="col-md-6 ">
+                                        <div class="col-md-6">
                                             Cascos
                                         </div>
-                                        <div class="col-md-6 ">
+                                        <div class="col-md-6">
                                             +Ver más
                                         </div>
                                     </div>

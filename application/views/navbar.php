@@ -38,8 +38,12 @@
                     </ul>
                 </li>
                 <li><a href="#">Indumentaria</a></li>
+                <li><a href="#">Calzado</a></li>
                 <li><a href="#">Accesorios</a></li>
-                <li><a href="#">Comunicación</a></li>
+                <li><a href="#">Cubiertas</a></li>
+                <li><a href="#">Repuestos</a></li>
+                <li><a href="#">Seguridad</a></li>
+                <li><a href="#">Protecciones</a></li>
                 <li><a href="#">Conocenos</a></li>
             </ul>
         </div>

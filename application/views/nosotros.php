@@ -1,32 +1,34 @@
     <!--Nosotros-->
     <div class="row nosotros">
 
-        <div class="col-md-1">
-        </div>
-
-        <div class="col-md-3 columnas">
-            <a href="#" onclick="verMediosPago()">Medios de pago</a>
-            <p>Garantía extendida</p>
-            <p>Servicio post venta</p>
-            <p>Devoluciones</p>
-            <p>Términos y condiciones</p>
-            <p>Preguntas Frecuentes</p>
-            <a href="#" onclick="verContacto()">Contacto</a>
-            <p>RR HH</p>
-            <p>Sucursales</p>
+        <div class="col-md-4 columnas" style="margin-left: 50px;">
+            <ul class="list-unstyled">
+                <li><a href="#" onclick="verMediosPago()">Medios de pago</a></li>
+                <li><a href="#">Garantía extendida</a></li>
+                <li><a href="#" data-toggle="modal" data-target="#post_venta">Servicio post venta</a></li>
+                <li><a href="#" data-toggle="modal" data-target="#venta_corporativa"> Ventas corporativas</a></li>
+                <li><a href="#">Preguntas Frecuentes</a></li>
+                <li><a href="#" data-toggle="modal" data-target="#contacto">Contacto</a></li>
+                <li><a href="#" data-toggle="modal" data-target="#rrhh">RR HH</a></li>
+                <li><a href="#" data-toggle="modal" data-target="#sucursales">Sucursales</a></li>
+                <li><a href="#">Términos y condiciones</a></li>
+            </ul>
         </div>
 
         <div class="col-md-3">
             <p>
                 Seguinos!!
-                <img src="<?php echo base_url(); ?>assets/img/iconos/facebook.png" alt="facebook" height="35px" width="35px">
+                <a href="https://www.facebook.com/lavalle.motos.oficial/" target="_blank">
+                    <img src="<?php echo base_url(); ?>assets/img/iconos/facebook.png" alt="facebook" height="35px" width="35px">
+                </a>
                 <img src="<?php echo base_url(); ?>assets/img/iconos/youtube.png" alt="facebook" height="35px" width="35px">
             </p>
             <div style="border-bottom: solid; border-bottom-width: 2px; border-color: #d10404;"></div>
             <br>
-            <div style="margin-left: 40px;">
-                <img src="<?php echo base_url(); ?>assets/img/marcas/triunfo_seguros.png" alt="facebook" height="90px" width="90px">
-                <img src="<?php echo base_url(); ?>assets/img/marcas/moto_auxilio.png" alt="facebook" height="90px" width="90px">
+            <div>
+                <img style="margin: 0px 10px 0px 30px;" src="<?php echo base_url(); ?>assets/img/marcas/triunfo_seguros.png" alt="facebook" height="90px" width="90px">
+
+                <img style="margin: 0px 0px 0px 10px;" src="<?php echo base_url(); ?>assets/img/marcas/moto_auxilio.png" alt="facebook" height="90px" width="90px">
             </div>
         </div>
 

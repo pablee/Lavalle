@@ -1,6 +1,6 @@
 <?php
 
-    //$to = $categoria;
+    //$to = $para;
     $to="pgarcia@grimoldi.com";
     $subject = "Consulta";
 
