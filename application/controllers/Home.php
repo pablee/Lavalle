@@ -20,7 +20,7 @@ class Home extends CI_Controller {
 		$this->load->view('formularios/venta_corporativa');
 		$this->load->view('contacto');
 		$this->load->view('login');
-		$this->load->view('navbar');
+		$this->load->view('navbar2');
 		$this->load->view('banner_principal');
 		$this->load->view('pago_retiro_envio');
 		$this->load->view('pro_cat');
