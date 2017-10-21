@@ -47,7 +47,7 @@
                                 <li>V-can</li>
                             </div>
                             <div class="col-md-5 text-right">
-                                <img src="<?php echo base_url(); ?>assets/img/categorias/cat_casco.jpg" alt="casco" width="300" height="300">
+                                <img src="<?php echo base_url(); ?>assets/img/categorias/cat_moto.png" alt="casco" width="300" height="300">
                             </div>
                         </div>
                     </ul>
@@ -72,32 +72,32 @@
                                 <li>Agv</li>
                                 <li>Airoh</li>
                                 <li>Arai</li>
+                                <li>Benelli</li>
                             </div>
                             <div class="col-md-1 margin-top">
                                 <br>
-                                <li>Benelli</li>
                                 <li>Beon</li>
                                 <li>Fox</li>
                                 <li>Givi</li>
                                 <li>Hjc</li>
+                                <li>Ls2</li>
                             </div>
                             <div class="col-md-1 margin-top">
                                 <br>
-                                <li>Ls2</li>
                                 <li>Momo</li>
                                 <li>Nzi</li>
                                 <li>Origine</li>
                                 <li>Peels</li>
+                                <li>Schuberth</li>
                             </div>
                             <div class="col-md-1 margin-top">
                                 <br>
-                                <li>Schuberth</li>
                                 <li>Shiro</li>
                                 <li>Shoei</li>
                                 <li>V-can</li>
                             </div>
                             <div class="col-md-5 text-right">
-                                <img src="<?php echo base_url(); ?>assets/img/categorias/cat_casco.jpg" alt="casco" width="300" height="300">
+                                <img src="<?php echo base_url(); ?>assets/img/categorias/cat_casco.png" alt="casco" width="300" height="300">
                             </div>
 
                         </div>
@@ -115,7 +115,7 @@
                                 <li><a href="#">Touring</a></li>
                                 <li><a href="#">Enduro-cross</a></li>
                             </div>
-                            <div class="col-md-1 margin-top">
+                            <div class="col-md-2 margin-top">
                                 <li><b>Marcas</b></li>
                                 <li>Acerbis</li>
                                 <li>Fox</li>
@@ -130,12 +130,13 @@
                                 <li>Yamaha</li>
                             </div>
 
-                            <div class="col-md-7 text-right">
-                                <img src="<?php echo base_url(); ?>assets/img/categorias/cat_casco.jpg" alt="casco" width="300" height="300">
+                            <div class="col-md-6 text-right">
+                                <img src="<?php echo base_url(); ?>assets/img/categorias/cat_indumentaria.jpg" alt="casco" width="300" height="300">
                             </div>
 
                         </div>
                     </ul>
+
                 </li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Calzado</a>
@@ -150,7 +151,7 @@
                                 <li><a href="#">Touring</a></li>
                                 <li><a href="#">Enduro-cross</a></li>
                             </div>
-                            <div class="col-md-1 margin-top">
+                            <div class="col-md-2 margin-top">
                                 <li><b>Marcas</b></li>
                                 <li>Acerbis</li>
                                 <li>Cros Roads</li>
@@ -162,8 +163,8 @@
                                 <li>Gaerne</li>
                                 <li>Sidi</li>
                             </div>
-                            <div class="col-md-7 text-right">
-                                <img src="<?php echo base_url(); ?>assets/img/categorias/cat_casco.jpg" alt="casco" width="300" height="300">
+                            <div class="col-md-6 text-right">
+                                <img src="<?php echo base_url(); ?>assets/img/categorias/cat_botas.png" alt="casco" width="300" height="300">
                             </div>
 
                         </div>
@@ -181,7 +182,7 @@
                                 <li><a href="#">Bauleras</a></li>
                                 <li><a href="#">Intercomunicadores</a></li>
                             </div>
-                            <div class="col-md-1 margin-top">
+                            <div class="col-md-2 margin-top">
                                 <li><b>Marcas</b></li>
                                 <li>Coocase</li>
                                 <li>Ethen</li>
@@ -197,8 +198,8 @@
                                 <li>Thor</li>
                                 <li>Vega</li>
                             </div>
-                            <div class="col-md-7 text-right">
-                                <img src="<?php echo base_url(); ?>assets/img/categorias/cat_casco.jpg" alt="casco" width="300" height="300">
+                            <div class="col-md-6 text-right">
+                                <img src="<?php echo base_url(); ?>assets/img/categorias/cat_baul.png" alt="casco" width="300" height="300">
                             </div>
 
                         </div>
@@ -221,15 +222,16 @@
                                 <li>Continental</li>
                                 <li>Dunlop</li>
                                 <li>Metzeler</li>
+                            </div>
+                            <div class="col-md-1 margin-top">
+                                <br>
                                 <li>Pirelli</li>
                                 <li>Rinaldi</li>
                                 <li>Torc</li>
                             </div>
-
-                            <div class="col-md-7 text-right">
-                                <img src="<?php echo base_url(); ?>assets/img/categorias/cat_casco.jpg" alt="casco" width="300" height="300">
+                            <div class="col-md-6 text-right">
+                                <img src="<?php echo base_url(); ?>assets/img/categorias/cat_accesorios.jpg" alt="casco" width="300" height="300">
                             </div>
-
                         </div>
                     </ul>
                 </li>
@@ -244,7 +246,7 @@
                                 <li><a href="#">Baterias</a></li>
                                 <li><a href="#">Escapes</a></li>
                             </div>
-                            <div class="col-md-1 margin-top">
+                            <div class="col-md-2 margin-top">
                                 <li><b>Marcas</b></li>
                                 <li>Cott</li>
                                 <li>Dinavolt</li>
@@ -256,7 +258,7 @@
                                 <li>Outdo</li>
                                 <li>R72</li>
                             </div>
-                            <div class="col-md-7 text-right">
+                            <div class="col-md-6 text-right">
                                 <img src="<?php echo base_url(); ?>assets/img/categorias/cat_casco.jpg" alt="casco" width="300" height="300">
                             </div>
 

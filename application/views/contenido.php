@@ -170,7 +170,7 @@
 
                         <div class="col-md-3">
                             <div class="thumbnail thumbnail-categoria">
-                                <img src="<?php echo base_url(); ?>assets/img/categorias/indumentaria.jpg" alt="indumentaria">
+                                <img src="<?php echo base_url(); ?>assets/img/categorias/cat_indumentaria.jpg" alt="indumentaria">
                                 <a href="#" onclick="cargarVista()">
                                     <div class="row caption caption-tag">
                                         <div class="col-md-6">
@@ -186,7 +186,7 @@
 
                         <div class="col-md-3">
                             <div class="thumbnail thumbnail-categoria">
-                                <img src="<?php echo base_url(); ?>assets/img/categorias/accesorios.jpg" alt="accesorios">
+                                <img src="<?php echo base_url(); ?>assets/img/categorias/cat_accesorios.jpg" alt="accesorios">
                                 <a href="#" onclick="cargarVista()">
                                     <div class="row caption caption-tag">
                                         <div class="col-md-6 ">
@@ -367,7 +367,7 @@
         <div class="container margin-top margin-hottom">
             <div class="row text-center">
                 <div class="col-md-4 buscar-local">
-                    <h4>Buscá la sucursal mas cercana</h4>
+                    <h4>Buscá la sucursal mas cercana!!!</h4>
                     <div class="form-group has-feedback" style="margin-bottom: 30px;">
                         <input type="text" class="form-control input-lg" placeholder="Localidad">
                         <span class="glyphicon glyphicon-search form-control-feedback"></span>

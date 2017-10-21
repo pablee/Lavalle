@@ -69,11 +69,12 @@ a:visited
     text-align: center;
 }
 
+
 .navbar-nav > li
 {
     float: none;
     display: inline-block;
-    font-size: 20px;
+    font-size: 17px;
 }
 
 .carousel
