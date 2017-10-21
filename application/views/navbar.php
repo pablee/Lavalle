@@ -10,43 +10,23 @@
                             </div>
                             <div class="col-md-2 margin-top">
                                 <li><b>Tipo</b></li>
-                                <li><a href="#">Abiertos</a></li>
-                                <li><a href="#">Motocross</a></li>
-                                <li><a href="#">Integrales</a></li>
-                                <li><a href="#">Rebatibles</a></li>
-                                <li><a href="#">Modulares</a></li>
+                                <li><a href="#">Cuatriciclos</a></li>
+                                <li><a href="#">Cubs</a></li>
+                                <li><a href="#">Custom</a></li>
+                                <li><a href="#">Enduro</a></li>
+                                <li><a href="#">Enduro - Calle</a></li>
+                                <li><a href="#">Scooters</a></li>
+                                <li><a href="#">Streets</a></li>
+                                <li><a href="#">Utilitarios</a></li>
                             </div>
-                            <div class="col-md-1 margin-top">
-                                <li><b>Marcas</b></li>
-                                <li>Acerbis</li>
-                                <li>Agv</li>
-                                <li>Airoh</li>
-                                <li>Arai</li>
+                            <div class="col-md-2 margin-top">
+                                <li><b>Alta gama</b></li>
+                                <li><a href="#">Yamaha</a></li>
+                                <li><a href="#">Kawasaki</a></li>
+                                <li><a href="#">Suzuki</a></li>
+                                <li><a href="#">Benelli</a></li>
                             </div>
-                            <div class="col-md-1 margin-top">
-                                <br>
-                                <li>Benelli</li>
-                                <li>Beon</li>
-                                <li>Fox</li>
-                                <li>Givi</li>
-                                <li>Hjc</li>
-                            </div>
-                            <div class="col-md-1 margin-top">
-                                <br>
-                                <li>Ls2</li>
-                                <li>Momo</li>
-                                <li>Nzi</li>
-                                <li>Origine</li>
-                                <li>Peels</li>
-                            </div>
-                            <div class="col-md-1 margin-top">
-                                <br>
-                                <li>Schuberth</li>
-                                <li>Shiro</li>
-                                <li>Shoei</li>
-                                <li>V-can</li>
-                            </div>
-                            <div class="col-md-5 text-right">
+                            <div class="col-md-7 text-right">
                                 <img src="<?php echo base_url(); ?>assets/img/categorias/cat_moto.png" alt="casco" width="300" height="300">
                             </div>
                         </div>

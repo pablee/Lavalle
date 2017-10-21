@@ -13,15 +13,20 @@ class Home extends CI_Controller {
 	public function index()
 	{
 		$this->load->view('header');
-		$this->load->view('contacto');
         $this->load->view('formularios/contacto');
-		$this->load->view('login');
-		$this->load->view('navbar');
-		$this->load->view('contenido');
 		$this->load->view('formularios/post_venta');
 		$this->load->view('formularios/rrhh');
 		$this->load->view('formularios/sucursales');
 		$this->load->view('formularios/venta_corporativa');
+		$this->load->view('contacto');
+		$this->load->view('login');
+		$this->load->view('navbar');
+		$this->load->view('banner_principal');
+		$this->load->view('pago_retiro_envio');
+		$this->load->view('pro_cat');
+		$this->load->view('marcas');
+		$this->load->view('horario');
+		$this->load->view('mapa');
 		$this->load->view('nosotros');
 		$this->load->view('footer');
 	}
