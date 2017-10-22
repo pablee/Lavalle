@@ -12,6 +12,7 @@ textarea
     margin-left: auto;
 }
 
+
 .info_contacto_header
 {
     /*margin: 0px;*/
@@ -391,4 +392,15 @@ font-size: 50%;
     {
         display: block;
     }
+}
+
+
+/**Conocenos**/
+.gradient
+{
+    height: 2px;
+    background: -webkit-linear-gradient(left, rgba(255,0,0,0), #afa8ab); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, rgba(255,0,0,0), #afa8ab); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, rgba(255,0,0,0), #afa8ab); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, rgba(255,0,0,0), #afa8ab); /* Standard syntax (must be last) */
 }

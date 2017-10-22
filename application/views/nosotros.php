@@ -4,7 +4,7 @@
         <div class="col-md-4 columnas" style="margin-left: 50px;">
             <ul class="list-unstyled">
                 <li><a href="#" onclick="verMediosPago()">Medios de pago</a></li>
-                <li><a href="#">Garantía extendida</a></li>
+                <li><a href="#" data-toggle="modal" data-target="#garantia">Garantía extendida</a></li>
                 <li><a href="#" data-toggle="modal" data-target="#post_venta">Servicio post venta</a></li>
                 <li><a href="#" data-toggle="modal" data-target="#venta_corporativa"> Ventas corporativas</a></li>
                 <li><a href="#">Preguntas Frecuentes</a></li>

@@ -203,36 +203,7 @@
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Conocenos</a>
-                    <ul class="dropdown-menu" role="menu">
-                        <div class="row">
-                            <div class="col-md-1 margin-top">
-                            </div>
-                            <div class="col-md-2 margin-top">
-                                <li><b>Tipo</b></li>
-                                <li><a href="#">Pista</a></li>
-                                <li><a href="#">Motocross</a></li>
-                                <li><a href="#">Touring</a></li>
-                                <li><a href="#">Enduro-cross</a></li>
-                            </div>
-                            <div class="col-md-1 margin-top">
-                                <li><b>Marcas</b></li>
-                                <li>Acerbis</li>
-                                <li>Cros Roads</li>
-                                <li>Forma</li>
-                            </div>
-                            <div class="col-md-1 margin-top">
-                                <br>
-                                <li>Fox</li>
-                                <li>Gaerne</li>
-                                <li>Sidi</li>
-                            </div>
-                            <div class="col-md-7 text-right">
-                                <img src="<?php echo base_url(); ?>assets/img/categorias/cat_casco.jpg" alt="casco" width="300" height="300">
-                            </div>
-
-                        </div>
-                    </ul>
+                    <a href="conocenos">Conocenos</a>
                 </li>
             </ul>
         </div>

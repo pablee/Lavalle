@@ -13,11 +13,13 @@ class Home extends CI_Controller {
 	public function index()
 	{
 		$this->load->view('header');
+		$this->load->view('formularios/login');
         $this->load->view('formularios/contacto');
 		$this->load->view('formularios/post_venta');
 		$this->load->view('formularios/rrhh');
 		$this->load->view('formularios/sucursales');
 		$this->load->view('formularios/venta_corporativa');
+		$this->load->view('info/garantia');
 		$this->load->view('contacto');
 		$this->load->view('login');
 		$this->load->view('navbar2');
@@ -31,13 +33,13 @@ class Home extends CI_Controller {
 		$this->load->view('footer');
 	}
 
-
+/*
     public function contacto()
     {
         $this->load->view('header');
         $this->load->view('contacto_formulario');
     }
-
+*/
 
 	public function enviar()
 	{
@@ -50,6 +52,24 @@ class Home extends CI_Controller {
         $this->index();
 	}
 
+	public function conocenos()
+	{
+		$this->load->view('header');
+		$this->load->view('formularios/contacto');
+		$this->load->view('formularios/post_venta');
+		$this->load->view('formularios/rrhh');
+		$this->load->view('formularios/sucursales');
+		$this->load->view('formularios/venta_corporativa');
+		$this->load->view('info/garantia');
+		$this->load->view('contacto');
+		$this->load->view('login');
+		$this->load->view('navbar2');
+		$this->load->view('info/conocenos');
+		$this->load->view('horario');
+		$this->load->view('mapa');
+		$this->load->view('nosotros');
+		$this->load->view('footer');
+	}
 
 	public function cascos()
 	{
