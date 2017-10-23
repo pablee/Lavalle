@@ -2,6 +2,7 @@
 <head>
     <meta charset="latin1">
     <meta charset="utf-8">
+    <meta charset=ISO-8859-1>
     <title>Lavalle motos</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">

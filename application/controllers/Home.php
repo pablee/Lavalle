@@ -41,6 +41,25 @@ class Home extends CI_Controller {
     }
 */
 
+    public function login()
+    {
+
+        $this->load->model('login');
+        $data['usuario']  = $this->input->post('usuario');
+        $data['password'] = $this->input->post('password');
+        $data['recordar'] = $this->input->post('recordar');
+        $validacion=$this->login->validar($data);
+
+        if($validacion==1)
+        {
+
+            $this->load->view('admin/home');
+        }
+        else{
+            $this->index();
+            }
+    }
+
 	public function enviar()
 	{
 		$data['nombre']   = $this->input->post('nombre');

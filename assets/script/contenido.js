@@ -20,3 +20,9 @@ function verMediosPago()
     var myWindow = window.open(url, "MsgWindow", "width=500,height=600");
 }
 
+
+function campoModificado(id)
+{
+    //alert(id);
+    document.getElementById(id+"-modificado").value=1;
+}

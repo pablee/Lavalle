@@ -25,17 +25,17 @@
                 <h4><span class="glyphicon glyphicon-lock"></span> Login</h4>
             </div>
             <div class="modal-body" style="padding:40px 50px;">
-                <form role="form">
+                <form role="form" method="post" action="login">
                     <div class="form-group">
                         <label for="usuario"><span class="glyphicon glyphicon-user"></span> Usuario</label>
-                        <input type="text" class="form-control" id="usuario" placeholder="Enter email">
+                        <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Enter email">
                     </div>
                     <div class="form-group">
-                        <label for="password"><span class="glyphicon glyphicon-eye-open"></span> Contraseña</label>
-                        <input type="text" class="form-control" id="password" placeholder="Enter password">
+                        <label for="password"><span class="glyphicon glyphicon-eye-open"></span> Contrase&ntilde;a</label>
+                        <input type="text" class="form-control" id="password" name="password" placeholder="Enter password">
                     </div>
                     <div class="checkbox">
-                        <label><input type="checkbox" value="" checked>Recordarme</label>
+                        <label><input type="checkbox" name="recordar" value="1" checked>Recordarme</label>
                     </div>
                     <br>
                     <button type="submit" class="btn btn-danger btn-block"><span class="glyphicon glyphicon-off"></span> Login</button>
