@@ -91,6 +91,13 @@ class Home extends CI_Controller {
 		$this->load->model('productos');
 		$data['productos']=$this->productos->listar_cat('cascos');
 		$data['i']=0;
+        $this->load->view('formularios/login');
+        $this->load->view('formularios/contacto');
+        $this->load->view('formularios/post_venta');
+        $this->load->view('formularios/rrhh');
+        $this->load->view('formularios/sucursales');
+        $this->load->view('formularios/venta_corporativa');
+        $this->load->view('info/garantia');
 		$this->load->view('header');
 		$this->load->view('contacto');
 		$this->load->view('login');
@@ -104,6 +111,13 @@ class Home extends CI_Controller {
 	{
 		$this->load->model('productos');
 		$data['productos']=$this->productos->listar_cat('indumentaria');
+        $this->load->view('formularios/login');
+        $this->load->view('formularios/contacto');
+        $this->load->view('formularios/post_venta');
+        $this->load->view('formularios/rrhh');
+        $this->load->view('formularios/sucursales');
+        $this->load->view('formularios/venta_corporativa');
+        $this->load->view('info/garantia');
 		$this->load->view('header');
 		$this->load->view('contacto');
 		$this->load->view('login');
@@ -117,6 +131,13 @@ class Home extends CI_Controller {
 	{
 		$this->load->model('productos');
 		$data['productos']=$this->productos->listar_cat('accesorios');
+        $this->load->view('formularios/login');
+        $this->load->view('formularios/contacto');
+        $this->load->view('formularios/post_venta');
+        $this->load->view('formularios/rrhh');
+        $this->load->view('formularios/sucursales');
+        $this->load->view('formularios/venta_corporativa');
+        $this->load->view('info/garantia');
 		$this->load->view('header');
 		$this->load->view('contacto');
 		$this->load->view('login');
@@ -130,6 +151,13 @@ class Home extends CI_Controller {
 	{
 		$this->load->model('productos');
 		$data['productos']=$this->productos->listar_cat('motos');
+        $this->load->view('formularios/login');
+        $this->load->view('formularios/contacto');
+        $this->load->view('formularios/post_venta');
+        $this->load->view('formularios/rrhh');
+        $this->load->view('formularios/sucursales');
+        $this->load->view('formularios/venta_corporativa');
+        $this->load->view('info/garantia');
 		$this->load->view('header');
 		$this->load->view('contacto');
 		$this->load->view('login');

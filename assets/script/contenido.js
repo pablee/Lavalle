@@ -9,6 +9,6 @@ function verMediosPago()
 
 function campoModificado(id)
 {
-    //alert(id);
+    alert(id);
     document.getElementById(id+"-modificado").value=1;
 }

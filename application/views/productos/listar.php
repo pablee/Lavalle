@@ -1,7 +1,88 @@
 <div class="row contenido">
 
     <div class="col-md-3 contenido filtro">
-        <table class="table">
+        <div class="container">
+            <h2>Filtrar por</h2>
+            <div class="panel-group" id="accordion">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse1"> Marca </a>
+                        </h4>
+                    </div>
+                    <ul id="collapse1" class="panel-collapse collapse in">
+                        <ul class="list-group">
+                            <?php foreach($productos AS $producto): ?>
+                                <li class="list-group-item">
+                                    <a href="#" target="_blank"><?php echo $producto["marca"]; ?></a>
+                                </li>
+                            <?php endforeach; ?>
+                        </ul>
+                </div>
+            </div>
+
+            <div class="panel">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse2"> Modelo </a>
+                    </h4>
+                </div>
+                <div id="collapse2" class="panel-collapse collapse">
+                    <ul class="list-group">
+                        <?php foreach($productos AS $producto): ?>
+                            <li class="list-group-item">
+                                <a href="#" target="_blank"><?php echo $producto["titulo"]; ?></a>
+                            </li>
+                        <?php endforeach; ?>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="panel">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse3"> Color </a>
+                    </h4>
+                </div>
+                <div id="collapse3" class="panel-collapse collapse">
+                    <ul class="list-group">
+                        <li class="list-group-item">Rojo</li>
+                        <li class="list-group-item">Verde</li>
+                        <li class="list-group-item">Amarillo</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="panel">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse4"> Talle </a>
+                    </h4>
+                </div>
+                <div id="collapse4" class="panel-collapse collapse">
+                    <ul class="list-group">
+                        <li class="list-group-item">L</li>
+                        <li class="list-group-item">M</li>
+                        <li class="list-group-item">S</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="panel">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse5"> Precio </a>
+                    </h4>
+                </div>
+                <div id="collapse5" class="panel-collapse collapse">
+                    <div class="panel-body">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--table class="table">
             <thead>
             <tr>
                 <th>Filtrar por</th>
@@ -25,12 +106,10 @@
                 <td>Precio</td>
             </tr>
             </tbody>
-        </table>
-
+        </table-->
     </div>
 
     <div class="col-md-9 container contenido">
-
 
         <div class="row">
             <div class="col-md-12 filtro-barra" id="filtro-barra">
@@ -38,7 +117,7 @@
             </div>
         </div>
 
-
+        <div class="row">
         <?php foreach($productos AS $producto): ?>
            <div class="col-md-3">
             <div class="thumbnail thumbnail-producto">
@@ -53,6 +132,6 @@
             </div>
            </div>
         <?php endforeach; ?>
-
+        </div>
     </div>
 </div>

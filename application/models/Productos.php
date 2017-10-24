@@ -40,7 +40,8 @@ class Productos
 
         $consulta="SELECT *
 			       FROM Productos
-			       WHERE rubro = '$categoria';";
+			       WHERE rubro = '$categoria'
+			       ORDER BY marca ASC;";
 
         $resultado=mysqli_query($db->conexion, $consulta)
         or die ("No se pueden mostrar los productos por categoria.");
