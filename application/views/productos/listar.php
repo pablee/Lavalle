@@ -12,9 +12,9 @@
                     </div>
                     <ul id="collapse1" class="panel-collapse collapse in">
                         <ul class="list-group">
-                            <?php foreach($productos AS $producto): ?>
+                            <?php foreach($marcas AS $marca): ?>
                                 <li class="list-group-item">
-                                    <a href="#" target="_blank"><?php echo $producto["marca"]; ?></a>
+                                   <a href="filtrar?marca=<?php echo $marca["nombre"]; ?>&rubro=<?php echo $rubro; ?>"><?php echo $marca["nombre"]; ?></a>
                                 </li>
                             <?php endforeach; ?>
                         </ul>
@@ -30,9 +30,11 @@
                 <div id="collapse2" class="panel-collapse collapse">
                     <ul class="list-group">
                         <?php foreach($productos AS $producto): ?>
+
                             <li class="list-group-item">
                                 <a href="#" target="_blank"><?php echo $producto["titulo"]; ?></a>
                             </li>
+
                         <?php endforeach; ?>
                     </ul>
                 </div>
@@ -118,8 +120,10 @@
         </div>
 
         <div class="row">
+
         <?php foreach($productos AS $producto): ?>
-           <div class="col-md-3">
+
+           <div class="">
             <div class="thumbnail thumbnail-producto">
                 <img src="<?php echo base_url(); ?>assets/img/productos/<?php echo $producto["img"]; ?>" alt="baul" height="auto" width="auto">
                 <div class="caption">
@@ -131,6 +135,7 @@
                 </div>
             </div>
            </div>
+
         <?php endforeach; ?>
         </div>
     </div>

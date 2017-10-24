@@ -40,11 +40,60 @@ class Productos
 
         $consulta="SELECT *
 			       FROM Productos
-			       WHERE rubro = '$categoria'
-			       ORDER BY marca ASC;";
-
+			       WHERE rubro = '$categoria';";
         $resultado=mysqli_query($db->conexion, $consulta)
         or die ("No se pueden mostrar los productos por categoria.");
+        
+        $productos = array(array("sku", "titulo", "stock", "precio", "rubro", "marca", "destacado", "img"));
+        $i=0;
+        while($producto = mysqli_fetch_assoc($resultado))
+        {
+            $productos[$i]["sku"]=$producto["sku"];
+            $productos[$i]["titulo"]=$producto["titulo"];
+            $productos[$i]["stock"]=$producto["stock"];
+            $productos[$i]["precio"]=$producto["precio"];
+            $productos[$i]["rubro"]=$producto["rubro"];
+            $productos[$i]["marca"]=$producto["marca"];
+            $productos[$i]["destacado"]=$producto["destacado"];
+            $productos[$i]["img"]=$producto["img"];
+            $i++;
+        }
+        return $productos;
+    }
+
+
+    public function filtros_cat($categoria)
+    {
+        $db=new database();
+        $db->conectar();
+
+        $consulta="SELECT DISTINCT marca
+			       FROM Productos
+			       WHERE rubro = '$categoria';";
+        $resultado=mysqli_query($db->conexion, $consulta)
+        or die ("No se pueden armar los filtros por categoria.");
+
+        $i=0;
+        while($producto = mysqli_fetch_assoc($resultado))
+        {
+            $marcas[$i]["nombre"]=$producto["marca"];
+            $i++;
+        }
+        return $marcas;
+    }
+
+
+    public function filtrar($filtro, $rubro)
+    {
+        $db=new database();
+        $db->conectar();
+
+        $consulta="SELECT *
+			       FROM Productos
+			       WHERE rubro = '$rubro'
+			       AND marca = '$filtro';";
+        $resultado=mysqli_query($db->conexion, $consulta)
+        or die ("No se puede filtrar por marca.");
 
         $productos = array(array("sku", "titulo", "stock", "precio", "rubro", "marca", "destacado", "img"));
         $i=0;

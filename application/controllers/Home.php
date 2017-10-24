@@ -90,7 +90,9 @@ class Home extends CI_Controller {
 	{
 		$this->load->model('productos');
 		$data['productos']=$this->productos->listar_cat('cascos');
-		$data['i']=0;
+        $data['marcas']=$this->productos->filtros_cat('cascos');
+		$data['rubro']='cascos';
+        $data['i']=0;
         $this->load->view('formularios/login');
         $this->load->view('formularios/contacto');
         $this->load->view('formularios/post_venta');
@@ -166,4 +168,32 @@ class Home extends CI_Controller {
 		$this->load->view('nosotros');
 		$this->load->view('footer');
 	}
+
+
+/**Filtros**/
+    public function filtrar()
+    {
+        $filtro = $this->input->get('marca');
+        $rubro = $this->input->get('rubro');
+
+        $this->load->model('productos');
+        $data['productos']=$this->productos->filtrar($filtro, $rubro);
+        $data['marcas']=$this->productos->filtros_cat('cascos');
+        $data['i']=0;
+        $this->load->view('formularios/login');
+        $this->load->view('formularios/contacto');
+        $this->load->view('formularios/post_venta');
+        $this->load->view('formularios/rrhh');
+        $this->load->view('formularios/sucursales');
+        $this->load->view('formularios/venta_corporativa');
+        $this->load->view('info/garantia');
+        $this->load->view('header');
+        $this->load->view('contacto');
+        $this->load->view('login');
+        $this->load->view('navbar2');
+        $this->load->view('productos/listar',$data);
+        $this->load->view('nosotros');
+        $this->load->view('footer');
+    }
+
 }
