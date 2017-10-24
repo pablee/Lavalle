@@ -1,4 +1,5 @@
 
+
 function verMediosPago()
 {
     var url = 'https://www.mercadopago.com.ar/promociones';
