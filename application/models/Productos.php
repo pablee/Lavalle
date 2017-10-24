@@ -13,9 +13,9 @@ class Productos
 			       FROM Productos;";
 
         $resultado=mysqli_query($db->conexion, $consulta)
-        or die ("No se pueden mostrar los planes.");
+        or die ("No se pueden mostrar los productos.");
 
-        $productos = array(array("sku", "titulo", "stock", "precio", "rubro", "marca", "destacado"));
+        $productos = array(array("sku", "titulo", "stock", "precio", "rubro", "marca", "destacado", "img"));
         $i=0;
         while($producto = mysqli_fetch_assoc($resultado))
         {
@@ -26,14 +26,76 @@ class Productos
             $productos[$i]["rubro"]=$producto["rubro"];
             $productos[$i]["marca"]=$producto["marca"];
             $productos[$i]["destacado"]=$producto["destacado"];
+            $productos[$i]["img"]=$producto["img"];
             $i++;
         }
         return $productos;
     }
 
 
-    public function guardar($producto)
+    public function listar_cat($categoria)
     {
+        $db=new database();
+        $db->conectar();
+
+        $consulta="SELECT *
+			       FROM Productos
+			       WHERE rubro = '$categoria';";
+
+        $resultado=mysqli_query($db->conexion, $consulta)
+        or die ("No se pueden mostrar los productos por categoria.");
+
+        $productos = array(array("sku", "titulo", "stock", "precio", "rubro", "marca", "destacado", "img"));
+        $i=0;
+        while($producto = mysqli_fetch_assoc($resultado))
+        {
+            $productos[$i]["sku"]=$producto["sku"];
+            $productos[$i]["titulo"]=$producto["titulo"];
+            $productos[$i]["stock"]=$producto["stock"];
+            $productos[$i]["precio"]=$producto["precio"];
+            $productos[$i]["rubro"]=$producto["rubro"];
+            $productos[$i]["marca"]=$producto["marca"];
+            $productos[$i]["destacado"]=$producto["destacado"];
+            $productos[$i]["img"]=$producto["img"];
+            $i++;
+        }
+        return $productos;
+    }
+
+
+    public function destacados()
+    {
+        $db=new database();
+        $db->conectar();
+
+        $consulta="SELECT *
+			       FROM Productos
+			       WHERE destacado=1;";
+
+        $resultado=mysqli_query($db->conexion, $consulta)
+        or die ("No se pueden mostrar los productos.");
+
+        $productos = array(array("sku", "titulo", "stock", "precio", "rubro", "marca", "destacado", "img"));
+        $i=0;
+        while($producto = mysqli_fetch_assoc($resultado))
+        {
+            $productos[$i]["sku"]=$producto["sku"];
+            $productos[$i]["titulo"]=$producto["titulo"];
+            $productos[$i]["stock"]=$producto["stock"];
+            $productos[$i]["precio"]=$producto["precio"];
+            $productos[$i]["rubro"]=$producto["rubro"];
+            $productos[$i]["marca"]=$producto["marca"];
+            $productos[$i]["destacado"]=$producto["destacado"];
+            $productos[$i]["img"]=$producto["img"];
+            $i++;
+        }
+        return $productos;
+    }
+
+
+    public function guardar($upload_data, $producto)
+    {
+        //echo $upload_data["file_name"];
         $db=new database();
         $db->conectar();
 
@@ -43,14 +105,16 @@ class Productos
                                             precio,
                                             rubro,
                                             marca,
-                                            destacado) 
+                                            destacado,
+                                            img)
                      VALUES("' . $producto["sku"] . '", 
                             "' . $producto["titulo"] . '",
                             "' . $producto["stock"] . '",
                             "' . $producto["precio"] . '",
                             "' . $producto["rubro"] . '",
                             "' . $producto["marca"] . '",
-                            "' . $producto["destacado"] . '")';
+                            "' . $producto["destacado"] . '",
+                            "' . $upload_data["file_name"] . '")';
 
         $resultado=mysqli_query($db->conexion, $consulta)
         or die ("No se pudo guardar el producto.");
@@ -72,14 +136,16 @@ class Productos
                                                     precio,
                                                     rubro,
                                                     marca,
-                                                    destacado) 
+                                                    destacado,
+                                                    img)
                              VALUES("' . $datos["0"] . '", 
                                     "' . $datos["1"] . '",
                                     "' . $datos["2"] . '",
                                     "' . $datos["3"] . '",
                                     "' . $datos["4"] . '",
                                     "' . $datos["5"] . '",
-                                    "' . $datos["6"] . '")';
+                                    "' . $datos["6"] . '",
+                                    "' . $datos["7"] . '")';
                 $resultado = mysqli_query($db->conexion, $consulta) or die ("No se pueden guardar los productos.");
             }
         }
@@ -109,6 +175,7 @@ class Productos
 
         //return $productos;
     }
+
 
 }
 

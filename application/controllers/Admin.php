@@ -15,7 +15,7 @@ class Admin extends CI_Controller
     {
         $this->load->view('admin/header');
         $this->load->view('admin/navbar');
-        $this->load->view('admin/nuevo');
+        $this->load->view('admin/nuevo_producto');
     }
 
 
@@ -62,6 +62,37 @@ class Admin extends CI_Controller
         $this->home();
     }
 
+
+    public function upload_producto()
+    {
+        $this->load->model('productos');
+        $grilla=$this->input->post('grilla[]');
+
+        $config['upload_path']          = './uploads/img/';
+        $config['allowed_types']        = '*';
+        $config['max_size']             = '50000';
+        $config['max_width']            = '1920';
+        $config['max_height']           = '1080';
+
+        $this->load->library('upload', $config);
+
+        if ( ! $this->upload->do_upload('archivo'))
+        {
+            $error = array('error' => $this->upload->display_errors());
+
+            $this->load->view('nuevo', $error);
+        }
+        else
+        {
+            $upload_data=$this->upload->data();
+            $this->productos->guardar($upload_data, $grilla);
+            $data = array('upload_data' => $this->upload->data());
+            //$this->load->view('consumo/upload_success', $data);
+        }
+
+        $this->home();
+    }
+
 /*
     public function consultar()
     {
@@ -91,7 +122,7 @@ class Admin extends CI_Controller
     {
         $this->load->view('admin/header');
         $this->load->view('admin/navbar');
-        $this->load->view('admin/nuevo');
+        $this->load->view('admin/nuevo_producto');
     }
 
 

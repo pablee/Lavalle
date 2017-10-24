@@ -12,6 +12,8 @@ class Home extends CI_Controller {
 
 	public function index()
 	{
+		$this->load->model('productos');
+		$data['destacados'] = $this->productos->destacados();
 		$this->load->view('header');
 		$this->load->view('formularios/login');
         $this->load->view('formularios/contacto');
@@ -25,21 +27,13 @@ class Home extends CI_Controller {
 		$this->load->view('navbar2');
 		$this->load->view('banner_principal');
 		$this->load->view('pago_retiro_envio');
-		$this->load->view('pro_cat');
+		$this->load->view('pro_cat', $data);
 		$this->load->view('marcas');
 		$this->load->view('horario');
 		$this->load->view('mapa');
 		$this->load->view('nosotros');
 		$this->load->view('footer');
 	}
-
-/*
-    public function contacto()
-    {
-        $this->load->view('header');
-        $this->load->view('contacto_formulario');
-    }
-*/
 
     public function login()
     {
@@ -90,13 +84,57 @@ class Home extends CI_Controller {
 		$this->load->view('footer');
 	}
 
+
+	/*Listar por categoria*/
 	public function cascos()
 	{
+		$this->load->model('productos');
+		$data['productos']=$this->productos->listar_cat('cascos');
+		$data['i']=0;
 		$this->load->view('header');
 		$this->load->view('contacto');
 		$this->load->view('login');
-		$this->load->view('navbar');
-		$this->load->view('productos/cascos');
+		$this->load->view('navbar2');
+		$this->load->view('productos/listar',$data);
+		$this->load->view('nosotros');
+		$this->load->view('footer');
+	}
+
+	public function indumentaria()
+	{
+		$this->load->model('productos');
+		$data['productos']=$this->productos->listar_cat('indumentaria');
+		$this->load->view('header');
+		$this->load->view('contacto');
+		$this->load->view('login');
+		$this->load->view('navbar2');
+		$this->load->view('productos/listar',$data);
+		$this->load->view('nosotros');
+		$this->load->view('footer');
+	}
+
+	public function accesorios()
+	{
+		$this->load->model('productos');
+		$data['productos']=$this->productos->listar_cat('accesorios');
+		$this->load->view('header');
+		$this->load->view('contacto');
+		$this->load->view('login');
+		$this->load->view('navbar2');
+		$this->load->view('productos/listar',$data);
+		$this->load->view('nosotros');
+		$this->load->view('footer');
+	}
+
+	public function motos()
+	{
+		$this->load->model('productos');
+		$data['productos']=$this->productos->listar_cat('motos');
+		$this->load->view('header');
+		$this->load->view('contacto');
+		$this->load->view('login');
+		$this->load->view('navbar2');
+		$this->load->view('productos/listar',$data);
 		$this->load->view('nosotros');
 		$this->load->view('footer');
 	}
