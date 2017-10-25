@@ -1,3 +1,3 @@
 <?php
 
-header("location: /Lavalle/admin/home");
+header("location: /admin/home");

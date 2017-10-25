@@ -25,7 +25,7 @@
                 <h4 class="modal-title">Escribinos tu consulta y te responderemos a la brevedad!</h4>
             </div>
             <div class="modal-body">
-                <form role="form" method="post" action="enviar">
+                <form role="form" method="post" action="<?php echo $form_action ?>">
                     <div class="form-group">
                         <label for="nombre"><span class="glyphicon glyphicon-user"></span> Nombre</label>
                         <input type="text" class="form-control" name="nombre"  placeholder="Nombre"> </input>
@@ -53,7 +53,7 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <p class="pull-left">Teléfono: 0261 4315476</p>
+                <p class="pull-left">Telï¿½fono: 0261 4315476</p>
             </div>
         </div>
 

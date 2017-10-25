@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row text-center busqueda_rapida">
             <div class="col-md-3">
-                <a href="index">
+                <a href="/">
                     <img src="<?php echo base_url(); ?>assets/img/iconos/logo_md.png" alt="logo" height="75" width="auto">
                 </a>
 

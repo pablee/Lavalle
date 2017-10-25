@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-include_once "database.php";
+include_once "Database.php";
 
 class Productos
 {
@@ -123,7 +123,7 @@ class Productos
 			       WHERE destacado=1;";
 
         $resultado=mysqli_query($db->conexion, $consulta)
-        or die ("No se pueden mostrar los productos.");
+        or die ("No se pueden mostrar los productos destacados.");
 
         $productos = array(array("sku", "titulo", "stock", "precio", "rubro", "marca", "destacado", "img"));
         $i=0;

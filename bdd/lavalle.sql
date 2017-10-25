@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
--- https://www.phpmyadmin.net/
+-- version 4.5.1
+-- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-10-2017 a las 02:50:33
--- Versión del servidor: 10.1.21-MariaDB
--- Versión de PHP: 7.1.1
+-- Tiempo de generación: 24-10-2017 a las 20:37:40
+-- Versión del servidor: 10.1.13-MariaDB
+-- Versión de PHP: 7.0.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -42,11 +42,11 @@ CREATE TABLE `productos` (
 --
 
 INSERT INTO `productos` (`sku`, `titulo`, `stock`, `precio`, `rubro`, `marca`, `destacado`, `img`) VALUES
-('000009', 'Campera Octane', 1, 19.000, 'mecanica', 'lg', 1, 'campera_octane.jpg'),
 ('0987654321', 'Baul Coocase', 1, 1000.000, 'Cascos', 'Coocase', 1, 'baul_coocase.jpg'),
 ('1000000256988', 'CASCO HJC RPHA MAX EVO ZOOMWALT MC5SF M', 300, 13045.452, 'CASCOS', 'HJC', 0, 'casco_abierto.jpg'),
+('1000009', 'Campera Octane', 1, 19.000, 'Indumentaria', 'lg', 1, 'campera_octane.jpg'),
 ('111', 'Casco Airoh', 1, 10.000, 'CASCOS', 'moto', 1, 'casco_airoh.png'),
-('1234', 'Botas Sidi', 1, 1.000, 'baul', 'coocase', 1, 'botas_sidi.jpg'),
+('1234', 'Botas Sidi', 1, 1.000, 'Accesorios', 'coocase', 1, 'botas_sidi.jpg'),
 ('256989', 'Guantes Octane', 40, 13045.452, 'CASCOS', 'HJC', 1, 'guantes_octane.jpg'),
 ('4512048319472', 'CASCO SHOEI QWEST MT.NEGRO L', 2, 9055.137, 'CASCOS', 'SHOEI', 0, 'casco_abierto.jpg'),
 ('4512048319489', 'CASCO SHOEI QWEST MT.NEGRO XL', 2, 9055.137, 'CASCOS', 'SHOEI', 0, 'casco_abierto.jpg'),

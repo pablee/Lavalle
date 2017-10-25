@@ -4,14 +4,13 @@
         <div class="col-md-4 columnas" style="margin-left: 50px;">
             <ul class="list-unstyled">
                 <li><a href="#" onclick="verMediosPago()">Medios de pago</a></li>
-                <li><a href="#" data-toggle="modal" data-target="#garantia">Garantía extendida</a></li>
+                <li><a href="#" data-toggle="modal" data-target="#garantia">Garant&iacute;a</a></li>
                 <li><a href="#" data-toggle="modal" data-target="#post_venta">Servicio post venta</a></li>
                 <li><a href="#" data-toggle="modal" data-target="#venta_corporativa"> Ventas corporativas</a></li>
                 <li><a href="#">Preguntas Frecuentes</a></li>
                 <li><a href="#" data-toggle="modal" data-target="#contacto">Contacto</a></li>
                 <li><a href="#" data-toggle="modal" data-target="#rrhh">RR HH</a></li>
                 <li><a href="#" data-toggle="modal" data-target="#sucursales">Sucursales</a></li>
-                <li><a href="#">Términos y condiciones</a></li>
             </ul>
         </div>
 
@@ -34,8 +33,8 @@
 
         <div class="col-md-4">
             <div class="form-inline">
-                <h4>Recibí ofertas y promociones por email</h4>
-                <input type="text" class="form-control input-lg" placeholder="Ingresá tu email">
+                <h4>Recibï¿½ ofertas y promociones por email</h4>
+                <input type="text" class="form-control input-lg" placeholder="Ingresï¿½ tu email">
                 <button type="button" class="btn btn-danger btn-lg" style="margin-left:20px;">Suscribite</button>
             </div>
         </div>

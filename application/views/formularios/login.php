@@ -32,7 +32,7 @@
                     </div>
                     <div class="form-group">
                         <label for="password"><span class="glyphicon glyphicon-eye-open"></span> Contrase&ntilde;a</label>
-                        <input type="text" class="form-control" id="password" name="password" placeholder="Enter password">
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Enter password">
                     </div>
                     <div class="checkbox">
                         <label><input type="checkbox" name="recordar" value="1" checked>Recordarme</label>

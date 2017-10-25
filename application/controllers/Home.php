@@ -13,14 +13,15 @@ class Home extends CI_Controller {
 	public function index()
 	{
 		$this->load->model('productos');
-		$data['destacados'] = $this->productos->destacados();
+		$data['form_action'] = "home/enviar";
+        $data['destacados'] = $this->productos->destacados();
 		$this->load->view('header');
-		$this->load->view('formularios/login');
-        $this->load->view('formularios/contacto');
-		$this->load->view('formularios/post_venta');
-		$this->load->view('formularios/rrhh');
-		$this->load->view('formularios/sucursales');
-		$this->load->view('formularios/venta_corporativa');
+		$this->load->view('formularios/login',$data);
+        $this->load->view('formularios/contacto',$data);
+		$this->load->view('formularios/post_venta',$data);
+		$this->load->view('formularios/rrhh',$data);
+		$this->load->view('formularios/sucursales',$data);
+		$this->load->view('formularios/venta_corporativa',$data);
 		$this->load->view('info/garantia');
 		$this->load->view('contacto');
 		$this->load->view('login');
@@ -46,7 +47,6 @@ class Home extends CI_Controller {
 
         if($validacion==1)
         {
-
             $this->load->view('admin/home');
         }
         else{
@@ -170,7 +170,7 @@ class Home extends CI_Controller {
 	}
 
 
-/**Filtros**/
+    /**Filtros**/
     public function filtrar()
     {
         $filtro = $this->input->get('marca');
