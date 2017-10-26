@@ -27,6 +27,12 @@
     $headers .= "From: ".$mail." \r\n";
 
 
-    mail($to,$subject,$message,$headers);
+    $envio = mail($to,$subject,$message,$headers);
+    if (!$envio)
+    {
+        $errorMessage = error_get_last()['message'];
+    }
+
+    return $envio;
 
 ?>

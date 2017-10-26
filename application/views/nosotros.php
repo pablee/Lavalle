@@ -33,8 +33,8 @@
 
         <div class="col-md-4">
             <div class="form-inline">
-                <h4>Recib� ofertas y promociones por email</h4>
-                <input type="text" class="form-control input-lg" placeholder="Ingres� tu email">
+                <h4>Recib&iacute; ofertas y promociones por email</h4>
+                <input type="text" class="form-control input-lg" placeholder="Ingres&aacute; tu email">
                 <button type="button" class="btn btn-danger btn-lg" style="margin-left:20px;">Suscribite</button>
             </div>
         </div>

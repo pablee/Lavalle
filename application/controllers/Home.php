@@ -7,12 +7,12 @@ class Home extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->helper('url');
+		$this->load->model('productos');
 	}
 
 
 	public function index()
 	{
-		$this->load->model('productos');
 		$data['form_action'] = "home/enviar";
         $data['destacados'] = $this->productos->destacados();
 		$this->load->view('header');
@@ -61,18 +61,28 @@ class Home extends CI_Controller {
 		$data['telefono'] = $this->input->post('telefono');
 		$data['para']     = $this->input->post('para');
 		$data['consulta'] = $this->input->post('consulta');
-		$this->load->view('formularios/send', $data);
-        $this->index();
+		$envio=$this->load->view('formularios/send', $data);
+		if($envio==true)
+		{
+			$this->load->view('formularios/success');
+			$this->index();
+		}
+		else{
+			$this->index();
+			}
+
 	}
 
 	public function conocenos()
 	{
+		$data['form_action'] = "home/enviar";
 		$this->load->view('header');
-		$this->load->view('formularios/contacto');
-		$this->load->view('formularios/post_venta');
-		$this->load->view('formularios/rrhh');
-		$this->load->view('formularios/sucursales');
-		$this->load->view('formularios/venta_corporativa');
+		$this->load->view('formularios/login',$data);
+		$this->load->view('formularios/contacto',$data);
+		$this->load->view('formularios/post_venta',$data);
+		$this->load->view('formularios/rrhh',$data);
+		$this->load->view('formularios/sucursales',$data);
+		$this->load->view('formularios/venta_corporativa',$data);
 		$this->load->view('info/garantia');
 		$this->load->view('contacto');
 		$this->load->view('login');
@@ -88,19 +98,19 @@ class Home extends CI_Controller {
 	/*Listar por categoria*/
 	public function cascos()
 	{
-		$this->load->model('productos');
-		$data['productos']=$this->productos->listar_cat('cascos');
-        $data['marcas']=$this->productos->filtros_cat('cascos');
 		$data['rubro']='cascos';
-        $data['i']=0;
-        $this->load->view('formularios/login');
-        $this->load->view('formularios/contacto');
-        $this->load->view('formularios/post_venta');
-        $this->load->view('formularios/rrhh');
-        $this->load->view('formularios/sucursales');
-        $this->load->view('formularios/venta_corporativa');
-        $this->load->view('info/garantia');
+		$data['productos']=$this->productos->listar_cat($data["rubro"]);
+		$data['marcas']=$this->productos->filtros_cat($data["rubro"]);
+		$data['i']=0;
+		$data['form_action'] = "home/enviar";
 		$this->load->view('header');
+		$this->load->view('formularios/login',$data);
+		$this->load->view('formularios/contacto',$data);
+		$this->load->view('formularios/post_venta',$data);
+		$this->load->view('formularios/rrhh',$data);
+		$this->load->view('formularios/sucursales',$data);
+		$this->load->view('formularios/venta_corporativa',$data);
+        $this->load->view('info/garantia');
 		$this->load->view('contacto');
 		$this->load->view('login');
 		$this->load->view('navbar2');
@@ -111,14 +121,17 @@ class Home extends CI_Controller {
 
 	public function indumentaria()
 	{
-		$this->load->model('productos');
-		$data['productos']=$this->productos->listar_cat('indumentaria');
-        $this->load->view('formularios/login');
-        $this->load->view('formularios/contacto');
-        $this->load->view('formularios/post_venta');
-        $this->load->view('formularios/rrhh');
-        $this->load->view('formularios/sucursales');
-        $this->load->view('formularios/venta_corporativa');
+		$data['rubro']='indumentaria';
+		$data['productos']=$this->productos->listar_cat($data["rubro"]);
+		$data['marcas']=$this->productos->filtros_cat($data["rubro"]);
+		$data['i']=0;
+		$data['form_action'] = "home/enviar";
+		$this->load->view('formularios/login',$data);
+		$this->load->view('formularios/contacto',$data);
+		$this->load->view('formularios/post_venta',$data);
+		$this->load->view('formularios/rrhh',$data);
+		$this->load->view('formularios/sucursales',$data);
+		$this->load->view('formularios/venta_corporativa',$data);
         $this->load->view('info/garantia');
 		$this->load->view('header');
 		$this->load->view('contacto');
@@ -131,14 +144,17 @@ class Home extends CI_Controller {
 
 	public function accesorios()
 	{
-		$this->load->model('productos');
-		$data['productos']=$this->productos->listar_cat('accesorios');
-        $this->load->view('formularios/login');
-        $this->load->view('formularios/contacto');
-        $this->load->view('formularios/post_venta');
-        $this->load->view('formularios/rrhh');
-        $this->load->view('formularios/sucursales');
-        $this->load->view('formularios/venta_corporativa');
+		$data['rubro']='accesorios';
+		$data['productos']=$this->productos->listar_cat($data["rubro"]);
+		$data['marcas']=$this->productos->filtros_cat($data["rubro"]);
+		$data['i']=0;
+		$data['form_action'] = "home/enviar";
+		$this->load->view('formularios/login',$data);
+		$this->load->view('formularios/contacto',$data);
+		$this->load->view('formularios/post_venta',$data);
+		$this->load->view('formularios/rrhh',$data);
+		$this->load->view('formularios/sucursales',$data);
+		$this->load->view('formularios/venta_corporativa',$data);
         $this->load->view('info/garantia');
 		$this->load->view('header');
 		$this->load->view('contacto');
@@ -151,14 +167,17 @@ class Home extends CI_Controller {
 
 	public function motos()
 	{
-		$this->load->model('productos');
-		$data['productos']=$this->productos->listar_cat('motos');
-        $this->load->view('formularios/login');
-        $this->load->view('formularios/contacto');
-        $this->load->view('formularios/post_venta');
-        $this->load->view('formularios/rrhh');
-        $this->load->view('formularios/sucursales');
-        $this->load->view('formularios/venta_corporativa');
+		$data['rubro']='motos';
+		$data['productos']=$this->productos->listar_cat($data["rubro"]);
+		$data['marcas']=$this->productos->filtros_cat($data["rubro"]);
+		$data['i']=0;
+		$data['form_action'] = "home/enviar";
+		$this->load->view('formularios/login',$data);
+		$this->load->view('formularios/contacto',$data);
+		$this->load->view('formularios/post_venta',$data);
+		$this->load->view('formularios/rrhh',$data);
+		$this->load->view('formularios/sucursales',$data);
+		$this->load->view('formularios/venta_corporativa',$data);
         $this->load->view('info/garantia');
 		$this->load->view('header');
 		$this->load->view('contacto');
@@ -176,16 +195,16 @@ class Home extends CI_Controller {
         $filtro = $this->input->get('marca');
         $rubro = $this->input->get('rubro');
 
-        $this->load->model('productos');
+		$data['form_action'] = "home/enviar";
         $data['productos']=$this->productos->filtrar($filtro, $rubro);
         $data['marcas']=$this->productos->filtros_cat('cascos');
         $data['i']=0;
-        $this->load->view('formularios/login');
-        $this->load->view('formularios/contacto');
-        $this->load->view('formularios/post_venta');
-        $this->load->view('formularios/rrhh');
-        $this->load->view('formularios/sucursales');
-        $this->load->view('formularios/venta_corporativa');
+		$this->load->view('formularios/login',$data);
+		$this->load->view('formularios/contacto',$data);
+		$this->load->view('formularios/post_venta',$data);
+		$this->load->view('formularios/rrhh',$data);
+		$this->load->view('formularios/sucursales',$data);
+		$this->load->view('formularios/venta_corporativa',$data);
         $this->load->view('info/garantia');
         $this->load->view('header');
         $this->load->view('contacto');
