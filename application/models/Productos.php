@@ -62,6 +62,32 @@ class Productos
     }
 
 
+    public function filtros($categoria)
+    {
+        $db=new database();
+        $db->conectar();
+
+        $consulta="SELECT DISTINCT rubro, marca, titulo, precio
+			       FROM Productos
+			       WHERE rubro = '$categoria';";
+        $resultado=mysqli_query($db->conexion, $consulta)
+        or die ("No se pueden armar los filtros por categoria.");
+
+        $filtros=array(array("rubro", "marca", "modelo", "tipo", "color", "talle", "precio"));
+        
+        $i=0;
+        while($filtro = mysqli_fetch_assoc($resultado))
+        {
+            $filtros[$i]["rubro"]=$filtro["rubro"];
+            $filtros[$i]["marca"]=$filtro["marca"];
+            $filtros[$i]["modelo"]=$filtro["titulo"];
+            $filtros[$i]["precio"]=$filtro["precio"];
+            $i++;
+        }
+        return $filtros;
+    }
+
+
     public function filtros_cat($categoria)
     {
         $db=new database();
@@ -82,7 +108,7 @@ class Productos
         return $marcas;
     }
 
-
+/*
     public function filtrar($filtro, $rubro)
     {
         $db=new database();
@@ -91,9 +117,52 @@ class Productos
         $consulta="SELECT *
 			       FROM Productos
 			       WHERE rubro = '$rubro'
-			       AND marca = '$filtro';";
+			       AND (marca = '$filtro'
+			       OR titulo = '$filtro');";
         $resultado=mysqli_query($db->conexion, $consulta)
         or die ("No se puede filtrar por marca.");
+
+        $productos = array(array("sku", "titulo", "stock", "precio", "rubro", "marca", "destacado", "img"));
+        $i=0;
+        while($producto = mysqli_fetch_assoc($resultado))
+        {
+            $productos[$i]["sku"]=$producto["sku"];
+            $productos[$i]["titulo"]=$producto["titulo"];
+            $productos[$i]["stock"]=$producto["stock"];
+            $productos[$i]["precio"]=$producto["precio"];
+            $productos[$i]["rubro"]=$producto["rubro"];
+            $productos[$i]["marca"]=$producto["marca"];
+            $productos[$i]["destacado"]=$producto["destacado"];
+            $productos[$i]["img"]=$producto["img"];
+            $i++;
+        }
+        return $productos;
+    }
+*/
+
+    public function filtrar($filtrado)
+    {
+        $db=new database();
+        $db->conectar();
+
+        if(isset($filtrado["marca"]))
+        {
+            $consulta='SELECT *
+                       FROM Productos
+                       WHERE rubro = "'.$filtrado["rubro"].'"
+                       AND marca = "'.$filtrado["marca"].'";';
+        }
+
+        if(isset($filtrado["modelo"]))
+        {
+            $consulta='SELECT *
+                       FROM Productos
+                       WHERE rubro = "'.$filtrado["rubro"].'"                     
+                       AND titulo = "'.$filtrado["modelo"].'";';
+        }
+
+        $resultado=mysqli_query($db->conexion, $consulta)
+        or die ("No se puede filtrar.");
 
         $productos = array(array("sku", "titulo", "stock", "precio", "rubro", "marca", "destacado", "img"));
         $i=0;

@@ -51,9 +51,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $route['default_controller'] = 'home';
 $route['login'] = 'home/login';
-$route['cascos'] = 'home/cascos';
-$route['indumentaria'] = 'home/indumentaria';
-$route['accesorios'] = 'home/accesorios';
-$route['motos'] = 'home/motos';
+$route['categoria'] = 'home/categoria';
+$route['filtrar'] = 'home/filtrar';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

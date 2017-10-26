@@ -10,14 +10,15 @@
                             <a data-toggle="collapse" data-parent="#accordion" href="#collapse1"> Marca </a>
                         </h4>
                     </div>
-                    <ul id="collapse1" class="panel-collapse collapse in">
+                    <div id="collapse1" class="panel-collapse collapse ">
                         <ul class="list-group">
-                            <?php foreach($marcas AS $marca): ?>
+                            <?php foreach($filtros AS $filtro): ?>
                                 <li class="list-group-item">
-                                   <a href="filtrar?marca=<?php echo $marca["nombre"]; ?>&rubro=<?php echo $rubro; ?>"><?php echo $marca["nombre"]; ?></a>
+                                   <a href="filtrar?marca=<?php echo $filtro["marca"]; ?>&rubro=<?php echo $filtrado["rubro"]; ?>"><?php echo $filtro["marca"]; ?></a>
                                 </li>
                             <?php endforeach; ?>
                         </ul>
+                    </div>
                 </div>
             </div>
 
@@ -29,12 +30,10 @@
                 </div>
                 <div id="collapse2" class="panel-collapse collapse">
                     <ul class="list-group">
-                        <?php foreach($productos AS $producto): ?>
-
+                        <?php foreach($filtros AS $filtro): ?>
                             <li class="list-group-item">
-                                <a href="#" target="_blank"><?php echo $producto["titulo"]; ?></a>
+                                <a href="filtrar?modelo=<?php echo $filtro["modelo"]; ?>&rubro=<?php echo $filtro["rubro"]; ?>"><?php echo $filtro["modelo"]; ?></a>
                             </li>
-
                         <?php endforeach; ?>
                     </ul>
                 </div>
@@ -83,39 +82,15 @@
                 </div>
             </div>
         </div>
-
-        <!--table class="table">
-            <thead>
-            <tr>
-                <th>Filtrar por</th>
-            </tr>
-            </thead>
-
-            <tbody class="text-center">
-            <tr>
-                <td>Marca</td>
-            </tr>
-            <tr>
-                <td>Modelo</td>
-            </tr>
-            <tr>
-                <td>Color</td>
-            </tr>
-            <tr>
-                <td>Talle</td>
-            </tr>
-            <tr>
-                <td>Precio</td>
-            </tr>
-            </tbody>
-        </table-->
     </div>
 
     <div class="col-md-9 container contenido">
 
         <div class="row">
             <div class="col-md-12 filtro-barra" id="filtro-barra">
-                Cascos> Abiertos> Shoei
+                <a href="categoria?rubro=<?php echo $filtrado["rubro"]; ?>"> <?php echo ucwords($filtrado["rubro"]);?> </a>
+                > <?php echo ucwords($filtrado["marca"]); ?>
+                > <?php echo ucwords($filtrado["modelo"]); ?>
             </div>
         </div>
 

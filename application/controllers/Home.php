@@ -96,115 +96,57 @@ class Home extends CI_Controller {
 
 
 	/*Listar por categoria*/
-	public function cascos()
-	{
-		$data['rubro']='cascos';
-		$data['productos']=$this->productos->listar_cat($data["rubro"]);
-		$data['marcas']=$this->productos->filtros_cat($data["rubro"]);
-		$data['i']=0;
-		$data['form_action'] = "home/enviar";
-		$this->load->view('header');
-		$this->load->view('formularios/login',$data);
-		$this->load->view('formularios/contacto',$data);
-		$this->load->view('formularios/post_venta',$data);
-		$this->load->view('formularios/rrhh',$data);
-		$this->load->view('formularios/sucursales',$data);
-		$this->load->view('formularios/venta_corporativa',$data);
-        $this->load->view('info/garantia');
-		$this->load->view('contacto');
-		$this->load->view('login');
-		$this->load->view('navbar2');
-		$this->load->view('productos/listar',$data);
-		$this->load->view('nosotros');
-		$this->load->view('footer');
-	}
+    public function categoria()
+    {
+        $filtrado=array("rubro"=>"", "marca"=>"", "modelo"=>"");
+        $filtrado["rubro"]=$this->input->get('rubro');
 
-	public function indumentaria()
-	{
-		$data['rubro']='indumentaria';
-		$data['productos']=$this->productos->listar_cat($data["rubro"]);
-		$data['marcas']=$this->productos->filtros_cat($data["rubro"]);
-		$data['i']=0;
-		$data['form_action'] = "home/enviar";
-		$this->load->view('formularios/login',$data);
-		$this->load->view('formularios/contacto',$data);
-		$this->load->view('formularios/post_venta',$data);
-		$this->load->view('formularios/rrhh',$data);
-		$this->load->view('formularios/sucursales',$data);
-		$this->load->view('formularios/venta_corporativa',$data);
-        $this->load->view('info/garantia');
-		$this->load->view('header');
-		$this->load->view('contacto');
-		$this->load->view('login');
-		$this->load->view('navbar2');
-		$this->load->view('productos/listar',$data);
-		$this->load->view('nosotros');
-		$this->load->view('footer');
-	}
+        $data['productos']=$this->productos->listar_cat($filtrado["rubro"]);
 
-	public function accesorios()
-	{
-		$data['rubro']='accesorios';
-		$data['productos']=$this->productos->listar_cat($data["rubro"]);
-		$data['marcas']=$this->productos->filtros_cat($data["rubro"]);
-		$data['i']=0;
-		$data['form_action'] = "home/enviar";
-		$this->load->view('formularios/login',$data);
-		$this->load->view('formularios/contacto',$data);
-		$this->load->view('formularios/post_venta',$data);
-		$this->load->view('formularios/rrhh',$data);
-		$this->load->view('formularios/sucursales',$data);
-		$this->load->view('formularios/venta_corporativa',$data);
+        $data['filtros']=$this->productos->filtros($filtrado["rubro"]);
+        $data['filtrado']=$filtrado;
+        $data['i']=0;
+        $data['form_action'] = "home/enviar";
+        $this->load->view('header');
+        $this->load->view('formularios/login',$data);
+        $this->load->view('formularios/contacto',$data);
+        $this->load->view('formularios/post_venta',$data);
+        $this->load->view('formularios/rrhh',$data);
+        $this->load->view('formularios/sucursales',$data);
+        $this->load->view('formularios/venta_corporativa',$data);
         $this->load->view('info/garantia');
-		$this->load->view('header');
-		$this->load->view('contacto');
-		$this->load->view('login');
-		$this->load->view('navbar2');
-		$this->load->view('productos/listar',$data);
-		$this->load->view('nosotros');
-		$this->load->view('footer');
-	}
-
-	public function motos()
-	{
-		$data['rubro']='motos';
-		$data['productos']=$this->productos->listar_cat($data["rubro"]);
-		$data['marcas']=$this->productos->filtros_cat($data["rubro"]);
-		$data['i']=0;
-		$data['form_action'] = "home/enviar";
-		$this->load->view('formularios/login',$data);
-		$this->load->view('formularios/contacto',$data);
-		$this->load->view('formularios/post_venta',$data);
-		$this->load->view('formularios/rrhh',$data);
-		$this->load->view('formularios/sucursales',$data);
-		$this->load->view('formularios/venta_corporativa',$data);
-        $this->load->view('info/garantia');
-		$this->load->view('header');
-		$this->load->view('contacto');
-		$this->load->view('login');
-		$this->load->view('navbar2');
-		$this->load->view('productos/listar',$data);
-		$this->load->view('nosotros');
-		$this->load->view('footer');
-	}
+        $this->load->view('contacto');
+        $this->load->view('login');
+        $this->load->view('navbar2');
+        $this->load->view('productos/listar',$data);
+        $this->load->view('nosotros');
+        $this->load->view('footer');
+    }
 
 
     /**Filtros**/
     public function filtrar()
     {
-        $filtro = $this->input->get('marca');
-        $rubro = $this->input->get('rubro');
+        $filtrado=array("rubro"=>"cascos", "marca"=>"", "modelo"=>"");
+        $filtrado["rubro"]=$this->input->get('rubro');
+        $filtrado["marca"]=$this->input->get('marca');
+        $filtrado["modelo"]=$this->input->get('modelo');
 
-		$data['form_action'] = "home/enviar";
-        $data['productos']=$this->productos->filtrar($filtro, $rubro);
-        $data['marcas']=$this->productos->filtros_cat('cascos');
+        //Obtengo los filtros disponibles para la categoria.
+        $data['filtros']=$this->productos->filtros($filtrado["rubro"]);
+        //Obtengo los productos de acuerdo a los filtros usados.
+        $data['productos']=$this->productos->filtrar($filtrado);
+        //Devuelvo los filtros usados para visualizar los mismos en la vista.
+        $data['filtrado']=$filtrado;
+
         $data['i']=0;
-		$this->load->view('formularios/login',$data);
-		$this->load->view('formularios/contacto',$data);
-		$this->load->view('formularios/post_venta',$data);
-		$this->load->view('formularios/rrhh',$data);
-		$this->load->view('formularios/sucursales',$data);
-		$this->load->view('formularios/venta_corporativa',$data);
+        $data['form_action'] = "home/enviar";
+        $this->load->view('formularios/login',$data);
+        $this->load->view('formularios/contacto',$data);
+        $this->load->view('formularios/post_venta',$data);
+        $this->load->view('formularios/rrhh',$data);
+        $this->load->view('formularios/sucursales',$data);
+        $this->load->view('formularios/venta_corporativa',$data);
         $this->load->view('info/garantia');
         $this->load->view('header');
         $this->load->view('contacto');

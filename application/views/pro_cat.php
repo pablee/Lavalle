@@ -42,13 +42,13 @@
                 <div class="col-md-3">
                     <div class="thumbnail thumbnail-categoria">
                         <img src="<?php echo base_url(); ?>assets/img/categorias/cascos_moto_cross.jpg" alt="cascos">
-                        <a href="cascos">
+                        <a href="categoria?rubro=cascos">
                             <div class="row caption caption-tag">
                                 <div class="col-md-6">
                                     Cascos
                                 </div>
                                 <div class="col-md-6">
-                                    +Ver más
+                                    +Ver m&aacute;s
                                 </div>
                             </div>
                         </a>
@@ -58,13 +58,13 @@
                 <div class="col-md-3">
                     <div class="thumbnail thumbnail-categoria">
                         <img src="<?php echo base_url(); ?>assets/img/categorias/cat_indumentaria.jpg" alt="indumentaria">
-                        <a href="indumentaria">
+                        <a href="categoria?rubro=indumentaria">
                             <div class="row caption caption-tag">
                                 <div class="col-md-6">
                                     Indumentaria
                                 </div>
                                 <div class="col-md-6 text-right">
-                                    +Ver más
+                                    +Ver m&aacute;s
                                 </div>
                             </div>
                         </a>
@@ -74,13 +74,13 @@
                 <div class="col-md-3">
                     <div class="thumbnail thumbnail-categoria">
                         <img src="<?php echo base_url(); ?>assets/img/categorias/cat_accesorios.jpg" alt="accesorios">
-                        <a href="accesorios">
+                        <a href="categoria?rubro=accesorios">
                             <div class="row caption caption-tag">
                                 <div class="col-md-6 ">
                                     Accesorios
                                 </div>
                                 <div class="col-md-6 text-right">
-                                    +Ver más
+                                    +Ver m&aacute;s
                                 </div>
                             </div>
                         </a>
@@ -90,13 +90,13 @@
                 <div class="col-md-3">
                     <div class="thumbnail thumbnail-categoria">
                         <img src="<?php echo base_url(); ?>assets/img/categorias/motos.jpg" alt="moto">
-                        <a href="motos">
+                        <a href="categoria?rubro=motos">
                             <div class="row caption caption-tag">
                                 <div class="col-md-6">
                                     Motos
                                 </div>
                                 <div class="col-md-6 text-right">
-                                    +Ver más
+                                    +Ver m&aacute;s
                                 </div>
                             </div>
                         </a>
