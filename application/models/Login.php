@@ -9,7 +9,7 @@ class Login
         $db = new database();
         $db->conectar();
 
-        $consulta = 'SELECT * FROM usuario 
+        $consulta = 'SELECT * FROM Usuario 
                      WHERE mail = "'.$data['usuario'].'" 
                      AND password = "'.$data['password'].'";';
         $resultado = mysqli_query($db->conexion, $consulta) or die ("Fallo la consulta, no se puede validar el usuario");
