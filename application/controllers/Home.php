@@ -13,7 +13,7 @@ class Home extends CI_Controller {
 
 	public function index()
 	{
-		$data['form_action'] = "home/enviar";
+		$data['form_action'] = "enviar";
         $data['destacados'] = $this->productos->destacados();
 		$this->load->view('header');
 		$this->load->view('formularios/login',$data);
@@ -56,12 +56,21 @@ class Home extends CI_Controller {
 
 	public function enviar()
 	{
-        $data['producto']  = $this->input->post('producto');
-		$data['nombre']   = $this->input->post('nombre');
+        //$data['producto'] = $this->input->post('producto[]');
+		//Datos de contacto
+        $data['nombre']   = $this->input->post('nombre');
 		$data['mail']     = $this->input->post('mail');
 		$data['telefono'] = $this->input->post('telefono');
 		$data['para']     = $this->input->post('para');
 		$data['consulta'] = $this->input->post('consulta');
+
+		//Datos de producto
+        $data['sku']=$this->input->post('sku');
+        $data['titulo']=$this->input->post('titulo');
+        $data['precio']=$this->input->post('precio');
+        $data['rubro']=$this->input->post('rubro');
+        $data['marca']=$this->input->post('marca');
+
 		$envio=$this->load->view('formularios/send', $data);
 		if($envio==true)
 		{
@@ -71,7 +80,6 @@ class Home extends CI_Controller {
 		else{
 			$this->index();
 			}
-
 	}
 
 	public function conocenos()
@@ -105,10 +113,9 @@ class Home extends CI_Controller {
         $data['filtros']=$this->productos->filtros($filtrado["rubro"]);
         $data['filtrado']=$filtrado;
         $data['i']=0;
-        $data['form_action'] = "home/enviar";
+        $data['form_action'] = "enviar";
 
         $this->load->view('header');
-
         $this->load->view('formularios/login',$data);
         $this->load->view('formularios/contacto',$data);
         $this->load->view('formularios/post_venta',$data);
@@ -142,13 +149,15 @@ class Home extends CI_Controller {
         $data['filtrado']=$filtrado;
 
         $data['i']=0;
-        $data['form_action'] = "home/enviar";
+        $data['form_action'] = "enviar";
         $this->load->view('formularios/login',$data);
         $this->load->view('formularios/contacto',$data);
         $this->load->view('formularios/post_venta',$data);
         $this->load->view('formularios/rrhh',$data);
         $this->load->view('formularios/sucursales',$data);
         $this->load->view('formularios/venta_corporativa',$data);
+        $this->load->view('formularios/comprar',$data);
+
         $this->load->view('info/garantia');
         $this->load->view('header');
         $this->load->view('contacto');

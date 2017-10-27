@@ -19,15 +19,15 @@
                 </html>
                 ';
 
-    if(isset($producto))
+    if(isset($sku))
     {
         $message.= '<label> Producto</label>
                     <ul>
-                        <li>SKU:'.$producto["sku"].'</li>
-                        <li>Titulo:'.$producto["titulo"].'</li>
-                        <li>Precio:'.$producto["precio"].'</li>
-                        <li>Rubro:'.$producto["rubro"].'</li>
-                        <li>Marca:'.$producto["marca"].'</li>
+                        <li>SKU:'.$sku.'</li>
+                        <li>Titulo:'.$titulo.'</li>
+                        <li>Precio:'.$precio.'</li>
+                        <li>Rubro:'.$rubro.'</li>
+                        <li>Marca:'.$marca.'</li>
                     </ul>';
     }
 

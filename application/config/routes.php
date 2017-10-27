@@ -54,5 +54,6 @@ $route['login'] = 'home/login';
 $route['categoria'] = 'home/categoria';
 $route['filtrar'] = 'home/filtrar';
 $route['comprar'] = 'home/comprar';
+$route['enviar'] = 'home/enviar';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

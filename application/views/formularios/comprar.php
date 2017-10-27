@@ -44,8 +44,17 @@
                         </div>
 
                         <input type="hidden" name="para" value="tiendaweb@lavallemotos.com.ar">
-                        <input type="hidden" name="producto" value="'.$producto[].'">
 
+                        <?php
+                        echo'
+                            <input type="hidden" class="form-control" id="" name="sku"    value="'.$producto["sku"].'"></input>                           
+                            <input type="hidden" class="form-control" id="" name="titulo" value="'.$producto["titulo"].'"></input>
+                            <input type="hidden" class="form-control" id="" name="stock"  value="'.$producto["stock"].'"></input>
+                            <input type="hidden" class="form-control" id="" name="precio" value="'.$producto["precio"].'"></input>
+                            <input type="hidden" class="form-control" id="" name="rubro"  value="'.$producto["rubro"].'"></input>
+                            <input type="hidden" class="form-control" id="" name="marca"  value="'.$producto["marca"].'"></input>
+                            ';
+                        ?>
                         <label> Producto</label>
                         <ul>
                             <li><?php echo 'SKU:'.$producto["sku"]; ?></li>

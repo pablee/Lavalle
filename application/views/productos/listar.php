@@ -3,6 +3,7 @@
     <div class="col-md-3 contenido filtro">
         <div class="container">
             <h2>Filtrar por</h2>
+            <!--Marca-->
             <div class="panel-group" id="accordion">
                 <div class="panel">
                     <div class="panel-heading">
@@ -22,6 +23,7 @@
                 </div>
             </div>
 
+            <!--Modelo-->
             <div class="panel">
                 <div class="panel-heading">
                     <h4 class="panel-title">
@@ -39,7 +41,8 @@
                 </div>
             </div>
 
-            <div class="panel">
+            <!--Color-->
+            <!--div class="panel">
                 <div class="panel-heading">
                     <h4 class="panel-title">
                         <a data-toggle="collapse" data-parent="#accordion" href="#collapse3"> Color </a>
@@ -52,9 +55,10 @@
                         <li class="list-group-item">Amarillo</li>
                     </ul>
                 </div>
-            </div>
+            </div-->
 
-            <div class="panel">
+            <!--Talle-->
+            <!--div class="panel">
                 <div class="panel-heading">
                     <h4 class="panel-title">
                         <a data-toggle="collapse" data-parent="#accordion" href="#collapse4"> Talle </a>
@@ -67,9 +71,10 @@
                         <li class="list-group-item">S</li>
                     </ul>
                 </div>
-            </div>
+            </div-->
 
-            <div class="panel">
+            <!--Precio-->
+            <!--div class="panel">
                 <div class="panel-heading">
                     <h4 class="panel-title">
                         <a data-toggle="collapse" data-parent="#accordion" href="#collapse5"> Precio </a>
@@ -80,7 +85,7 @@
 
                     </div>
                 </div>
-            </div>
+            </div-->
         </div>
     </div>
 
