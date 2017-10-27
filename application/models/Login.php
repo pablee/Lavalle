@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-include_once "database.php";
+include_once "Database.php";
 
 class Login
 {
