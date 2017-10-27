@@ -13,9 +13,9 @@
                     </div>
                     <div id="collapse1" class="panel-collapse collapse ">
                         <ul class="list-group">
-                            <?php foreach($filtros AS $filtro): ?>
+                            <?php foreach($marcas AS $marca): ?>
                                 <li class="list-group-item">
-                                   <a href="filtrar?marca=<?php echo $filtro["marca"]; ?>&rubro=<?php echo $filtrado["rubro"]; ?>"><?php echo $filtro["marca"]; ?></a>
+                                   <a href="filtrar?marca=<?php echo $marca["nombre"]; ?>&rubro=<?php echo $filtrado["rubro"]; ?>"><?php echo $marca["nombre"]; ?></a>
                                 </li>
                             <?php endforeach; ?>
                         </ul>

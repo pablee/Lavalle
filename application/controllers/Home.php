@@ -103,14 +103,18 @@ class Home extends CI_Controller {
 		$this->load->view('footer');
 	}
 
-	/*Listar por categoria*/
+    /*Listar por categoria*/
     public function categoria()
     {
         $filtrado=array("rubro"=>"", "marca"=>"", "modelo"=>"");
         $filtrado["rubro"]=$this->input->get('rubro');
 
-        $data['productos']=$this->productos->listar_cat($filtrado["rubro"]);
+        //Obtengo los filtros disponibles para la categoria.
         $data['filtros']=$this->productos->filtros($filtrado["rubro"]);
+        //Obtengo las marcas disponibles para la categoria.
+        $data['marcas']=$this->productos->filtrar_marcas($filtrado["rubro"]);
+        //Obtengo los productos de acuerdo a los filtros usados.
+        $data['productos']=$this->productos->listar_cat($filtrado["rubro"]);
         $data['filtrado']=$filtrado;
         $data['i']=0;
         $data['form_action'] = "enviar";
@@ -133,6 +137,7 @@ class Home extends CI_Controller {
         $this->load->view('footer');
     }
 
+
     /**Filtros**/
     public function filtrar()
     {
@@ -143,6 +148,8 @@ class Home extends CI_Controller {
 
         //Obtengo los filtros disponibles para la categoria.
         $data['filtros']=$this->productos->filtros($filtrado["rubro"]);
+        //Obtengo las marcas disponibles para la categoria.
+        $data['marcas']=$this->productos->filtrar_marcas($filtrado["rubro"]);
         //Obtengo los productos de acuerdo a los filtros usados.
         $data['productos']=$this->productos->filtrar($filtrado);
         //Devuelvo los filtros usados para visualizar los mismos en la vista.
