@@ -56,6 +56,7 @@ class Home extends CI_Controller {
 
 	public function enviar()
 	{
+        $data['producto']  = $this->input->post('producto');
 		$data['nombre']   = $this->input->post('nombre');
 		$data['mail']     = $this->input->post('mail');
 		$data['telefono'] = $this->input->post('telefono');
@@ -94,7 +95,6 @@ class Home extends CI_Controller {
 		$this->load->view('footer');
 	}
 
-
 	/*Listar por categoria*/
     public function categoria()
     {
@@ -102,18 +102,21 @@ class Home extends CI_Controller {
         $filtrado["rubro"]=$this->input->get('rubro');
 
         $data['productos']=$this->productos->listar_cat($filtrado["rubro"]);
-
         $data['filtros']=$this->productos->filtros($filtrado["rubro"]);
         $data['filtrado']=$filtrado;
         $data['i']=0;
         $data['form_action'] = "home/enviar";
+
         $this->load->view('header');
+
         $this->load->view('formularios/login',$data);
         $this->load->view('formularios/contacto',$data);
         $this->load->view('formularios/post_venta',$data);
         $this->load->view('formularios/rrhh',$data);
         $this->load->view('formularios/sucursales',$data);
         $this->load->view('formularios/venta_corporativa',$data);
+        $this->load->view('formularios/comprar',$data);
+
         $this->load->view('info/garantia');
         $this->load->view('contacto');
         $this->load->view('login');
@@ -122,7 +125,6 @@ class Home extends CI_Controller {
         $this->load->view('nosotros');
         $this->load->view('footer');
     }
-
 
     /**Filtros**/
     public function filtrar()

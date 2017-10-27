@@ -106,6 +106,7 @@
                         <a href="#" target="_blank"><?php echo $producto["titulo"]; ?></a>
                         <p class="descripcion">Pilot 1.1 Graphic B White</p>
                         <p><!--strike>$2000</strike--> <?php echo $producto["precio"]; ?> <!--span class="label label-danger">10% OFF</span--></p>
+                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#comprar_<?php echo $producto["sku"]; ?>">Lo quiero!</button>
                     </div>
                 </div>
             </div>

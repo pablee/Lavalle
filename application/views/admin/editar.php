@@ -16,7 +16,7 @@ foreach ($productos as $producto)
     '	
     <tr>	  
         <td>
-            <input type="text" class="form-control" id="" name="grilla['.$producto["sku"].'][sku]"     value="'.$producto["sku"].'"></input>
+            <input type="text" class="form-control" id="" name="grilla['.$producto["sku"].'][sku]" value="'.$producto["sku"].'"></input>
         </td>
     
         <td>	
