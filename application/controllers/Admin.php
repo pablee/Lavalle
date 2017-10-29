@@ -11,6 +11,7 @@ class Admin extends CI_Controller
         //$this->load->helper(array('form', 'url'));
     }
 
+
     public function home()
     {
         $this->load->view('admin/header');
@@ -45,10 +46,9 @@ class Admin extends CI_Controller
 
         $this->load->library('upload', $config);
 
-        if ( ! $this->upload->do_upload('archivo'))
+        if (!$this->upload->do_upload('archivo'))
         {
             $error = array('error' => $this->upload->display_errors());
-
             $this->load->view('nuevo', $error);
         }
         else
@@ -76,10 +76,9 @@ class Admin extends CI_Controller
 
         $this->load->library('upload', $config);
 
-        if ( ! $this->upload->do_upload('archivo'))
+        if (!$this->upload->do_upload('archivo'))
         {
             $error = array('error' => $this->upload->display_errors());
-
             $this->load->view('nuevo', $error);
         }
         else
@@ -87,10 +86,10 @@ class Admin extends CI_Controller
             $upload_data=$this->upload->data();
             $this->productos->guardar($upload_data, $grilla);
             $data = array('upload_data' => $this->upload->data());
-            //$this->load->view('consumo/upload_success', $data);
+            $this->load->view('admin/upload_success', $data);
         }
 
-        $this->home();
+        $this->listar();
     }
 
 /*
@@ -166,7 +165,11 @@ class Admin extends CI_Controller
                 $productos[$i]["precio"] = $producto["precio"];
                 $productos[$i]["rubro"] = $producto["rubro"];
                 $productos[$i]["marca"] = $producto["marca"];
+                $productos[$i]["modelo"] = $producto["modelo"];
+                $productos[$i]["talle"] = $producto["talle"];
+                $productos[$i]["publicado"] = $producto["publicado"];
                 $productos[$i]["destacado"] = $producto["destacado"];
+                $productos[$i]["img"] = $producto["img"];
                 $i++;
             }
         }

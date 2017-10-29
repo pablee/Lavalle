@@ -12,6 +12,14 @@ foreach ($productos as $producto)
         $destacado="<option value=\"1\"> Si </option>";
         }
 
+    if($producto["publicado"]==0)
+    {
+        $publicado="<option value=\"1\"> No </option>";
+    }
+    else{
+        $publicado="<option value=\"1\"> Si </option>";
+    }
+
     echo
     '	
     <tr>	  
@@ -23,11 +31,11 @@ foreach ($productos as $producto)
             <input type="text"   class="form-control" id="" name="grilla['.$producto["sku"].'][titulo]" value="'.$producto["titulo"].'" onchange="campoModificado('.$producto["sku"].')"></input>
         </td>
     
-        <td>		
+        <td style="width: 80px;">
             <input type="text"   class="form-control" id="" name="grilla['.$producto["sku"].'][stock]" value="'.$producto["stock"].'" onchange="campoModificado('.$producto["sku"].')"></input>
         </td>
     
-        <td>		
+        <td class="col-xs-1">
             <input type="text"   class="form-control" id="" name="grilla['.$producto["sku"].'][precio]" value="'.$producto["precio"].'" onchange="campoModificado('.$producto["sku"].')"></input>
         </td>
     
@@ -38,7 +46,15 @@ foreach ($productos as $producto)
         <td>		
             <input type="text"   class="form-control" id="" name="grilla['.$producto["sku"].'][marca]" value="'.$producto["marca"].'" onchange="campoModificado('.$producto["sku"].')"></input>
         </td>
-    
+
+        <td>
+            <input type="text"   class="form-control" id="" name="grilla['.$producto["sku"].'][modelo]" value="'.$producto["modelo"].'" onchange="campoModificado('.$producto["sku"].')"></input>
+        </td>
+
+        <td style="width: 70px;">
+            <input type="text"   class="form-control" id="" name="grilla['.$producto["sku"].'][talle]" value="'.$producto["talle"].'" onchange="campoModificado('.$producto["sku"].')"></input>
+        </td>
+
         <td>	    
             <select class="form-control" id="" name="grilla['.$producto["sku"].'][destacado]" onchange="campoModificado('.$producto["sku"].')">
                 '.$destacado.'
@@ -46,7 +62,19 @@ foreach ($productos as $producto)
                 <option value="0"> No </option>
             </select>
         </td>    
-        
+
+        <td>
+            <select class="form-control" id="" name="grilla['.$producto["sku"].'][publicado]" onchange="campoModificado('.$producto["sku"].')">
+                '.$publicado.'
+                <option value="1"> Si </option>
+                <option value="0"> No </option>
+            </select>
+        </td>
+
+        <td>
+            <input type="text"   class="form-control" id="" name="grilla['.$producto["sku"].'][img]" value="'.$producto["img"].'" onchange="campoModificado('.$producto["sku"].')"></input>
+        </td>
+
         <td><input type="hidden" class="form-control" id="'.$producto["sku"].'-modificado" name="grilla['.$producto["sku"].'][modificado]" value="0"></input></td>
     ';
 }

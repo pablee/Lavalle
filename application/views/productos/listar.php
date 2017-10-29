@@ -13,11 +13,15 @@
                     </div>
                     <div id="collapse1" class="panel-collapse collapse ">
                         <ul class="list-group">
-                            <?php foreach($marcas AS $marca): ?>
-                                <li class="list-group-item">
-                                   <a href="filtrar?marca=<?php echo $marca["nombre"]; ?>&rubro=<?php echo $filtrado["rubro"]; ?>"><?php echo $marca["nombre"]; ?></a>
-                                </li>
-                            <?php endforeach; ?>
+                            <?php  if($productos==false): ?>
+                                <h5>No existen marcas para la busqueda realizada</h5>
+                            <?php else: ?>
+                                <?php foreach($marcas AS $marca): ?>
+                                    <li class="list-group-item">
+                                       <a href="filtrar?marca=<?php echo $marca["nombre"]; ?>&rubro=<?php echo $filtrado["rubro"]; ?>"><?php echo $marca["nombre"]; ?></a>
+                                    </li>
+                                <?php endforeach; ?>
+                            <?php endif; ?>
                         </ul>
                     </div>
                 </div>
@@ -32,11 +36,15 @@
                 </div>
                 <div id="collapse2" class="panel-collapse collapse">
                     <ul class="list-group">
-                        <?php foreach($filtros AS $filtro): ?>
-                            <li class="list-group-item">
-                                <a href="filtrar?modelo=<?php echo $filtro["modelo"]; ?>&rubro=<?php echo $filtro["rubro"]; ?>"><?php echo $filtro["modelo"]; ?></a>
-                            </li>
-                        <?php endforeach; ?>
+                        <?php  if($productos==false): ?>
+                            <h5>No existen marcas para la busqueda realizada</h5>
+                        <?php else: ?>
+                            <?php foreach($modelos AS $modelo): ?>
+                                <li class="list-group-item">
+                                    <a href="filtrar?modelo=<?php echo $modelo["nombre"]; ?>&rubro=<?php echo $filtrado["rubro"]; ?>"><?php echo $modelo["nombre"]; ?></a>
+                                </li>
+                            <?php endforeach; ?>
+                        <?php endif; ?>
                     </ul>
                 </div>
             </div>
@@ -94,39 +102,48 @@
         <div class="row">
             <div class="col-md-12 filtro-barra" id="filtro-barra">
                 <a href="categoria?rubro=<?php echo $filtrado["rubro"]; ?>"> <?php echo ucwords($filtrado["rubro"]);?> </a>
-                > <?php echo ucwords($filtrado["marca"]); ?>
-                > <?php echo ucwords($filtrado["modelo"]); ?>
+                    <?php
+                        if($filtrado["marca"]!="")
+                        {
+                            echo '>'.ucwords($filtrado["marca"]);
+                        }
+                    
+                        if($filtrado["modelo"]!="")
+                        {
+                            echo '>'.ucwords($filtrado["modelo"]);
+                        }
+                    ?>
             </div>
         </div>
 
         <div class="row" style="margin-top: 2%;">
-
-        <?php foreach($productos AS $producto): ?>
-
-           <div class="col-md-3">
-            <div class="thumbnail thumbnail-producto">
-                <img src="<?php echo base_url(); ?>assets/img/productos/<?php echo $producto["img"]; ?>" alt="baul" height="auto" width="auto">
-                <div class="caption">
-                    <div class="text-center">
-                        <a href="#" target="_blank"><?php echo $producto["titulo"]; ?></a>
-                        <p class="descripcion">Pilot 1.1 Graphic B White</p>
-                        <p><!--strike>$2000</strike--> <?php echo $producto["precio"]; ?> <!--span class="label label-danger">10% OFF</span--></p>
-                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#comprar_<?php echo $producto["sku"]; ?>">Lo quiero!</button>
+            <?php  if($productos==false): ?>
+                <h2>No existen productos para la busqueda realizada</h2>
+            <?php else: ?>
+                <?php foreach($productos AS $producto): ?>
+                   <div class="col-md-3">
+                    <div class="thumbnail thumbnail-producto">
+                        <img src="<?php echo base_url(); ?>assets/img/productos/<?php echo $producto["img"]; ?>" alt="baul" height="auto" width="auto">
+                        <div class="caption">
+                            <div class="text-center">
+                                <a href="#" target="_blank"><?php echo $producto["titulo"]; ?></a>
+                                <p class="descripcion">Pilot 1.1 Graphic B White</p>
+                                <p><!--strike>$2000</strike--> <?php echo $producto["precio"]; ?> <!--span class="label label-danger">10% OFF</span--></p>
+                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#comprar_<?php echo $producto["sku"]; ?>">Lo quiero!</button>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-           </div>
-
-        <?php
-        $i++;
-            if($i == 4)
-            {
-                $i=0;
-                echo '</div><div class="row">';
-            }
-
-        ?>
-        <?php endforeach; ?>
+                   </div>
+                <?php
+                $i++;
+                    if($i == 4)
+                    {
+                        $i=0;
+                        echo '</div><div class="row">';
+                    }
+                ?>
+                <?php endforeach; ?>
+            <?php endif; ?>
         </div>
     </div>
 </div>

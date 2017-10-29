@@ -10,6 +10,13 @@ foreach($productos as $producto)
         $destacado="Si";
         }
 
+	if($producto["publicado"]==0)
+	{
+		$publicado="No";
+	}
+	else{
+		$publicado="Si";
+	}
     echo
         '	
 	<tr>	   		
@@ -19,7 +26,11 @@ foreach($productos as $producto)
 		<td>'.$producto["precio"].'</td>
 		<td>'.$producto["rubro"].'</td>
 		<td>'.$producto["marca"].'</td>
-		<td>'.$destacado.'</td>		
+		<td>'.$producto["modelo"].'</td>
+		<td>'.$producto["talle"].'</td>
+		<td>'.$destacado.'</td>
+		<td>'.$publicado.'</td>
+		<td>'.$producto["img"].'</td>
 	</tr>
 	';
 }

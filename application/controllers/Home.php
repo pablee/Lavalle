@@ -11,24 +11,60 @@ class Home extends CI_Controller {
 	}
 
 
-	public function index()
-	{
-		$data['form_action'] = "enviar";
-        $data['destacados'] = $this->productos->destacados();
-		$this->load->view('header');
-		$this->load->view('formularios/login',$data);
+    public function formularios()
+    {
+        $data['form_action'] = "enviar";
+        $this->load->view('formularios/login',$data);
         $this->load->view('formularios/contacto',$data);
-		$this->load->view('formularios/post_venta',$data);
-		$this->load->view('formularios/rrhh',$data);
-		$this->load->view('formularios/sucursales',$data);
-		$this->load->view('formularios/venta_corporativa',$data);
+        $this->load->view('formularios/post_venta',$data);
+        $this->load->view('formularios/rrhh',$data);
+        $this->load->view('formularios/sucursales',$data);
+        $this->load->view('formularios/venta_corporativa',$data);
+        //$this->load->view('formularios/comprar',$data);
+    }
+
+
+    public function navbar()
+    {
+        //NAVBAR
+        //Obtengo las marcas disponibles para la categoria motos.
+        $data['motos_marcas']=$this->productos->filtrar_marcas("motos");
+        //Obtengo las marcas disponibles para la categoria motos.
+        $data['motos_modelos']=$this->productos->filtrar_modelos("motos");
+
+        //Obtengo las marcas disponibles para la categoria cascos.
+        $data['cascos_marcas']=$this->productos->filtrar_marcas("cascos");
+        //Obtengo las marcas disponibles para la categoria cascos.
+        $data['cascos_modelos']=$this->productos->filtrar_modelos("cascos");
+
+        //Obtengo las marcas disponibles para la categoria indumentaria.
+        $data['indumentaria_marcas']=$this->productos->filtrar_marcas("indumentaria");
+        //Obtengo las marcas disponibles para la categoria indumentaria.
+        $data['indumentaria_modelos']=$this->productos->filtrar_modelos("indumentaria");
+
+        //Obtengo las marcas disponibles para la categoria calzado.
+        $data['calzado_marcas']=$this->productos->filtrar_marcas("calzado");
+        //Obtengo las marcas disponibles para la categoria calzado.
+        $data['calzado_modelos']=$this->productos->filtrar_modelos("calzado");
+
+        $this->load->view('navbar2',$data);
+    }
+
+
+    public function index()
+	{
+        $data['form_action'] = "enviar";
+        $data['destacados'] = $this->productos->destacados();
+
+		$this->load->view('header');
+        $this->formularios();
 		$this->load->view('info/garantia');
 		$this->load->view('contacto');
 		$this->load->view('login');
-		$this->load->view('navbar2');
+        $this->navbar();
 		$this->load->view('banner_principal');
 		$this->load->view('pago_retiro_envio');
-		$this->load->view('pro_cat', $data);
+		$this->load->view('pro_cat',$data);
 		$this->load->view('marcas');
 		$this->load->view('horario');
 		$this->load->view('mapa');
@@ -36,9 +72,9 @@ class Home extends CI_Controller {
 		$this->load->view('footer');
 	}
 
+
     public function login()
     {
-
         $this->load->model('login');
         $data['usuario']  = $this->input->post('usuario');
         $data['password'] = $this->input->post('password');
@@ -54,9 +90,9 @@ class Home extends CI_Controller {
             }
     }
 
+
 	public function enviar()
 	{
-        //$data['producto'] = $this->input->post('producto[]');
 		//Datos de contacto
         $data['nombre']   = $this->input->post('nombre');
 		$data['mail']     = $this->input->post('mail');
@@ -82,8 +118,10 @@ class Home extends CI_Controller {
 			}
 	}
 
+
 	public function conocenos()
 	{
+        /*
 		$data['form_action'] = "home/enviar";
 		$this->load->view('header');
 		$this->load->view('formularios/login',$data);
@@ -101,7 +139,9 @@ class Home extends CI_Controller {
 		$this->load->view('mapa');
 		$this->load->view('nosotros');
 		$this->load->view('footer');
+        */
 	}
+
 
     /*Listar por categoria*/
     public function categoria()
@@ -109,10 +149,11 @@ class Home extends CI_Controller {
         $filtrado=array("rubro"=>"", "marca"=>"", "modelo"=>"");
         $filtrado["rubro"]=$this->input->get('rubro');
 
-        //Obtengo los filtros disponibles para la categoria.
-        $data['filtros']=$this->productos->filtros($filtrado["rubro"]);
         //Obtengo las marcas disponibles para la categoria.
         $data['marcas']=$this->productos->filtrar_marcas($filtrado["rubro"]);
+        //Obtengo las marcas disponibles para la categoria.
+        $data['modelos']=$this->productos->filtrar_modelos($filtrado["rubro"]);
+
         //Obtengo los productos de acuerdo a los filtros usados.
         $data['productos']=$this->productos->listar_cat($filtrado["rubro"]);
         $data['filtrado']=$filtrado;
@@ -131,48 +172,102 @@ class Home extends CI_Controller {
         $this->load->view('info/garantia');
         $this->load->view('contacto');
         $this->load->view('login');
-        $this->load->view('navbar2');
+        $this->navbar();
         $this->load->view('productos/listar',$data);
         $this->load->view('nosotros');
         $this->load->view('footer');
     }
 
 
-    /**Filtros**/
     public function filtrar()
     {
-        $filtrado=array("rubro"=>"cascos", "marca"=>"", "modelo"=>"");
+        $filtrado=array("sku"=>"", "rubro"=>"", "marca"=>"", "modelo"=>"", "buscado"=>"");
+        $filtrado["sku"]=$this->input->get('sku');
         $filtrado["rubro"]=$this->input->get('rubro');
         $filtrado["marca"]=$this->input->get('marca');
         $filtrado["modelo"]=$this->input->get('modelo');
+        $filtrado["buscado"]=$this->input->post('buscado');
 
-        //Obtengo los filtros disponibles para la categoria.
-        $data['filtros']=$this->productos->filtros($filtrado["rubro"]);
+        //Obtengo los productos de acuerdo a los filtros usados.
+        $productos=$this->productos->filtrar($filtrado);
+
+        $data['productos']=$productos;
+
+        $filtrado["rubro"]=$productos[0]['rubro'];
+
         //Obtengo las marcas disponibles para la categoria.
         $data['marcas']=$this->productos->filtrar_marcas($filtrado["rubro"]);
-        //Obtengo los productos de acuerdo a los filtros usados.
-        $data['productos']=$this->productos->filtrar($filtrado);
+        //Obtengo las marcas disponibles para la categoria.
+        $data['modelos']=$this->productos->filtrar_modelos($filtrado["rubro"]);
+
         //Devuelvo los filtros usados para visualizar los mismos en la vista.
         $data['filtrado']=$filtrado;
-
         $data['i']=0;
-        $data['form_action'] = "enviar";
-        $this->load->view('formularios/login',$data);
-        $this->load->view('formularios/contacto',$data);
-        $this->load->view('formularios/post_venta',$data);
-        $this->load->view('formularios/rrhh',$data);
-        $this->load->view('formularios/sucursales',$data);
-        $this->load->view('formularios/venta_corporativa',$data);
-        $this->load->view('formularios/comprar',$data);
 
-        $this->load->view('info/garantia');
         $this->load->view('header');
+        $this->formularios();
+        $this->load->view('formularios/comprar',$data);
+        $this->load->view('info/garantia');
         $this->load->view('contacto');
         $this->load->view('login');
-        $this->load->view('navbar2');
+        $this->navbar();
         $this->load->view('productos/listar',$data);
         $this->load->view('nosotros');
         $this->load->view('footer');
     }
+
+
+    public function producto()
+    {
+        $sku=$this->input->get('sku');
+        $data['form_action'] = "enviar";
+        $data['producto']=$this->productos->buscar_sku($sku);
+
+        $this->load->view('header');
+        $this->formularios();
+        $this->load->view('formularios/comprar',$data);
+        $this->load->view('info/garantia');
+        $this->load->view('contacto');
+        $this->load->view('login');
+        $this->navbar();
+        $this->load->view('productos/producto',$data);
+        $this->load->view('nosotros');
+        $this->load->view('footer');
+    }
+
+
+    public function adjuntar()
+    {
+        //Datos de contacto
+        $data['nombre']   = $this->input->post('nombre');
+        $data['mail']     = $this->input->post('mail');
+        $data['telefono'] = $this->input->post('telefono');
+        $data['para']     = $this->input->post('para');
+        $data['consulta'] = $this->input->post('consulta');
+
+        $config['upload_path']          = './uploads/cv/';
+        $config['allowed_types']        = '*';
+        $config['max_size']             = '50000';
+        $config['max_width']            = '1024';
+        $config['max_height']           = '768';
+
+        $this->load->library('upload', $config);
+
+        if (!$this->upload->do_upload('archivo'))
+        {
+            $error = array('error' => $this->upload->display_errors());
+            $this->load->view('formularios/success', $error);
+        }
+        else
+            {
+                //$upload_data=$this->upload->data();
+                $data['upload_data'] = array('upload_data' => $this->upload->data());
+                $this->load->view('formularios/send', $data);
+                //$this->load->view('consumo/upload_success', $data);
+            }
+
+        $this->index();
+    }
+
 
 }

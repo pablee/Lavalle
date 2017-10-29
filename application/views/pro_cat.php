@@ -17,7 +17,7 @@
                     <div class="text-center">
                         <?php echo $destacado["titulo"]?>
                     </div>
-                    <a href="#" class="btn btn-danger btn-xs" target="_blank">Ver m&aacutes</a>
+                    <a href="producto?sku=<?php echo $destacado["sku"]; ?>" class="btn btn-danger btn-xs">Ver m&aacutes</a>
                 </div>
             </div>
 
@@ -63,7 +63,7 @@
                                 <div class="col-md-6">
                                     Indumentaria
                                 </div>
-                                <div class="col-md-6 text-right">
+                                <div class="col-md-6 ">
                                     +Ver m&aacute;s
                                 </div>
                             </div>
@@ -79,7 +79,7 @@
                                 <div class="col-md-6 ">
                                     Accesorios
                                 </div>
-                                <div class="col-md-6 text-right">
+                                <div class="col-md-6 ">
                                     +Ver m&aacute;s
                                 </div>
                             </div>
@@ -95,7 +95,7 @@
                                 <div class="col-md-6">
                                     Motos
                                 </div>
-                                <div class="col-md-6 text-right">
+                                <div class="col-md-6 ">
                                     +Ver m&aacute;s
                                 </div>
                             </div>

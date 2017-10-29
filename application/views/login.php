@@ -8,10 +8,14 @@
 
             </div>
             <div class="col-md-6 input-buscar-producto">
-                <div class="form-group has-feedback">
-                    <input type="text" class="form-control input-lg" placeholder="Buscar producto">
-                    <span class="glyphicon glyphicon-search form-control-feedback"></span>
-                </div>
+                <form method="post" action="filtrar">
+                    <div class="form-group has-feedback">
+                        <input type="text" class="form-control input-lg" name="buscado" placeholder="Buscar producto">
+                        <span type="submit" class="glyphicon glyphicon-search form-control-feedback"></span>
+                    </div>
+                </form>
+
+
             </div>
             <div class="col-md-3 login-carrito">
                 <a href="#" data-toggle="modal" data-target="#login"><img src="<?php echo base_url(); ?>assets/img/iconos/login.png" alt="login" class="centrado" height="35px" width="35px">Ingresar a mi cuenta</a>

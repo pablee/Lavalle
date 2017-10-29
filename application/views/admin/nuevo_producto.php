@@ -39,6 +39,16 @@
                     </div>
 
                     <div class="form-group">
+                        <label for="modelo"> Modelo </label>
+                        <input type="text" class="form-control" id="marca" name="grilla[modelo]"></input>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="talle"> Talle </label>
+                        <input type="text" class="form-control" id="marca" name="grilla[talle]"></input>
+                    </div>
+
+                    <div class="form-group">
                         <label for="destacado"> Destacado </label>
                         <select class="form-control" id="destacado" name="grilla[destacado]">
                             <option value="1"> Si </option>
@@ -46,6 +56,13 @@
                         </select>
                     </div>
 
+                    <div class="form-group">
+                        <label for="publicado"> Publicado </label>
+                        <select class="form-control" id="publicado" name="grilla[publicado]">
+                            <option value="1"> Si </option>
+                            <option value="0"> No </option>
+                        </select>
+                    </div>
 
                     <div class="form-group">
                         <label for="archivo"> Seleccione la imagen del producto </label>

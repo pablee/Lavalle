@@ -22,10 +22,10 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Form� parte del equipo de Lavalle Motos </h4>
+                <h4 class="modal-title">Form&aacute; parte del equipo de Lavalle Motos </h4>
             </div>
             <div class="modal-body">
-                <form role="form" method="post" action="<?php echo $form_action ?>">
+                <form role="form" method="post" action="adjuntar" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="nombre"><span class="glyphicon glyphicon-user"></span> Nombre</label>
                         <input type="text" class="form-control" name="nombre"  placeholder="Nombre"> </input>
@@ -45,6 +45,11 @@
                     <div class="form-group">
                         <label> Consulta</label>
                         <textarea type="text" class="form-control" name="consulta"> </textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="archivo"> Adjunte su cv </label>
+                        <input type="file" class="form-control" id="archivo" name="archivo"></input>
                     </div>
 
                     <div class="form-group">

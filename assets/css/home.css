@@ -70,13 +70,61 @@ a:visited
     text-align: center;
 }
 
-
+/*
 .navbar-nav > li
 {
     float: none;
     display: inline-block;
     font-size: 17px;
 }
+*/
+
+.white
+{
+    background-color: #fff;
+}
+
+
+/*screen-xs*/
+@media (max-width: 768px)
+{
+    .navbar-nav > li {
+        float: none;
+        /* display: inline-block; */
+        font-size: 17px;
+    }
+}
+/*screen-sm*/
+@media (min-width: 768px) and (max-width: 992px)
+{
+    .navbar-nav > li
+    {
+        float: none;
+        display: inline-block;
+        font-size: 17px;
+    }
+}
+/*screen-md*/
+@media (min-width: 992px) and (max-width: 1200px)
+{
+    .navbar-nav > li
+    {
+        float: none;
+        display: inline-block;
+        font-size: 17px;
+    }
+}
+/*screen-lg corresponds with col-lg*/
+@media (min-width: 1200px)
+{
+    .navbar-nav > li
+    {
+        float: none;
+        display: inline-block;
+        font-size: 17px;
+    }
+}
+
 
 .carousel
 {
