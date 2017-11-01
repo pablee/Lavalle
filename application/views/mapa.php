@@ -1,5 +1,5 @@
 <!--Mapa-->
-<div class="container margin-top margin-hottom">
+<div class="container  margin-hottom">
     <div class="row text-center">
         <div class="col-md-4 buscar-local">
             <h4>Buscá la sucursal mas cercana!!!</h4>

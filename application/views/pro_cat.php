@@ -261,7 +261,7 @@
     </div>
 
 
-    <div class="row" style="height: 50px; background-color: #dbd8d7;">
+    <div class="row hidden-xs hidden-sm" style="height: 50px; background-color: #dbd8d7;">
     </div>
 </div>
 

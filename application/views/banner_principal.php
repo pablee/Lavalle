@@ -1,5 +1,5 @@
 <!--Carousel banner-->
-<div id="carousel" class="carousel slide" data-ride="carousel">
+<div id="carousel" class="carousel slide hidden-xs hidden-sm" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
         <li data-target="#carousel" data-slide-to="0" class="active"></li>
