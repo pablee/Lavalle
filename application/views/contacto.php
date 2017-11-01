@@ -1,10 +1,9 @@
 <body class="container-fluid">
 
-
     <!--div class="container-fluid"-->
         <!--Informacion de contacto en el header-->
-        <div class="row text-center info_contacto_header" id="info_contacto_header">
-            <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="row hidden-xs hidden-sm text-center info_contacto_header" id="info_contacto_header">
+            <div class="col-md-12">
                 <span style="margin-right: 25px;">
                     <span style="color:#FF0000; padding-right: 3px" class="glyphicon glyphicon-envelope"></span><a href="#" data-toggle="modal" data-target="#contacto"> Escribinos </a>
                 </span>

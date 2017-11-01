@@ -22,12 +22,7 @@ textarea
 
 
 /*<!--Logo-Busqueda-Login-Carrito-->*/
-.busqueda_rapida
-{
-    background-color:#dbd8d7;
-    height: auto;
-    padding: 5px 0px 5px 0px;
-}
+
 
 .input-buscar-producto
 {
@@ -41,6 +36,31 @@ textarea
     padding: 0px;
     font-size: 12px;
 }
+
+/*screen-xs*//*screen-sm*/
+@media (max-width: 768px), (min-width: 768px) and (max-width: 992px)
+{
+    .busqueda_rapida
+    {
+        background-color:#dbd8d7;
+        height: auto;
+        padding: 5px 0px 5px 0px;
+        margin-top: 5%;
+    }
+}
+
+
+/*screen-md*//*screen-lg corresponds with col-lg*/
+@media (min-width: 992px) and (max-width: 1200px), (min-width: 1200px)
+{
+    .busqueda_rapida
+    {
+        background-color:#dbd8d7;
+        height: auto;
+        padding: 5px 0px 5px 0px;
+    }
+}
+
 
 
 /* unvisited link */
@@ -56,6 +76,10 @@ a:visited
     color: black;
 }
 
+
+
+
+/*NAVBAR*/
 .navbar
 {
     width: 100%;
