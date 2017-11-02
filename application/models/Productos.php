@@ -1,6 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 include_once "Database.php";
+require_once "mercadopago.php";
 
 class Productos
 {

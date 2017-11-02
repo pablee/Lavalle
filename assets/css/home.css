@@ -436,11 +436,23 @@ font-size: 50%;
     color: #ffffff;
 }
 
+
+/*NOSOTROS*/
+
 .nosotros
 {
     background-color: #ffffff;
     padding: 40px 20px 40px 20px;
 }
+
+.nosotros-img > img
+{
+    display: block;
+    margin: auto;
+    /*width: 50%;*/
+}
+
+
 
 /*<!--Mapa-->*/
 #map

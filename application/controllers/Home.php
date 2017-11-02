@@ -8,6 +8,7 @@ class Home extends CI_Controller {
 		parent::__construct();
 		$this->load->helper('url');
 		$this->load->model('productos');
+        $this->load->model('checkout');
 	}
 
 
@@ -270,4 +271,27 @@ class Home extends CI_Controller {
     }
 
 
+    public function checkout()
+    {
+        //Datos de producto
+        $data['sku']=$this->input->post('sku');
+        $data['titulo']=$this->input->post('titulo');
+        $data['precio']=$this->input->post('precio');
+        $data['rubro']=$this->input->post('rubro');
+        $data['marca']=$this->input->post('marca');
+
+        $data['preference']=$this->checkout->preference($data);
+
+        $this->load->view('header');
+        $this->formularios();
+
+        $this->load->view('info/garantia');
+        $this->load->view('contacto');
+        $this->load->view('login');
+        $this->navbar();
+
+        $this->load->view('productos/comprar',$data);
+        $this->load->view('nosotros');
+        $this->load->view('footer');
+    }
 }

@@ -56,7 +56,7 @@
                                 <input type="hidden" class="form-control" id="" name="marca"  value="'.$producto["marca"].'"></input>
                                 ';
                             ?>
-                            <label> Producto</label>
+                            <label>Producto</label>
                             <ul>
                                 <li><?php echo 'SKU:'.$producto["sku"]; ?></li>
                                 <li><?php echo 'Titulo:'.$producto["titulo"]; ?></li>
@@ -198,3 +198,6 @@
     </div>
 
 <?php endif; ?>
+
+
+
