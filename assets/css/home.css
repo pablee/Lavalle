@@ -112,10 +112,16 @@ a:visited
 /*screen-xs*/
 @media (max-width: 768px)
 {
-    .navbar-nav > li {
+    .navbar-nav > li
+    {
         float: none;
         /* display: inline-block; */
         font-size: 17px;
+    }
+
+    .padding
+    {
+        padding-bottom: 30px;
     }
 }
 /*screen-sm*/
@@ -126,6 +132,11 @@ a:visited
         float: none;
         /*display: inline-block;*/
         font-size: 17px;
+    }
+
+    .padding
+    {
+        padding-bottom: 30px;
     }
 }
 /*screen-md*/
@@ -438,12 +449,27 @@ font-size: 50%;
 
 
 /*NOSOTROS*/
-
-.nosotros
+/*screen-xs*//*screen-sm*/
+@media (max-width: 768px), (min-width: 768px) and (max-width: 992px)
 {
-    background-color: #ffffff;
-    padding: 40px 20px 40px 20px;
+    .nosotros
+    {
+        background-color: #f2f2f2;
+        padding: 40px 20px 40px 20px;
+    }
 }
+
+
+/*screen-md*//*screen-lg corresponds with col-lg*/
+@media (min-width: 992px) and (max-width: 1200px), (min-width: 1200px)
+{
+    .nosotros
+    {
+        background-color: #ffffff;
+        padding: 40px 20px 40px 20px;
+    }
+}
+
 
 .nosotros-img > img
 {

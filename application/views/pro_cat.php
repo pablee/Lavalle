@@ -24,7 +24,7 @@
         </div>
     </div>
 
-    <div class="row hidden-md hidden-lg margin-bottom">
+    <div class="row hidden-md hidden-lg margin-bottom" style="padding: 15px 0px;">
         <div class="col-xs-12 col-sm-12">
             <div id="carousel-destacados" class="carousel" data-ride="carousel" >
                 <div class="text-center">
@@ -164,7 +164,7 @@
         </div>
     </div>
 
-    <div class="row hidden-md hidden-lg margin-bottom">
+    <div class="row hidden-md hidden-lg margin-bottom" style="padding: 15px 0px;">
         <div class="col-xs-12 col-sm-12">
             <div id="carousel-categorias" class="carousel" data-ride="carousel" >
                 <div class="text-center">

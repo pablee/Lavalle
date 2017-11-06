@@ -1,8 +1,10 @@
 <div class="row contenido">
 
     <div class="col-md-3 contenido filtro">
-        <div class="container">
-            <h2>Filtrar por</h2>
+            <div style="padding: 10px 15px;">
+                <h2>Filtrar por</h2>
+            </div>
+
             <!--Marca-->
             <div class="panel-group" id="accordion">
                 <div class="panel">
@@ -14,7 +16,7 @@
                     <div id="collapse1" class="panel-collapse collapse ">
                         <ul class="list-group">
                             <?php  if($productos==false): ?>
-                                <h5>No existen marcas para la busqueda realizada</h5>
+                                <li class="list-group-item">No existen marcas para la busqueda realizada</li>
                             <?php else: ?>
                                 <?php foreach($marcas AS $marca): ?>
                                     <li class="list-group-item">
@@ -37,7 +39,7 @@
                 <div id="collapse2" class="panel-collapse collapse">
                     <ul class="list-group">
                         <?php  if($productos==false): ?>
-                            <h5>No existen marcas para la busqueda realizada</h5>
+                            <li class="list-group-item">No existen marcas para la busqueda realizada</li>
                         <?php else: ?>
                             <?php foreach($modelos AS $modelo): ?>
                                 <li class="list-group-item">
@@ -94,13 +96,13 @@
                     </div>
                 </div>
             </div-->
-        </div>
+
     </div>
 
     <div class="col-md-9 container contenido">
 
         <div class="row">
-            <div class="col-md-12 filtro-barra" id="filtro-barra">
+            <div class="col-xs-12 col-sm-12 col-md-12 filtro-barra" id="filtro-barra">
                 <a href="categoria?rubro=<?php echo $filtrado["rubro"]; ?>"> <?php echo ucwords($filtrado["rubro"]);?> </a>
                     <?php
                         if($filtrado["marca"]!="")
@@ -118,10 +120,12 @@
 
         <div class="row" style="margin-top: 2%;">
             <?php  if($productos==false): ?>
-                <h2>No existen productos para la busqueda realizada</h2>
+                <div class="col-xs-12 col-sm-12 col-md-3 text-center">
+                    <h5>No existen productos para la busqueda realizada</h5>
+                </div>
             <?php else: ?>
                 <?php foreach($productos AS $producto): ?>
-                   <div class="col-md-3">
+                   <div class="col-md-3" style="margin-top: 2%; margin-bottom: 2%;">
                     <div class="thumbnail thumbnail-producto">
                         <img src="<?php echo base_url(); ?>assets/img/productos/<?php echo $producto["img"]; ?>" alt="baul" height="auto" width="auto">
                         <div class="caption">

@@ -6,16 +6,15 @@ class Checkout
 {
     public function preference($data)
     {
-        $precio=$data['precio'];
+
         $mp = new MP('4512615258228207', 'kEFzRrUBVnRDQtMQGvKwkTdfDNmqvFry');
         $preference_data = array(
                                 "items" => array(
                                                 array(
-                                                    "id" => $data['sku'],
                                                     "title" => $data['titulo'],
                                                     "quantity" => 1,
                                                     "currency_id" => "ARS", // Available currencies at: https://api.mercadopago.com/currencies
-                                                    "unit_price" => (float)$data['precio']
+                                                    "unit_price" => 10.00
                                                     )
                                                 )
                                 );

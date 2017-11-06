@@ -14,7 +14,7 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Motos</a>
                             <ul class="dropdown-menu" role="menu">
-                                <div class="row white">
+                                <div class="row white padding">
                                     <div class="col-xs-1 col-sm-1 col-md-1 margin-top">
                                     </div>
                                     <div class="col-xs-5 col-sm-2 col-md-2 margin-top">
@@ -30,7 +30,6 @@
                                         <li><a href="filtrar?modelo=scooters&rubro=motos">Scooters</a></li>
                                         <li><a href="filtrar?modelo=streets&rubro=motos">Streets</a></li>
                                         <li><a href="filtrar?modelo=utilitarios&rubro=motos">Utilitarios</a></li>
-                                        <br>
                                     </div>
                                     <div class="col-xs-5 col-sm-2 col-md-2 margin-top">
                                         <li><b>Alta gama</b></li>
@@ -51,7 +50,7 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cascos</a>
                             <ul class="dropdown-menu" role="menu">
-                                <div class="row white">
+                                <div class="row white padding">
                                     <div class="hidden-xs hidden-sm col-md-1 margin-top">
                                     </div>
                                     <div class="col-xs-12 col-sm-12 col-md-2 margin-top">
@@ -64,7 +63,6 @@
                                         <li><a href="#">Integrales</a></li>
                                         <li><a href="#">Rebatibles</a></li>
                                         <li><a href="#">Modulares</a></li>
-                                        <br>
                                     </div>
                                     <div class="col-xs-12 col-sm-12 col-md-1 margin-top">
                                         <li><b>Marcas</b></li>
@@ -106,7 +104,7 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Indumentaria</a>
                             <ul class="dropdown-menu" role="menu">
-                                <div class="row white">
+                                <div class="row white padding">
                                     <div class="hidden-xs hidden-sm col-md-1 margin-top">
                                     </div>
                                     <div class="col-xs-12 col-sm-12 col-md-2 margin-top">
@@ -144,7 +142,7 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Calzado</a>
                             <ul class="dropdown-menu" role="menu">
-                                <div class="row white">
+                                <div class="row white padding">
                                     <div class="hidden-xs hidden-sm col-md-1 margin-top">
                                     </div>
                                     <div class="col-xs-12 col-sm-12 col-md-2 margin-top">
@@ -179,7 +177,7 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Accesorios</a>
                             <ul class="dropdown-menu" role="menu">
-                                <div class="row white">
+                                <div class="row white padding">
                                     <div class="col-md-1"></div>
 
                                     <div class="col-xs-12 col-sm-12 col-md-2 margin-top">

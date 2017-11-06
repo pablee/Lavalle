@@ -1,6 +1,6 @@
 <div class="row">
-    <div class="col-md-12">
-        <div class="thumbnail thumbnail-producto">
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="thumbnail thumbnail-producto" style="padding: 30px 0px;">
             <img src="<?php echo base_url(); ?>assets/img/productos/<?php echo $producto["img"]; ?>" alt="baul" height="auto" width="auto">
             <div class="caption">
                 <div class="text-center">

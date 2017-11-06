@@ -69,32 +69,6 @@ class Productos
         return $productos;
     }
 
-    //Busca los filtros para las distintas categorias
-/*  public function filtros($categoria)
-    {
-        $filtros=array(array("rubro", "marca", "modelo", "tipo", "color", "talle", "precio"));
-        $db=new database();
-        $db->conectar();
-
-        $consulta="SELECT DISTINCT rubro, marca, titulo, precio
-			       FROM Productos
-			       WHERE rubro = '$categoria';";
-        $resultado=mysqli_query($db->conexion, $consulta)
-        or die ("No se pueden armar los filtros por categoria.");
-
-        $i=0;
-        while($filtro = mysqli_fetch_assoc($resultado))
-        {
-            $filtros[$i]["rubro"]=$filtro["rubro"];
-            $filtros[$i]["marca"]=$filtro["marca"];
-            $filtros[$i]["modelo"]=$filtro["titulo"];
-            $filtros[$i]["precio"]=$filtro["precio"];
-            $i++;
-        }
-
-        return $filtros;
-    }
-*/
 
     //Busca las marcas de una categoria
     public function filtrar_marcas($categoria)

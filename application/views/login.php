@@ -5,8 +5,8 @@
                 <a href="/">
                     <img src="<?php echo base_url(); ?>assets/img/iconos/logo_md.png" alt="logo" height="75" width="auto">
                 </a>
-
             </div>
+
             <div class="col-md-6 input-buscar-producto">
                 <form method="post" action="filtrar">
                     <div class="form-group has-feedback">
@@ -14,10 +14,9 @@
                         <span type="submit" class="glyphicon glyphicon-search form-control-feedback"></span>
                     </div>
                 </form>
-
-
             </div>
-            <div class="col-md-3 login-carrito">
+
+            <div class="col-md-3 login-carrito" style="margin-bottom: 15px;">
                 <a href="#" data-toggle="modal" data-target="#login"><img src="<?php echo base_url(); ?>assets/img/iconos/login.png" alt="login" class="centrado" height="35px" width="35px">Ingresar a mi cuenta</a>
                 <a href="#"><img src="<?php echo base_url(); ?>assets/img/iconos/carrito.png" alt="carrito" class="centrado" height="35px" width="35px">Ver carrito</a>
             </div>

@@ -1,8 +1,8 @@
 <!--Mapa-->
 <div class="container  margin-hottom">
     <div class="row text-center">
-        <div class="col-xs-12 col-sm-12 col-md-4 buscar-local">
-            <h4>Buscá la sucursal mas cercana!!!</h4>
+        <div class="col-xs-12 col-sm-12 col-md-4 buscar-local" style="margin-bottom: 30px;">
+            <h4>Busc&aacute; la sucursal m&aacute;s cercana!!!</h4>
             <div class="form-group has-feedback" style="margin-bottom: 30px;">
                 <input type="text" class="form-control input-lg" placeholder="Localidad">
                 <span class="glyphicon glyphicon-search form-control-feedback"></span>
