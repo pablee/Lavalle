@@ -1,5 +1,7 @@
 <?php
+session_start();
 defined('BASEPATH') OR exit('No direct script access allowed');
+
 
 class Admin extends CI_Controller
 {
@@ -14,9 +16,16 @@ class Admin extends CI_Controller
 
     public function home()
     {
-        $this->load->view('admin/header');
-        $this->load->view('admin/navbar');
-        $this->load->view('admin/nuevo_producto');
+        if($_SESSION["login"]==true)
+        {
+            $this->load->view('admin/header');
+            $this->load->view('admin/navbar');
+            $this->load->view('admin/nuevo_producto');
+        }
+        else{
+            $this->load->view('admin/logout');
+            }
+
     }
 
 
@@ -28,9 +37,15 @@ class Admin extends CI_Controller
 
     public function nuevo_archivo()
     {
+        if($_SESSION["login"]==true)
+        {
         $this->load->view('admin/header');
         $this->load->view('admin/navbar');
         $this->load->view('admin/nuevo_archivo');
+        }
+        else{
+            $this->load->view('admin/logout');
+            }
     }
 
 
@@ -92,20 +107,11 @@ class Admin extends CI_Controller
         $this->listar();
     }
 
-/*
-    public function consultar()
-    {
-        $this->load->model('sector');
-        $data['sectores']=$this->sector->listar();
-
-        $this->load->view('header');
-        $this->load->view('navbar');
-        $this->load->view('consumo/consultar', $data);
-    }
-*/
 
     public function listar()
     {
+        if($_SESSION["login"]==true)
+        {
         $this->load->model('productos');
         $data['productos']=$this->productos->listar();
 
@@ -114,14 +120,24 @@ class Admin extends CI_Controller
         $this->load->view('admin/headerTabla');
         $this->load->view('admin/listar',$data);
         $this->load->view('admin/footerTabla');
+        }
+        else{
+            $this->load->view('admin/logout');
+            }
     }
 
 
     public function nuevo()
     {
+        if($_SESSION["login"]==true)
+        {
         $this->load->view('admin/header');
         $this->load->view('admin/navbar');
         $this->load->view('admin/nuevo_producto');
+        }
+        else{
+            $this->load->view('admin/logout');
+            }
     }
 
 
@@ -138,6 +154,8 @@ class Admin extends CI_Controller
 
     public function editar()
     {
+        if($_SESSION["login"]==true)
+        {
         $this->load->model('productos');
         $data['productos']=$this->productos->listar();
 
@@ -146,6 +164,10 @@ class Admin extends CI_Controller
         $this->load->view('admin/headerTabla');
         $this->load->view('admin/editar',$data);
         $this->load->view('admin/footerTabla');
+        }
+        else{
+            $this->load->view('admin/logout');
+            }
     }
 
 

@@ -17,8 +17,8 @@
             </div>
 
             <div class="col-md-3 login-carrito" style="margin-bottom: 15px;">
-                <a href="#" data-toggle="modal" data-target="#login"><img src="<?php echo base_url(); ?>assets/img/iconos/login.png" alt="login" class="centrado" height="35px" width="35px">Ingresar a mi cuenta</a>
-                <a href="#"><img src="<?php echo base_url(); ?>assets/img/iconos/carrito.png" alt="carrito" class="centrado" height="35px" width="35px">Ver carrito</a>
+                <a href="#" onclick="login()"><img src="<?php echo base_url(); ?>assets/img/iconos/login.png" alt="login" class="centrado" height="35px" width="35px">Ingresar a mi cuenta</a>
+                <a href="#" onclick="carrito()"><img src="<?php echo base_url(); ?>assets/img/iconos/carrito.png" alt="carrito" class="centrado" height="35px" width="35px">Ver carrito</a>
             </div>
         </div>
     </div>

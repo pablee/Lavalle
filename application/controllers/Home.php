@@ -1,4 +1,5 @@
 <?php
+session_start();
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Home extends CI_Controller {
@@ -85,9 +86,11 @@ class Home extends CI_Controller {
         if($validacion==1)
         {
             $this->load->view('admin/home');
+            $_SESSION["login"]=true;
         }
         else{
             $this->index();
+            $_SESSION["login"]=false;
             }
     }
 
