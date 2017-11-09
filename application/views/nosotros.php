@@ -1,7 +1,7 @@
 
     <!--Nosotros-->
-    <div class="container-fluid nosotros">
-        <div class="row">
+    <div class="row nosotros">
+        <div class="container">
             <div class="col-xs-12 col-sm-12 col-md-4">
                 <div class="row">
                     <div class="col-xs-6 col-sm-6 col-md-6">
@@ -26,15 +26,16 @@
 
             <div class="col-xs-12 col-sm-12 col-md-4">
                 <div class="row">
-                    <div class="col-xs-12 col-sm-12 col-md-12">
+                    <div class="col-xs-12 col-sm-12 col-md-12" style="margin-left: 25%;">
                             Seguinos!!
                             <a href="https://www.facebook.com/lavalle.motos.oficial/" target="_blank">
                                 <img src="<?php echo base_url(); ?>assets/img/iconos/facebook.png" alt="facebook" height="35px" width="35px">
                             </a>
                             <img src="<?php echo base_url(); ?>assets/img/iconos/youtube.png" alt="facebook" height="35px" width="35px">
-                        <div style="border-bottom: solid; border-bottom-width: 2px; border-color: #d10404; margin-top: 10px; margin-bottom: 10px;"></div>
                     </div>
                 </div>
+
+                <div class="row" style="border-bottom: solid; border-bottom-width: 2px; border-color: #d10404; margin-top: 10px; margin-bottom: 10px;"></div>
 
                 <div class="row hidden-xs hidden-sm">
                     <div class="col-xs-12 col-sm-12 col-md-12" style="margin-left: 25%;">
@@ -48,8 +49,8 @@
                 <div class="form-inline">
                     <h4>Recib&iacute; ofertas y promociones por email</h4>
                     <div class="hidden-xs hidden-sm">
-                        <input type="text" class="form-control input-lg" placeholder="Ingres&aacute; tu email">
-                        <button type="button" class="btn btn-danger btn-lg" style="margin-left:20px;">Suscribite</button>
+                        <input type="text" class="form-control" placeholder="Ingres&aacute; tu email">
+                        <button type="button" class="btn btn-danger" style="margin-left:20px;">Suscribite</button>
                     </div>
                     <div class="hidden-md hidden-lg">
                         <input type="text" class="form-control" placeholder="Ingres&aacute; tu email">
