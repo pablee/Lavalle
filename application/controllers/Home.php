@@ -10,6 +10,8 @@ class Home extends CI_Controller {
 		$this->load->helper('url');
 		$this->load->model('productos');
         $this->load->model('checkout');
+        $this->load->model('suscripcion');
+        $this->load->model('pedido');
 	}
 
 
@@ -111,15 +113,11 @@ class Home extends CI_Controller {
         $data['rubro']=$this->input->post('rubro');
         $data['marca']=$this->input->post('marca');
 
-		$envio=$this->load->view('formularios/send', $data);
-		if($envio==true)
-		{
-			$this->load->view('formularios/success');
-			$this->index();
-		}
-		else{
-			$this->index();
-			}
+        $this->pedido->guardar($data);
+
+		$data['envio']=$this->load->view('formularios/send', $data);
+		$this->load->view('formularios/success',$data);
+		$this->index();
 	}
 
 
@@ -296,5 +294,14 @@ class Home extends CI_Controller {
         $this->load->view('productos/comprar',$data);
         $this->load->view('nosotros');
         $this->load->view('footer');
+    }
+
+
+    public function suscripcion()
+    {
+        $data['correo']=$this->input->post('correo');
+        $data["suscripcion"]=$this->suscripcion->guardar($data);
+        $this->load->view('formularios/success_suscripcion',$data);
+        $this->index();
     }
 }

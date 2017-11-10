@@ -1,0 +1,56 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+include_once "Database.php";
+
+
+class Suscripcion
+{
+    public function listar()
+    {
+        $db=new database();
+        $db->conectar();
+
+        $consulta="SELECT *		
+			       FROM suscripcion;";
+
+        $resultado=mysqli_query($db->conexion, $consulta)
+        or die ("No se pueden mostrar los correos.");
+
+        $correos = array(array("id", "correo"));
+        $i=0;
+        while($datos = mysqli_fetch_assoc($resultado))
+        {
+            $correos[$i]["id"]=$datos["id"];
+            $correos[$i]["correo"]=$datos["correo"];
+            $i++;
+        }
+        return $correos;
+    }
+
+
+    public function guardar($data)
+    {
+        $db=new database();
+        $db->conectar();
+        
+        $consulta = 'INSERT INTO suscripcion (correo)
+                     VALUES("' . $data["correo"] . '")';
+
+        $resultado=mysqli_query($db->conexion, $consulta);
+        //or die ("No se pudo guardar la suscripcion.");
+
+        if($resultado==false)
+        {
+            $suscripcion=false;
+        }
+        else
+            {
+                $suscripcion=true;
+            }
+
+        return $suscripcion;
+    }
+
+
+}
+?>

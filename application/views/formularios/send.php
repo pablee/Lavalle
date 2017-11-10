@@ -66,11 +66,6 @@
 
     $envio = mail($to,$subject,$message,$headers);
 
-    if (!$envio)
-    {
-        $errorMessage = error_get_last()['message'];
-    }
-
     return $envio;
 
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 29-10-2017 a las 23:02:10
+-- Tiempo de generación: 10-11-2017 a las 01:07:32
 -- Versión del servidor: 10.1.21-MariaDB
 -- Versión de PHP: 7.1.1
 
@@ -19,6 +19,19 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `lavalle`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `pedido`
+--
+
+CREATE TABLE `pedido` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `sku` int(10) UNSIGNED NOT NULL,
+  `cantidad` int(10) UNSIGNED NOT NULL,
+  `fecha` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -95,6 +108,17 @@ INSERT INTO `productos` (`sku`, `titulo`, `stock`, `precio`, `rubro`, `marca`, `
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `suscripcion`
+--
+
+CREATE TABLE `suscripcion` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `correo` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `usuario`
 --
 
@@ -118,10 +142,24 @@ INSERT INTO `usuario` (`id`, `nombre`, `apellido`, `mail`, `password`) VALUES
 --
 
 --
+-- Indices de la tabla `pedido`
+--
+ALTER TABLE `pedido`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `sku` (`sku`);
+
+--
 -- Indices de la tabla `productos`
 --
 ALTER TABLE `productos`
   ADD PRIMARY KEY (`sku`);
+
+--
+-- Indices de la tabla `suscripcion`
+--
+ALTER TABLE `suscripcion`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `correo` (`correo`);
 
 --
 -- Indices de la tabla `usuario`
@@ -133,6 +171,16 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
+--
+-- AUTO_INCREMENT de la tabla `pedido`
+--
+ALTER TABLE `pedido`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `suscripcion`
+--
+ALTER TABLE `suscripcion`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --

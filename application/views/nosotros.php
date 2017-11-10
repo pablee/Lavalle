@@ -49,13 +49,17 @@
                 <div class="form-inline">
                     <h4>Recib&iacute; ofertas y promociones por email</h4>
                     <div class="hidden-xs hidden-sm">
-                        <input type="text" class="form-control" placeholder="Ingres&aacute; tu email">
-                        <button type="button" class="btn btn-danger" style="margin-left:20px;">Suscribite</button>
+                        <form method="post" action="suscripcion">
+                            <input type="text" class="form-control" name="correo" placeholder="Ingres&aacute; tu email">
+                            <button type="submit" class="btn btn-danger" style="margin-left:20px;">Suscribite</button>
+                        </form>
                     </div>
                     <div class="hidden-md hidden-lg">
-                        <input type="text" class="form-control" placeholder="Ingres&aacute; tu email">
-                        <br>
-                        <button type="button" class="btn btn-danger btn-block">Suscribite</button>
+                        <form method="post" action="suscripcion">
+                            <input type="text" class="form-control" name="correo" placeholder="Ingres&aacute; tu email">
+                            <br>
+                            <button type="submit" class="btn btn-danger btn-block">Suscribite</button>
+                        </form>
                     </div>
                 </div>
             </div>
