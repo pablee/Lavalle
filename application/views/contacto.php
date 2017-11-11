@@ -1,4 +1,4 @@
-<body class="container-fluid">
+
 
     <!--div class="container-fluid"-->
         <!--Informacion de contacto en el header-->
