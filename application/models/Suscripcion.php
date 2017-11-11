@@ -11,7 +11,7 @@ class Suscripcion
         $db->conectar();
 
         $consulta="SELECT *		
-			       FROM suscripcion;";
+			       FROM Suscripcion;";
 
         $resultado=mysqli_query($db->conexion, $consulta)
         or die ("No se pueden mostrar los correos.");
@@ -33,7 +33,7 @@ class Suscripcion
         $db=new database();
         $db->conectar();
         
-        $consulta = 'INSERT INTO suscripcion (correo)
+        $consulta = 'INSERT INTO Suscripcion (correo)
                      VALUES("' . $data["correo"] . '")';
 
         $resultado=mysqli_query($db->conexion, $consulta);

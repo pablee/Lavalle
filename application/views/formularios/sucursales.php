@@ -20,7 +20,7 @@
         <!-- Modal content-->
         <div class="modal-content">
 
-            <img src="<?php echo base_url(); ?>assets/img/banners/sucursales-banner.png" alt="sucursales" height="auto" width="auto">
+            <img src="<?php echo base_url(); ?>assets/img/banners/sucursales-banner.png" class="img-responsive" alt="sucursales" height="auto" width="auto">
             <div class="row modal-body">
                 <div class="col-md-6">
                     <label for="nombre"><span class="glyphicon glyphicon-map-marker"></span> MENDOZA</label>
