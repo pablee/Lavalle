@@ -364,5 +364,20 @@ class Productos
     }
 
 
+    public function exportar()
+    {
+        $productos = $this->listar();
+
+        //$file = fopen("productos.csv","w");
+        $file = fopen("php://output","w");
+
+        foreach ($productos as $producto)
+        {
+            //fputcsv($file,explode(',',$producto["titulo"]));
+            fputcsv($file, $producto);
+        }
+
+        fclose($file);
+    }
 }
 ?>

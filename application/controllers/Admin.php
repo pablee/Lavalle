@@ -10,6 +10,9 @@ class Admin extends CI_Controller
     {
         parent::__construct();
         $this->load->helper('url');
+        $this->load->model('productos');
+        $this->load->model('pedido');
+        $this->load->model('suscripcion');
         //$this->load->helper(array('form', 'url'));
     }
 
@@ -51,7 +54,6 @@ class Admin extends CI_Controller
 
     public function upload()
     {
-        $this->load->model('productos');
 
         $config['upload_path']          = './uploads/';
         $config['allowed_types']        = '*';
@@ -80,7 +82,7 @@ class Admin extends CI_Controller
 
     public function upload_producto()
     {
-        $this->load->model('productos');
+
         $grilla=$this->input->post('grilla[]');
 
         $config['upload_path']          = './uploads/img/';
@@ -112,7 +114,7 @@ class Admin extends CI_Controller
     {
         if($_SESSION["login"]==true)
         {
-        $this->load->model('productos');
+
         $data['productos']=$this->productos->listar();
 
         $this->load->view('admin/header');
@@ -143,7 +145,7 @@ class Admin extends CI_Controller
 
     public function guardar()
     {
-        $this->load->model('productos');
+
         $productos=$this->input->post('grilla[]');
 
         $this->productos->guardar($productos);
@@ -156,7 +158,7 @@ class Admin extends CI_Controller
     {
         if($_SESSION["login"]==true)
         {
-        $this->load->model('productos');
+
         $data['productos']=$this->productos->listar();
 
         $this->load->view('admin/header');
@@ -173,7 +175,7 @@ class Admin extends CI_Controller
 
     public function actualizar()
     {
-        $this->load->model('productos');
+
         $grilla=$this->input->post('grilla[]');
 
         $i=0;
@@ -200,15 +202,41 @@ class Admin extends CI_Controller
         $this->listar();
     }
 
-/*
-    public function borrar()
-    {
-        $this->load->model('consumo');
-        $mes=$this->input->post('mes');
-        $anio=$this->input->post('anio');
 
-        $this->consumo->borrar($mes, $anio);
-        $this->listar();
+    public function exportar_pedidos()
+    {
+        $this->pedido->exportar_local();
+        $this->download_send_headers("pedidos_" . date("Y-m-d") . ".csv");
+        $this->pedido->exportar();
+        die();
+        $this->home();
     }
-*/
+
+
+    public function exportar_suscripciones()
+    {
+        $this->download_send_headers("suscripciones_" . date("Y-m-d") . ".csv");
+        $this->suscripcion->exportar();
+        die();
+        $this->home();
+    }
+
+
+    function download_send_headers($filename)
+    {
+        // disable caching
+        $now = gmdate("D, d M Y H:i:s");
+        header("Expires: Tue, 03 Jul 2001 06:00:00 GMT");
+        header("Cache-Control: max-age=0, no-cache, must-revalidate, proxy-revalidate");
+        header("Last-Modified: {$now} GMT");
+
+        // force download
+        header("Content-Type: application/force-download");
+        header("Content-Type: application/octet-stream");
+        header("Content-Type: application/download");
+
+        // disposition / encoding on response body
+        header("Content-Disposition: attachment;filename={$filename}");
+        header("Content-Transfer-Encoding: binary");
+    }
 }

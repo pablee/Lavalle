@@ -49,5 +49,35 @@ class Pedido
     }
 
 
+    public function exportar()
+    {
+        $pedidos = $this->listar();
+
+        //$file = fopen("productos.csv","w");
+        $file = fopen("php://output","w");
+
+        foreach ($pedidos as $pedido)
+        {
+            //fputcsv($file,explode(',',$producto["titulo"]));
+            fputcsv($file, $pedido);
+        }
+
+        fclose($file);
+    }
+
+
+    public function exportar_local()
+    {
+        $pedidos = $this->listar();
+
+        $file = fopen("pedidos.csv","w");
+
+        foreach ($pedidos as $pedido)
+        {
+            fputcsv($file, $pedido);
+        }
+
+        fclose($file);
+    }
 }
 ?>

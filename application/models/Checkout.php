@@ -6,8 +6,7 @@ class Checkout
 {
     public function preference($data)
     {
-
-        $mp = new MP('4512615258228207', 'kEFzRrUBVnRDQtMQGvKwkTdfDNmqvFry');
+        $mp = new MP('1244831999709490', 'II4OhgaoXwLaEBH8iEXJZ6Rrt1HXMG14');
         $preference_data = array(
                                 "items" => array(
                                                 array(

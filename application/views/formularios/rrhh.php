@@ -28,12 +28,12 @@
                 <form role="form" method="post" action="adjuntar" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="nombre"><span class="glyphicon glyphicon-user"></span> Nombre</label>
-                        <input type="text" class="form-control" name="nombre"  placeholder="Nombre"> </input>
+                        <input type="text" class="form-control" name="nombre"  placeholder="Nombre" required> </input>
                     </div>
 
                     <div class="form-group">
                         <label for="mail"><span class="glyphicon glyphicon-envelope"></span> Mail</label>
-                        <input type="text" class="form-control" name="mail" placeholder="Mail"> </input>
+                        <input type="text" class="form-control" name="mail" placeholder="Mail" required> </input>
                     </div>
 
                     <div class="form-group">

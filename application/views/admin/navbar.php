@@ -18,6 +18,10 @@
        <li class="dropdown">
         <a href="nuevo_archivo"> Cargar archivo</a>
        </li>
+
+       <li class="dropdown">
+        <a href="exportar_pedidos"> Exportar productos</a>
+       </li>
     </ul>
 
     <ul class="nav navbar-nav navbar-right">

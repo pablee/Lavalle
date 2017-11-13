@@ -52,5 +52,23 @@ class Suscripcion
     }
 
 
+    public function exportar()
+    {
+        $suscripciones = $this->listar();
+
+        //$file = fopen("productos.csv","w");
+        $file = fopen("php://output","w");
+
+        foreach ($suscripciones as $suscripcion)
+        {
+            //fputcsv($file,explode(',',$producto["titulo"]));
+            fputcsv($file, $suscripcion);
+        }
+
+        fclose($file);
+    }
+
+
+
 }
 ?>

@@ -1,6 +1,6 @@
 
     <!--Nosotros-->
-    <div class="row nosotros">
+    <div class="container-fluid row nosotros">
         <div class="container">
             <div class="col-xs-12 col-sm-12 col-md-4">
                 <div class="row">
