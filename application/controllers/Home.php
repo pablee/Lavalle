@@ -263,12 +263,11 @@ class Home extends CI_Controller {
         else
         {
             //$upload_data=$this->upload->data();
-            $data['upload_data'] = array('upload_data' => $this->upload->data());
-            $this->load->view('formularios/send', $data);
+            $data['informacion'] = array('upload_data' => $this->upload->data());
+            $this->load->view('formularios/send_attachment', $data);
         }
 
-
-        //$this->index();
+        $this->index();
     }
 
 
