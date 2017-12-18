@@ -7,8 +7,7 @@
     // More headers
     $headers .= "From: ".$mail." \r\n";
 
-    //$to = $para;
-    $to="pgarcia@grimoldi.com";
+    $to = $para;
     $subject = "Consulta";
 
     $message = '<html>

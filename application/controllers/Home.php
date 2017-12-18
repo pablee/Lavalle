@@ -24,6 +24,9 @@ class Home extends CI_Controller {
         $this->load->view('formularios/rrhh',$data);
         $this->load->view('formularios/sucursales',$data);
         $this->load->view('formularios/venta_corporativa',$data);
+        $this->load->view('formularios/preguntas',$data);
+        $this->load->view('formularios/creditos',$data);
+        $this->load->view('formularios/preguntas',$data);
         //$this->load->view('formularios/comprar',$data);
     }
 
@@ -302,5 +305,11 @@ class Home extends CI_Controller {
         $data["suscripcion"]=$this->suscripcion->guardar($data);
         $this->load->view('formularios/success_suscripcion',$data);
         $this->index();
+    }
+
+
+    public function medios_pago()
+    {
+        $this->load->view('medios_pago');
     }
 }

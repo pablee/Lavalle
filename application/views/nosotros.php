@@ -10,15 +10,16 @@
                             <li><a href="#" data-toggle="modal" data-target="#garantia">Garant&iacute;a</a></li>
                             <li><a href="#" data-toggle="modal" data-target="#post_venta">Servicio post venta</a></li>
                             <li><a href="#" data-toggle="modal" data-target="#venta_corporativa"> Ventas corporativas</a></li>
-                            <li><a href="#" data-toggle="modal" data-target="#login">Backoffice</a></li>
+                            <li><a href="#" data-toggle="modal" data-target="#creditos"> Creditos personales</a></li>
                         </ul>
                     </div>
                     <div class="col-xs-6 col-sm-6 col-md-6">
                         <ul class="list-unstyled">
-                            <li><a href="#">Preguntas Frecuentes</a></li>
+                            <li><a href="#" data-toggle="modal" data-target="#preguntas">Preguntas Frecuentes</a></li>
                             <li><a href="#" data-toggle="modal" data-target="#rrhh">RR HH</a></li>
                             <li><a href="#" data-toggle="modal" data-target="#sucursales">Sucursales</a></li>
                             <li><a href="#" data-toggle="modal" data-target="#contacto">Contacto</a></li>
+                            <li><a href="#" data-toggle="modal" data-target="#login">Backoffice</a></li>
                         </ul>
                     </div>
                 </div>

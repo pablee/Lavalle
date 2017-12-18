@@ -12,10 +12,30 @@ function carrito()
 }
 
 
+function mercadoshops()
+{
+    var url = 'https://lavallemotos.mercadoshops.com.ar';
+    var myWindow = window.open(url, "MsgWindow", "width=500,height=600");
+}
+
+
 function verMediosPago()
 {
     var url = 'https://www.mercadopago.com.ar/promociones';
     var myWindow = window.open(url, "MsgWindow", "width=500,height=600");
+}
+
+
+function verMediosPagoSucursales()
+{
+    var x = document.createElement("IMG");
+    x.setAttribute("src", "<?php echo base_url(); ?>assets/img/banners/formas_de_pago.jpg");
+    x.setAttribute("width", "auto");
+    x.setAttribute("height", "auto");
+    x.setAttribute("alt", "Medios de pago");
+    document.body.appendChild(x);
+
+    var win = window.open(x, "MsgWindow", "width=500,height=600");
 }
 
 
@@ -95,15 +115,20 @@ function initMap()
     //San Juan
     var rawson_431 = {lat: -31.5387835, lng: -68.5147208};
     var rawson_311 = {lat: -31.5373817, lng: -68.5172181};
+    // Av. Rawson 299 SUR esq. Mitre, San Juan
+    var rawson_san_juan = {lat: -31.5371297, lng: -68.5168025};
     var villa_krause = {lat: -31.5842476, lng: -68.5387582};
     //San Luis
     var san_luis = {lat: -33.3065322, lng: -66.3357458};
+    var nueve_de_julio_san_luis = {lat: -33.3064999, lng: -66.3358699};
     //San Martin (Mendoza)
     var san_martin = {lat: -33.0821705, lng: -68.4744797};
     //San Rafael
     var san_rafael = {lat: -34.614842, lng: -68.3343528};
     //Tunuyan
     var san_martin_1230 = {lat: -33.5788665, lng: -69.0185986};
+
+
 
 
     var map = new google.maps.Map(document.getElementById('map'), {
@@ -114,22 +139,22 @@ function initMap()
     var lavalle = new google.maps.Marker({
         position: lavalle,
         map: map,
-        title: 'Lavalle 162'
+        title: 'Lavalle 162, Mendoza'
     });
     var las_heras = new google.maps.Marker({
         position: las_heras,
         map: map,
-        title: 'Av. Las Heras 403'
+        title: 'Av. Las Heras 403, Mendoza'
     });
     var mendocinas = new google.maps.Marker({
         position: mendocinas,
         map: map,
-        title: 'P. Mendocinas 1574'
+        title: 'P. Mendocinas 1574, Mendoza'
     });
     var san_martin_360 = new google.maps.Marker({
         position: san_martin_360,
         map: map,
-        title: 'San Martín 360'
+        title: 'San Martï¿½n 360'
     });
     var mitre = new google.maps.Marker({
         position: mitre,
@@ -184,9 +209,18 @@ function initMap()
     var san_martin_1230 = new google.maps.Marker({
         position: san_martin_1230,
         map: map,
-        title: 'San Martín 1230'
+        title: 'San Martï¿½n 1230'
     });
-
+    var rawson_san_juan = new google.maps.Marker({
+        position: rawson_san_juan,
+        map: map,
+        title: 'Av. Rawson 299 SUR esq. Mitre, San Juan // Tel: 0264 4041702'
+    });
+    var nueve_de_julio_san_luis = new google.maps.Marker({
+        position: nueve_de_julio_san_luis,
+        map: map,
+        title: '9 de Julio 802, San Luis // Tel. +549 266 4619618'
+    });
 }
 /*
 function handleLocationError(browserHasGeolocation, infoWindow, pos)

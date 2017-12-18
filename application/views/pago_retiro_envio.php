@@ -7,8 +7,8 @@
                     <img src="<?php echo base_url(); ?>assets/img/iconos/pago.png" alt="pago" height="35px" width="auto">
                 </div>
                 <div class="col-xs-10 col-sm-10 col-md-10">
-                    <a href="#" onclick="verMediosPago()">
-                        <b>Pagá con tarjeta de crédito y débito</b>
+                    <a href="medios_pago" target="_blank" onclick="verMediosPago()">
+                        <b>Pag&aacute; con tarjeta de cr&eacute;dito y d&eacute;bito</b>
                         <br>
                         <span class="hidden-xs hidden-sm"><small><i>Ver todos los medios de pago</i></small></span>
                     </a>
@@ -22,7 +22,7 @@
                     <img src="<?php echo base_url(); ?>assets/img/iconos/retiro.png" alt="retiro" height="35px" width="auto">
                 </div>
                 <div class="col-xs-10 col-sm-10 col-md-10 link-checkout">
-                    <a href="#" data-toggle="modal" data-target="#sucursales"><b> Retirá en nuestras sucursales</b></a>
+                    <a href="#" data-toggle="modal" data-target="#sucursales"><b> Retir&aacute; en nuestras sucursales</b></a>
                 </div>
             </div>
         </div>
@@ -33,7 +33,7 @@
                     <img src="<?php echo base_url(); ?>assets/img/iconos/envio.png" alt="envio" height="35px" width="auto">
                 </div>
                 <div class="col-xs-10 col-sm-10 col-md-10 link-checkout">
-                    <b> Envíos a todo el pais</b>
+                    <b> Env&iacute;os a todo el pa&iacute;s</b>
                 </div>
             </div>
         </div>
@@ -47,7 +47,7 @@
             <div class="checkout-margin">
                 <img src="<?php echo base_url(); ?>assets/img/iconos/pago.png" alt="pago" height="35px" width="auto">
                 <div class="container checkout-margin">
-                    <a href="#" onclick="verMediosPago()"><b>Pagos con crédito y débito</b></a>
+                    <a href="#" onclick="verMediosPago()"><b>Pagos con crï¿½dito y dï¿½bito</b></a>
                 </div>
             </div>
         </div>
@@ -56,7 +56,7 @@
             <div class="checkout-margin">
                 <img src="<?php echo base_url(); ?>assets/img/iconos/retiro.png" alt="retiro" height="35px" width="auto">
                 <div class="container checkout-margin">
-                    <a href="#" data-toggle="modal" data-target="#sucursales"><b> Retirá en tu sucursal</b></a>
+                    <a href="#" data-toggle="modal" data-target="#sucursales"><b> Retirï¿½ en tu sucursal</b></a>
                 </div>
             </div>
         </div>
@@ -65,7 +65,7 @@
             <div class="checkout-margin">
                 <img src="<?php echo base_url(); ?>assets/img/iconos/envio.png" alt="envio" height="35px" width="auto">
                 <div class="container checkout-margin">
-                    <b> Envíos a todo el pais</b>
+                    <b> Envï¿½os a todo el pais</b>
                 </div>
             </div>
         </div>

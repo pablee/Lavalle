@@ -20,6 +20,10 @@
         <div class="item">
             <img src="<?php echo base_url(); ?>assets/img/banners/banner_01.jpg" alt="banner_3" style="height:400px; width:100%;">
         </div>
+
+        <div class="item">
+            <img src="<?php echo base_url(); ?>assets/img/banners/banner_01.jpg" alt="banner_3" style="height:400px; width:100%;">
+        </div>
     </div>
 
     <!-- Left and right controls -->

@@ -110,6 +110,27 @@
                     <div class="col-md-2">
                     </div>
                 </div>
+
+                <div class="item">
+                    <div class="col-md-2">
+                    </div>
+
+                    <div class="col-md-2">
+                        <img src="<?php echo base_url(); ?>assets/img/marcas/marca-20.jpg" alt="marca-16" class="img-responsive" style="height:125px; width:100%;">
+                    </div>
+                    <div class="col-md-2">
+                        <img src="<?php echo base_url(); ?>assets/img/marcas/marca-21.jpg" alt="marca-17" class="img-responsive" style="height:150px; width:100%;">
+                    </div>
+                    <div class="col-md-2">
+                        <img src="<?php echo base_url(); ?>assets/img/marcas/marca-22.jpg" alt="marca-18" class="img-responsive" style="height:150px; width:100%;">
+                    </div>
+                    <div class="col-md-2">
+                        <img src="<?php echo base_url(); ?>assets/img/marcas/marca-23.jpg" alt="marca-19" class="img-responsive" style="height:150px; width:100%;">
+                    </div>
+
+                    <div class="col-md-2">
+                    </div>
+                </div>
             </div>
 
             <!-- Left and right controls -->
