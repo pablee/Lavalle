@@ -51,8 +51,8 @@
                     <div class="form-group">
                         <label for="destacado"> Destacado </label>
                         <select class="form-control" id="destacado" name="grilla[destacado]">
-                            <option value="1"> Si </option>
                             <option value="0"> No </option>
+							<option value="1"> Si </option>                            
                         </select>
                     </div>
 

@@ -9,7 +9,7 @@ class Productos
     {
         $db=new database();
         $db->conectar();
-
+				
         $consulta="SELECT *		
 			       FROM Productos;";
 
@@ -205,7 +205,7 @@ class Productos
     {
         $db=new database();
         $db->conectar();
-
+		
         $consulta="SELECT *
 			       FROM Productos
 			       WHERE destacado=1;";
@@ -215,18 +215,27 @@ class Productos
 
         $productos = array(array("sku", "titulo", "stock", "precio", "rubro", "marca", "destacado", "img"));
         $i=0;
-        while($producto = mysqli_fetch_assoc($resultado))
-        {
-            $productos[$i]["sku"]=$producto["sku"];
-            $productos[$i]["titulo"]=$producto["titulo"];
-            $productos[$i]["stock"]=$producto["stock"];
-            $productos[$i]["precio"]=$producto["precio"];
-            $productos[$i]["rubro"]=$producto["rubro"];
-            $productos[$i]["marca"]=$producto["marca"];
-            $productos[$i]["destacado"]=$producto["destacado"];
-            $productos[$i]["img"]=$producto["img"];
-            $i++;
-        }
+		
+		if(mysqli_num_rows($resultado)!=0)
+		{
+			while($producto = mysqli_fetch_assoc($resultado))
+			{
+				$productos[$i]["sku"]=$producto["sku"];
+				$productos[$i]["titulo"]=$producto["titulo"];
+				$productos[$i]["stock"]=$producto["stock"];
+				$productos[$i]["precio"]=$producto["precio"];
+				$productos[$i]["rubro"]=$producto["rubro"];
+				$productos[$i]["marca"]=$producto["marca"];
+				$productos[$i]["destacado"]=$producto["destacado"];
+				$productos[$i]["img"]=$producto["img"];
+				$i++;
+			}			
+		}
+		else{
+				$productos[$i]=NULL;				
+			}
+        
+		
         return $productos;
     }
 
@@ -237,7 +246,7 @@ class Productos
         $db=new database();
         $db->conectar();
         
-        $consulta = 'INSERT INTO productos (sku,
+        $consulta = 'INSERT INTO Productos (sku,
                                             titulo,
                                             stock,
                                             precio,
@@ -258,10 +267,14 @@ class Productos
                             "' . $producto["talle"] . '",
                             "' . $producto["destacado"] . '",
                             "' . $producto["publicado"] . '",
-                            "' . $upload_data["file_name"] . '")';
-
-        $resultado=mysqli_query($db->conexion, $consulta)
-        or die ("No se pudo guardar el producto.");
+                            "' . $upload_data["file_name"] . '")';		
+        		
+		if (!mysqli_query($db->conexion, $consulta))
+			  {
+			  echo("Error description: " . mysqli_error($db->conexion));
+			  $resultado=mysqli_query($db->conexion, $consulta) or die ("No se pudo guardar el producto.");
+			  }
+        
     }
 
 
@@ -274,7 +287,7 @@ class Productos
         {
             while (($datos = fgetcsv($fichero, 1000)) !== FALSE)
             {
-                $consulta = 'INSERT INTO productos (sku,
+                $consulta = 'INSERT INTO Productos (sku,
                                                     titulo,
                                                     stock,
                                                     precio,

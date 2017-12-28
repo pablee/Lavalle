@@ -85,7 +85,7 @@ class Admin extends CI_Controller
 
         $grilla=$this->input->post('grilla[]');
 
-        $config['upload_path']          = './uploads/img/';
+        $config['upload_path']          = './uploads/img/productos';
         $config['allowed_types']        = '*';
         $config['max_size']             = '50000';
         $config['max_width']            = '1920';

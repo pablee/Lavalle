@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="thumbnail thumbnail-producto" style="padding: 30px 0px;">
-            <img src="<?php echo base_url(); ?>assets/img/productos/<?php echo $producto["img"]; ?>" alt="baul" height="auto" width="auto">
+            <img src="<?php echo base_url(); ?>uploads/img/productos/<?php echo $producto["img"]; ?>" alt="baul" height="auto" width="auto">
             <div class="caption">
                 <div class="text-center">
                     <a href="#" target="_blank"><?php echo $producto["titulo"]; ?></a>

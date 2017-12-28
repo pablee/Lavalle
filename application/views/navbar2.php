@@ -19,9 +19,9 @@
                                     </div>
                                     <div class="col-xs-5 col-sm-2 col-md-2 margin-top">
                                         <li><b>Tipo</b></li>
-                                        <?php foreach($motos_modelos AS $moto_modelo): ?>
+                                        <?php //foreach($motos_modelos AS $moto_modelo): ?>
                                             <!--li><a href="filtrar?modelo=<?php //echo $moto_modelo["nombre"]; ?>&rubro=motos"><?php //echo ucwords($moto_modelo["nombre"]); ?></a></li-->
-                                        <?php endforeach; ?>
+                                        <?php //endforeach; ?>
                                         <li><a href="filtrar?modelo=cuatriciclos&rubro=motos">Cuatriciclos</a></li>
                                         <li><a href="filtrar?modelo=cubs&rubro=motos">Cubs</a></li>
                                         <li><a href="filtrar?modelo=custom&rubro=motos">Custom</a></li>
@@ -33,9 +33,9 @@
                                     </div>
                                     <div class="col-xs-5 col-sm-2 col-md-2 margin-top">
                                         <li><b>Alta gama</b></li>
-                                        <?php foreach($motos_marcas AS $moto_marca): ?>
-                                            <li><a href="filtrar?marca=<?php echo $moto_marca["nombre"]; ?>&rubro=motos"><?php echo ucwords($moto_marca["nombre"]); ?></a></li>
-                                        <?php endforeach; ?>
+                                        <?php //foreach($motos_marcas AS $moto_marca): ?>
+                                            <!--li><a href="filtrar?marca=<?php //echo $moto_marca["nombre"]; ?>&rubro=motos"><?php //echo ucwords($moto_marca["nombre"]); ?></a></li-->
+                                        <?php //endforeach; ?>
                                         <li><a href="filtrar?marca=yamaha&rubro=motos">Yamaha</a></li>
                                         <li><a href="filtrar?marca=kawasaki&rubro=motos">Kawasaki</a></li>
                                         <li><a href="filtrar?marca=suzuki&rubro=motos">Suzuki</a></li>
@@ -55,9 +55,9 @@
                                     </div>
                                     <div class="col-xs-12 col-sm-12 col-md-2 margin-top">
                                         <li><b>Tipo</b></li>
-                                        <?php foreach($cascos_modelos AS $casco_modelo): ?>
+                                        <?php //foreach($cascos_modelos AS $casco_modelo): ?>
                                             <!--li><a href="filtrar?modelo=<?php //echo $casco_modelo["nombre"]; ?>&rubro=cascos"><?php //echo ucwords($casco_modelo["nombre"]); ?></a></li-->
-                                        <?php endforeach; ?>
+                                        <?php //endforeach; ?>
                                         <li><a href="#">Abiertos</a></li>
                                         <li><a href="#">Motocross</a></li>
                                         <li><a href="#">Integrales</a></li>
@@ -109,9 +109,9 @@
                                     </div>
                                     <div class="col-xs-12 col-sm-12 col-md-2 margin-top">
                                         <li><b>Tipo</b></li>
-                                        <?php foreach($indumentaria_modelos AS $indumentaria_modelo): ?>
+                                        <?php //foreach($indumentaria_modelos AS $indumentaria_modelo): ?>
                                             <!--li><a href="filtrar?modelo=<?php //echo $indumentaria_modelo["nombre"]; ?>&rubro=indumentaria"><?php //echo ucwords($indumentaria_modelo["nombre"]); ?></a></li-->
-                                        <?php endforeach; ?>
+                                        <?php //endforeach; ?>
                                         <li><a href="#">Pista</a></li>
                                         <li><a href="#">Touring</a></li>
                                         <li><a href="#">Enduro-cross</a></li>
@@ -134,10 +134,8 @@
                                     <div class="hidden-xs hidden-sm col-md-6 text-right" style="padding: 0px;">
                                         <img src="<?php echo base_url(); ?>assets/img/categorias/cat_indumentaria.jpg" alt="casco" width="300" height="300">
                                     </div>
-
                                 </div>
                             </ul>
-
                         </li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Calzado</a>
@@ -147,9 +145,9 @@
                                     </div>
                                     <div class="col-xs-12 col-sm-12 col-md-2 margin-top">
                                         <li><b>Tipo</b></li>
-                                        <?php foreach($calzado_modelos AS $calzado_modelo): ?>
+                                        <?php //foreach($calzado_modelos AS $calzado_modelo): ?>
                                             <!--li><a href="filtrar?modelo=<?php //echo $calzado_modelo["nombre"]; ?>&rubro=calzado"><?php //echo ucwords($calzado_modelo["nombre"]); ?></a></li-->
-                                        <?php endforeach; ?>
+                                        <?php //endforeach; ?>
                                         <li><a href="#">Pista</a></li>
                                         <li><a href="#">Motocross</a></li>
                                         <li><a href="#">Touring</a></li>

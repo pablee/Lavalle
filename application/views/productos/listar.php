@@ -129,7 +129,7 @@
                 <?php foreach($productos AS $producto): ?>
                    <div class="col-md-3" style="margin-top: 2%; margin-bottom: 2%;">
                     <div class="thumbnail thumbnail-producto">
-                        <img src="<?php echo base_url(); ?>assets/img/productos/<?php echo $producto["img"]; ?>" alt="baul" height="auto" width="auto">
+                        <img src="<?php echo base_url(); ?>uploads/img/productos/<?php echo $producto["img"]; ?>" alt="baul" height="auto" width="auto">
                         <div class="caption">
                             <div class="text-center">
                                 <a href="#" target="_blank"><?php echo $producto["titulo"]; ?></a>

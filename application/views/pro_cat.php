@@ -10,6 +10,9 @@
         </div>
 
         <div class="row container-productos">
+		<?php if($destacados==NULL): ?>
+			<i>No existen productos destacados</i>
+		<?php else: ?>
         <?php foreach($destacados AS $destacado): ?>
             <div class="col-md-2 thumbnail thumbnail-producto">
                 <img src="<?php echo base_url(); ?>uploads/img/productos/<?php echo $destacado["img"]; ?>" alt="baul" height="auto" width="auto">
@@ -21,9 +24,11 @@
                 </div>
             </div>
         <?php endforeach; ?>
+		<?php endif; ?>
         </div>
     </div>
 
+	<!--Productos destacados mobile-->
     <div class="row hidden-md hidden-lg margin-bottom" style="padding: 15px 0px;">
         <div class="col-xs-12 col-sm-12">
             <div id="carousel-destacados" class="carousel" data-ride="carousel" >
