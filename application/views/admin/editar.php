@@ -24,7 +24,7 @@ foreach ($productos as $producto)
     '	
     <tr>	  
         <td>
-            <input type="text" class="form-control" id="" name="grilla['.$producto["sku"].'][sku]" value="'.$producto["sku"].'"></input>
+            <input type="text" class="form-control" id="" name="grilla['.$producto["sku"].'][sku]" value="'.$producto["sku"].'" required></input>
         </td>
     
         <td>	
@@ -39,8 +39,18 @@ foreach ($productos as $producto)
             <input type="text"   class="form-control" id="" name="grilla['.$producto["sku"].'][precio]" value="'.$producto["precio"].'" onchange="campoModificado('.$producto["sku"].')"></input>
         </td>
     
-        <td>		
-            <input type="text"   class="form-control" id="" name="grilla['.$producto["sku"].'][rubro]" value="'.$producto["rubro"].'" onchange="campoModificado('.$producto["sku"].')"></input>
+        <td>
+            <!--input type="text"   class="form-control" id="" name="grilla['.$producto["sku"].'][rubro]" value="'.$producto["rubro"].'" onchange="campoModificado('.$producto["sku"].')"></input-->
+            <select class="form-control" id="" name="grilla['.$producto["sku"].'][rubro]" onchange="campoModificado('.$producto["sku"].')">
+    
+                <option value="'.$producto["rubro"].'">'.$producto["rubro"].'</option>';
+                foreach($rubros AS $rubro)
+                    {
+                    echo '<option value="'.$rubro.'"> '.$rubro.' </option>';
+                    }
+    echo'         
+            </select>
+    
         </td>
     
         <td>		

@@ -42,10 +42,22 @@ class Productos
         $db=new database();
         $db->conectar();
 
-        $consulta="SELECT *
-			       FROM Productos
-			       WHERE rubro = '$categoria'
-			       AND publicado = true;";
+        if($categoria=="accesorios")
+        {
+            $consulta="SELECT *
+                       FROM Productos
+                       WHERE rubro = '$categoria'
+                       OR rubro = 'Calzado'
+                       AND publicado = true;";
+        }
+        else
+            {
+                $consulta="SELECT *
+                           FROM Productos
+                           WHERE rubro = '$categoria'
+                           AND publicado = true;";
+            }
+
         $resultado=mysqli_query($db->conexion, $consulta)
         or die ("No se pueden mostrar los productos por categoria.");
 

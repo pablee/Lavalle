@@ -10,7 +10,7 @@
                 <form name="grilla" method="POST" action="upload_producto" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="sku"> SKU </label>
-                        <input type="text" class="form-control" id="sku" name="grilla[sku]"></input>
+                        <input type="text" class="form-control" id="sku" name="grilla[sku]" required></input>
                     </div>
 
                     <div class="form-group">
@@ -30,7 +30,12 @@
 
                     <div class="form-group">
                         <label for="rubro"> Rubro </label>
-                        <input type="text" class="form-control" id="rubro" name="grilla[rubro]"></input>
+                        <!--input type="text" class="form-control" id="rubro" name="grilla[rubro]"></input-->
+                        <select class="form-control" id="rubro" name="grilla[rubro]">
+                            <?php foreach($rubros AS $rubro): ?>
+                                <option value="<?php echo $rubro; ?>"> <?php echo $rubro; ?> </option>
+                            <?php endforeach; ?>
+                        </select>
                     </div>
 
                     <div class="form-group">

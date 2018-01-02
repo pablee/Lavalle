@@ -109,12 +109,12 @@
                     <?php
                         if($filtrado["marca"]!="")
                         {
-                            echo '>'.ucwords($filtrado["marca"]);
+                            echo '> '.ucwords($filtrado["marca"]);
                         }
                     
                         if($filtrado["modelo"]!="")
                         {
-                            echo '>'.ucwords($filtrado["modelo"]);
+                            echo '> '.ucwords($filtrado["modelo"]);
                         }
                     ?>
             </div>
@@ -133,7 +133,7 @@
                         <div class="caption">
                             <div class="text-center">
                                 <a href="#" target="_blank"><?php echo $producto["titulo"]; ?></a>
-                                <p class="descripcion">Pilot 1.1 Graphic B White</p>
+                                <p class="descripcion"><?php echo $producto["modelo"]; ?></p>
                                 <p><!--strike>$2000</strike--> <?php echo $producto["precio"]; ?> <!--span class="label label-danger">10% OFF</span--></p>
                                 <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#comprar_<?php echo $producto["sku"]; ?>">Lo quiero!</button>
                             </div>

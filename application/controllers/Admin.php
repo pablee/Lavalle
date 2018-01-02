@@ -96,7 +96,7 @@ class Admin extends CI_Controller
         if (!$this->upload->do_upload('archivo'))
         {
             $error = array('error' => $this->upload->display_errors());
-            $this->load->view('nuevo', $error);
+            $this->load->view('admin/error', $error);
         }
         else
         {
@@ -129,13 +129,20 @@ class Admin extends CI_Controller
     }
 
 
+    public function rubros()
+    {
+        $rubros = array("Motos", "Cascos", "Indumentaria", "Calzado", "Accesorios");
+        return $rubros;
+    }
+
     public function nuevo()
     {
         if($_SESSION["login"]==true)
         {
+        $data["rubros"]=$this->rubros();
         $this->load->view('admin/header');
         $this->load->view('admin/navbar');
-        $this->load->view('admin/nuevo_producto');
+        $this->load->view('admin/nuevo_producto',$data);
         }
         else{
             $this->load->view('admin/logout');
@@ -158,8 +165,8 @@ class Admin extends CI_Controller
     {
         if($_SESSION["login"]==true)
         {
-
         $data['productos']=$this->productos->listar();
+        $data["rubros"]=$this->rubros();
 
         $this->load->view('admin/header');
         $this->load->view('admin/navbar');

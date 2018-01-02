@@ -24,8 +24,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 //$config['base_url'] = 'http://viajandojuntos.com.ar/';
-$config['base_url'] = 'http://lavallemotos.com.ar/prueba';
-//$config['base_url'] = '';
+//$config['base_url'] = 'http://lavallemotos.com.ar/prueba';
+$config['base_url'] = '';
 /*
 |--------------------------------------------------------------------------
 | Index File
