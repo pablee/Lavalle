@@ -44,18 +44,20 @@ class Productos
 
         if($categoria=="accesorios")
         {
-            $consulta="SELECT *
+            $consulta="SELECT DISTINCT *
                        FROM Productos
                        WHERE rubro = '$categoria'
                        OR rubro = 'Calzado'
-                       AND publicado = true;";
+                       AND publicado = true
+                       GROUP BY titulo;";
         }
         else
             {
-                $consulta="SELECT *
+                $consulta="SELECT DISTINCT *
                            FROM Productos
                            WHERE rubro = '$categoria'
-                           AND publicado = true;";
+                           AND publicado = true
+                           GROUP BY titulo;";
             }
 
         $resultado=mysqli_query($db->conexion, $consulta)
@@ -369,7 +371,7 @@ class Productos
         $resultado=mysqli_query($db->conexion, $consulta)
         or die ("No se pudo encontrar el articulo por sku.");
 
-        $producto = array("sku", "titulo", "stock", "precio", "rubro", "marca", "modelo", "talle", "destacado", "publicado", "img");
+        $producto = array("sku", "titulo", "stock", "precio", "rubro", "marca", "modelo", "talles", "destacado", "publicado", "img");
 
         while($encontrado = mysqli_fetch_assoc($resultado))
         {
@@ -380,11 +382,36 @@ class Productos
             $producto["rubro"]=$encontrado["rubro"];
             $producto["marca"]=$encontrado["marca"];
             $producto["modelo"]=$encontrado["modelo"];
-            $producto["talle"]=$encontrado["talle"];
+            $producto["talles"]=$encontrado["talle"];
             $producto["destacado"]=$encontrado["destacado"];
             $producto["publicado"]=$encontrado["publicado"];
             $producto["img"]=$encontrado["img"];
         }
+
+
+        $consultar_talles='SELECT * 
+                           FROM Productos
+                           WHERE titulo="'.$producto["titulo"].'"';
+
+        $resultado_talles=mysqli_query($db->conexion, $consultar_talles)
+        or die ("No se encontraron los talles.");
+        //Cantidad de productos con mismo titulo para obtener los talles existentes
+        $cantidad_talles=mysqli_num_rows($resultado_talles);
+        //Creacion de array talles
+        $talles=array($cantidad_talles);
+        $i=0;
+        //Carga el array con los talles encontrados
+        while($encontrado = mysqli_fetch_assoc($resultado_talles))
+        {
+            if($encontrado["stock"]>0&&$encontrado["publicado"]==1)
+            {
+                $talles[$i]=$encontrado["talle"];
+            }
+            $i++;
+        }
+
+        $producto["talles"]=$talles;
+
         return $producto;
     }
 

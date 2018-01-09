@@ -15,7 +15,7 @@
 </style>
 
 <?php if(isset($productos)&&$productos!=false): ?>
-
+    <!--Genera los modal comprar en el listado completo de productos -->
     <?php foreach($productos AS $producto): ?>
         <!-- Modal -->
         <div class="modal fade" id="comprar_<?php echo $producto["sku"]; ?>" role="dialog">
@@ -40,7 +40,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="nombre"><span class="glyphicon glyphicon-earphone"></span> Telefono</label>
+                                <label for="nombre"><span class="glyphicon glyphicon-earphone"></span> Tel&eacute;fono</label>
                                 <input type="text" class="form-control" name="telefono" placeholder="Telefono"> </input>
                             </div>
 
@@ -48,12 +48,12 @@
 
                             <?php
                             echo'
-                                <input type="hidden" class="form-control" id="" name="sku"    value="'.$producto["sku"].'"></input>
-                                <input type="hidden" class="form-control" id="" name="titulo" value="'.$producto["titulo"].'"></input>
-                                <input type="hidden" class="form-control" id="" name="stock"  value="'.$producto["stock"].'"></input>
-                                <input type="hidden" class="form-control" id="" name="precio" value="'.$producto["precio"].'"></input>
-                                <input type="hidden" class="form-control" id="" name="rubro"  value="'.$producto["rubro"].'"></input>
-                                <input type="hidden" class="form-control" id="" name="marca"  value="'.$producto["marca"].'"></input>
+                                <input type="hidden" class="form-control"  name="sku"    value="'.$producto["sku"].'"></input>
+                                <input type="hidden" class="form-control"  name="titulo" value="'.$producto["titulo"].'"></input>
+                                <input type="hidden" class="form-control"  name="stock"  value="'.$producto["stock"].'"></input>
+                                <input type="hidden" class="form-control"  name="precio" value="'.$producto["precio"].'"></input>
+                                <input type="hidden" class="form-control"  name="rubro"  value="'.$producto["rubro"].'"></input>
+                                <input type="hidden" class="form-control"  name="marca"  value="'.$producto["marca"].'"></input>
                                 ';
                             ?>
                             <label>Producto</label>
@@ -76,6 +76,7 @@
             </div>
         </div>
     <?php endforeach; ?>
+
 
     <?php elseif(isset($producto)!=false):?>
     <!-- Modal -->
@@ -101,7 +102,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="nombre"><span class="glyphicon glyphicon-earphone"></span> Telefono</label>
+                            <label for="nombre"><span class="glyphicon glyphicon-earphone"></span> Tel&eacute;fono</label>
                             <input type="text" class="form-control" name="telefono" placeholder="Telefono"> </input>
                         </div>
 
@@ -109,21 +110,25 @@
 
                         <?php
                         echo'
-                                <input type="hidden" class="form-control" id="" name="sku"    value="'.$producto["sku"].'"></input>
-                                <input type="hidden" class="form-control" id="" name="titulo" value="'.$producto["titulo"].'"></input>
-                                <input type="hidden" class="form-control" id="" name="stock"  value="'.$producto["stock"].'"></input>
-                                <input type="hidden" class="form-control" id="" name="precio" value="'.$producto["precio"].'"></input>
-                                <input type="hidden" class="form-control" id="" name="rubro"  value="'.$producto["rubro"].'"></input>
-                                <input type="hidden" class="form-control" id="" name="marca"  value="'.$producto["marca"].'"></input>
+                                <input type="hidden" class="form-control"  name="sku"    value="'.$producto["sku"].'"></input>
+                                <input type="hidden" class="form-control"  name="titulo" value="'.$producto["titulo"].'"></input>
+                                <input type="hidden" class="form-control"  name="stock"  value="'.$producto["stock"].'"></input>
+                                <input type="hidden" class="form-control"  name="precio" value="'.$producto["precio"].'"></input>
+                                <input type="hidden" class="form-control"  name="rubro"  value="'.$producto["rubro"].'"></input>
+                                <input type="hidden" class="form-control"  name="marca"  value="'.$producto["marca"].'"></input>
+                                <input type="hidden" class="form-control" id="talle_elegido" name="talle"  value=""></input>
+                                <input type="hidden" class="form-control" id="cantidad_elegido" name="cantidad"  value=""></input>
                                 ';
                         ?>
                         <label> Producto</label>
                         <ul>
-                            <li><?php echo 'SKU:'.$producto["sku"]; ?></li>
-                            <li><?php echo 'Titulo:'.$producto["titulo"]; ?></li>
-                            <li><?php echo 'Precio:'.$producto["precio"]; ?></li>
-                            <li><?php echo 'Rubro:'.$producto["rubro"]; ?></li>
-                            <li><?php echo 'Marca:'.$producto["marca"]; ?></li>
+                            <li><?php echo 'SKU: '.$producto["sku"]; ?></li>
+                            <li><?php echo 'Titulo: '.$producto["titulo"]; ?></li>
+                            <li><?php echo 'Precio: '.$producto["precio"]; ?></li>
+                            <li><?php echo 'Rubro: '.$producto["rubro"]; ?></li>
+                            <li><?php echo 'Marca: '.$producto["marca"]; ?></li>
+                            <li>Talle: <span id="talle_elegido_mostrar"></span></li>
+                            <li>Cantidad: <span id="cantidad_elegida_mostrar"></span></li>
                         </ul>
                         <br>
                         <button type="submit" class="btn btn-danger btn-default pull-right btn-block">Enviar</button>
@@ -136,6 +141,7 @@
 
         </div>
     </div>
+
 
     <?php elseif($productos!=false):?>
     <!-- Modal -->
@@ -161,7 +167,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="nombre"><span class="glyphicon glyphicon-earphone"></span> Telefono</label>
+                            <label for="nombre"><span class="glyphicon glyphicon-earphone"></span> Tel&eacute;fono</label>
                             <input type="text" class="form-control" name="telefono" placeholder="Telefono"> </input>
                         </div>
 
@@ -169,13 +175,15 @@
 
                         <?php
                         echo'
-                                    <input type="hidden" class="form-control" id="" name="sku"    value="'.$producto["sku"].'"></input>
-                                    <input type="hidden" class="form-control" id="" name="titulo" value="'.$producto["titulo"].'"></input>
-                                    <input type="hidden" class="form-control" id="" name="stock"  value="'.$producto["stock"].'"></input>
-                                    <input type="hidden" class="form-control" id="" name="precio" value="'.$producto["precio"].'"></input>
-                                    <input type="hidden" class="form-control" id="" name="rubro"  value="'.$producto["rubro"].'"></input>
-                                    <input type="hidden" class="form-control" id="" name="marca"  value="'.$producto["marca"].'"></input>
-                                    ';
+                            <input type="hidden" class="form-control"  name="sku"    value="'.$producto["sku"].'"></input>
+                            <input type="hidden" class="form-control"  name="titulo" value="'.$producto["titulo"].'"></input>
+                            <input type="hidden" class="form-control"  name="stock"  value="'.$producto["stock"].'"></input>
+                            <input type="hidden" class="form-control"  name="precio" value="'.$producto["precio"].'"></input>
+                            <input type="hidden" class="form-control"  name="rubro"  value="'.$producto["rubro"].'"></input>
+                            <input type="hidden" class="form-control"  name="marca"  value="'.$producto["marca"].'"></input>
+                            <input type="hidden" class="form-control" id="talle_elegido" name="talle"  value=""></input>
+                            <input type="hidden" class="form-control" id="cantidad_elegido" name="cantidad"  value=""></input>
+                            ';
                         ?>
                         <label> Producto</label>
                         <ul>
@@ -184,6 +192,8 @@
                             <li><?php echo 'Precio:'.$producto["precio"]; ?></li>
                             <li><?php echo 'Rubro:'.$producto["rubro"]; ?></li>
                             <li><?php echo 'Marca:'.$producto["marca"]; ?></li>
+                            <li>Talle: <span id="talle_elegido_mostrar"></span></li>
+                            <li>Cantidad: <span id="cantidad_elegida_mostrar"></span></li>
                         </ul>
                         <br>
                         <button type="submit" class="btn btn-danger btn-default pull-right btn-block">Enviar</button>

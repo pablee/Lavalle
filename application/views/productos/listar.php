@@ -135,8 +135,9 @@
                                 <a href="#" target="_blank"><?php echo $producto["titulo"]; ?></a>
                                 <p class="descripcion"><?php echo $producto["modelo"]; ?></p>
                                 <p><!--strike>$2000</strike--> <?php echo $producto["precio"]; ?> <!--span class="label label-danger">10% OFF</span--></p>
-                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#comprar_<?php echo $producto["sku"]; ?>">Lo quiero!</button>
+                                <!--button type="button" class="btn btn-danger" data-toggle="modal" data-target="#comprar_<?php echo $producto["sku"]; ?>">Lo quiero!</--button-->
                             </div>
+                            <a href="producto?sku=<?php echo $producto["sku"]; ?>" class="btn btn-danger btn-xs">Ver m&aacute;s</a>
                         </div>
                     </div>
                    </div>

@@ -34,6 +34,8 @@
                             <li>Precio:'.$precio.'</li>
                             <li>Rubro:'.$rubro.'</li>
                             <li>Marca:'.$marca.'</li>
+                            <li>Talle:'.$talle.'</li>
+                            <li>Talle:'.$cantidad.'</li>
                         </ul>';
     }
 

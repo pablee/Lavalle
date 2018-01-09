@@ -38,7 +38,7 @@ function verMediosPagoSucursales()
     var win = window.open(x, "MsgWindow", "width=500,height=600");
 }
 
-
+//En editar articulos guarda solo los campos en los que se hicieron modificaciones.
 function campoModificado(id)
 {
     document.getElementById(id+"-modificado").value=1;
@@ -232,3 +232,20 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos)
 }
 
 */
+
+
+//Carga el talle elegido en el formulario 'Comprar'
+function cargar_talle()
+{
+    var talle=document.getElementById("talle").value;
+    document.getElementById("talle_elegido").value=talle;
+    document.getElementById("talle_elegido_mostrar").innerHTML=talle;
+}
+
+//Carga la cantidad elegida en el formulario 'Comprar'
+function cargar_cantidad()
+{
+    var cantidad=document.getElementById("cantidad").value;
+    document.getElementById("talle_elegido").value=cantidad;
+    document.getElementById("cantidad_elegida_mostrar").innerHTML=cantidad;
+}

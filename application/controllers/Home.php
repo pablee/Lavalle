@@ -115,6 +115,8 @@ class Home extends CI_Controller {
         $data['precio']=$this->input->post('precio');
         $data['rubro']=$this->input->post('rubro');
         $data['marca']=$this->input->post('marca');
+        $data['talle']=$this->input->post('talle');
+        $data['cantidad']=$this->input->post('cantidad');
 
         $this->pedido->guardar($data);
 
