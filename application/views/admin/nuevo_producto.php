@@ -31,7 +31,8 @@
                     <div class="form-group">
                         <label for="rubro"> Rubro </label>
                         <!--input type="text" class="form-control" id="rubro" name="grilla[rubro]"></input-->
-                        <select class="form-control" id="rubro" name="grilla[rubro]">
+                        <select class="form-control" id="rubro" name="grilla[rubro]" required>
+                            <option value=""></option>
                             <?php foreach($rubros AS $rubro): ?>
                                 <option value="<?php echo $rubro; ?>"> <?php echo $rubro; ?> </option>
                             <?php endforeach; ?>
@@ -40,7 +41,13 @@
 
                     <div class="form-group">
                         <label for="marca"> Marca </label>
-                        <input type="text" class="form-control" id="marca" name="grilla[marca]"></input>
+                        <!--input type="text" class="form-control" id="marca" name="grilla[marca]"></input-->
+                        <select class="form-control" id="marca" name="grilla[marca]" required>
+                            <option value=""></option>
+                            <?php foreach($marcas AS $marca): ?>
+                                <option value="<?php echo $marca; ?>"> <?php echo $marca; ?> </option>
+                            <?php endforeach; ?>
+                        </select>
                     </div>
 
                     <div class="form-group">

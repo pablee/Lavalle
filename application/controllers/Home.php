@@ -1,4 +1,9 @@
 <?php
+//Corrige (oculta) el cartel de error en el final de la pagina hosteada.
+ini_set("display_errors", 0);
+ini_set("log_errors", 1);
+ini_set("error_log", "syslog");
+
 session_start();
 defined('BASEPATH') OR exit('No direct script access allowed');
 

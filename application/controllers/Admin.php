@@ -129,17 +129,27 @@ class Admin extends CI_Controller
     }
 
 
+    public function marcas()
+    {
+
+        $marcas = array("Acerbis","Agv","Airoh","Arai","Benelli","Beon","Cros Roads","Forma","Fox","Gaerne","Givi","Hjc","Joe rocket","Kawasaki","Ls2","Momo","Motorman","Nzi","Octane","Origine","Peels","Rpmcroos","Schuberth","Shift","Shiro","Shoei","Sidi","Suzuki","V-can","Yamaha","Otros");
+        return $marcas;
+    }
+
     public function rubros()
     {
         $rubros = array("Motos", "Cascos", "Indumentaria", "Calzado", "Accesorios");
         return $rubros;
     }
 
+
     public function nuevo()
     {
         if($_SESSION["login"]==true)
         {
         $data["rubros"]=$this->rubros();
+        $data["marcas"]=$this->marcas();
+
         $this->load->view('admin/header');
         $this->load->view('admin/navbar');
         $this->load->view('admin/nuevo_producto',$data);
@@ -167,6 +177,7 @@ class Admin extends CI_Controller
         {
         $data['productos']=$this->productos->listar();
         $data["rubros"]=$this->rubros();
+        $data["marcas"]=$this->marcas();
 
         $this->load->view('admin/header');
         $this->load->view('admin/navbar');
