@@ -57,28 +57,32 @@
                      <p><?php echo $producto["marca"]; ?></p>
                      <!--Precio-->
                      <h5>Precio:</h5>
-                     <p><?php echo '$ '.$producto["precio"]; ?></p>
-                     <!--Talle, cantidad-->
-                     <div class="row">
-                         <div class="col-xs-12 col-sm-12 col-md-4">
-                             <h5>Talle:</h5>
-                             <select class="form-control" id="talle" onchange="cargar_talle()">
-                                 <option value=""></option>
-                                 <?php foreach($producto["talles"] AS $talle): ?>
-                                     <option value="<?php echo $talle ?>"><?php echo $talle; ?></option>
-                                 <?php endforeach; ?>
-                             </select>
+                     <?php if($producto["rubro"]=="Motos"): ?>
+                        <p><?php echo $producto["precio"]; ?></p>
+                     <?php else: ?>
+                         <p><?php echo '$ '.$producto["precio"]; ?></p>
+                         <!--Talle, cantidad-->
+                         <div class="row">
+                             <div class="col-xs-12 col-sm-12 col-md-4">
+                                 <h5>Talle:</h5>
+                                 <select class="form-control" id="talle" onchange="cargar_talle()">
+                                     <option value=""></option>
+                                     <?php foreach($producto["talles"] AS $talle): ?>
+                                         <option value="<?php echo $talle ?>"><?php echo $talle; ?></option>
+                                     <?php endforeach; ?>
+                                 </select>
+                             </div>
+                             <div class="col-xs-12 col-sm-12 col-md-4">
+                                 <h5>Cantidad:</h5>
+                                 <select class="form-control" id="cantidad" onchange="cargar_cantidad()">
+                                     <option value=""></option>
+                                     <option value="1"> 1 </option>
+                                     <option value="2"> 2 </option>
+                                     <option value="3"> 3 </option>
+                                 </select>
+                             </div>
                          </div>
-                         <div class="col-xs-12 col-sm-12 col-md-4">
-                             <h5>Cantidad:</h5>
-                             <select class="form-control" id="cantidad" onchange="cargar_cantidad()">
-                                 <option value=""></option>
-                                 <option value="1"> 1 </option>
-                                 <option value="2"> 2 </option>
-                                 <option value="3"> 3 </option>
-                             </select>
-                         </div>
-                     </div>
+                     <?php endif; ?>
                      <div style="margin-top: 2%;">
                          <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#comprar_<?php echo $producto["sku"]; ?>">Lo quiero!</button>
                      </div>

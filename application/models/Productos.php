@@ -70,7 +70,16 @@ class Productos
             $productos[$i]["sku"]=$producto["sku"];
             $productos[$i]["titulo"]=$producto["titulo"];
             $productos[$i]["stock"]=$producto["stock"];
-            $productos[$i]["precio"]=$producto["precio"];
+
+            if($producto["rubro"]=="Motos")
+            {
+                $productos[$i]["precio"]="Consultar";
+            }
+            else
+                {
+                    $productos[$i]["precio"]=$producto["precio"];
+                }
+
             $productos[$i]["rubro"]=$producto["rubro"];
             $productos[$i]["marca"]=$producto["marca"];
             $productos[$i]["modelo"]=$producto["modelo"];
@@ -159,7 +168,8 @@ class Productos
                        FROM Productos
                        WHERE rubro = "'.$filtrado["rubro"].'"
                        AND marca = "'.$filtrado["marca"].'"
-                       AND publicado = true;';
+                       AND publicado = true
+                       GROUP BY titulo;;';
         }
 
         if(isset($filtrado["modelo"]))
@@ -168,9 +178,11 @@ class Productos
                        FROM Productos
                        WHERE rubro = "'.$filtrado["rubro"].'"                     
                        AND modelo = "'.$filtrado["modelo"].'"
-                       AND publicado = true;';
+                       AND publicado = true
+                       GROUP BY titulo;;';
         }
 
+        //La consulta busca el texto ingresado en el buscador del home.
         if(isset($filtrado["buscado"]))
         {
             $consulta='SELECT *
@@ -178,7 +190,8 @@ class Productos
                        WHERE rubro LIKE "%'.$filtrado["buscado"].'%"
                        OR marca LIKE "%'.$filtrado["buscado"].'%"
                        OR modelo LIKE "%'.$filtrado["buscado"].'%"
-                       AND publicado = true;';
+                       AND publicado = true
+                       GROUP BY titulo;;';
         }
 
         //echo $consulta;
@@ -378,7 +391,16 @@ class Productos
             $producto["sku"]=$encontrado["sku"];
             $producto["titulo"]=$encontrado["titulo"];
             $producto["stock"]=$encontrado["stock"];
-            $producto["precio"]=$encontrado["precio"];
+
+            if($encontrado["rubro"]=="Motos")
+            {
+                $producto["precio"]="Consultar";
+            }
+            else
+                {
+                    $producto["precio"]=$encontrado["precio"];
+                }
+
             $producto["rubro"]=$encontrado["rubro"];
             $producto["marca"]=$encontrado["marca"];
             $producto["modelo"]=$encontrado["modelo"];

@@ -17,13 +17,29 @@ class Admin extends CI_Controller
     }
 
 
+    public function marcas()
+    {
+
+        $marcas = array("Acerbis","Agv","Airoh","Arai","Benelli","Beon","Cros Roads","Forma","Fox","Gaerne","Givi","Hjc","Joe rocket","Kawasaki","Ls2","Momo","Motorman","Nzi","Octane","Origine","Peels","Rpmcroos","Schuberth","Shift","Shiro","Shoei","Sidi","Suzuki","V-can","Yamaha","Otros");
+        return $marcas;
+    }
+
+
+    public function rubros()
+    {
+        $rubros = array("Motos", "Cascos", "Indumentaria", "Calzado", "Accesorios");
+        return $rubros;
+    }
+
+
+
     public function home()
     {
         if($_SESSION["login"]==true)
         {
             $this->load->view('admin/header');
             $this->load->view('admin/navbar');
-            $this->load->view('admin/nuevo_producto');
+            //$this->load->view('admin/nuevo_producto');
         }
         else{
             $this->load->view('admin/logout');
@@ -126,20 +142,6 @@ class Admin extends CI_Controller
         else{
             $this->load->view('admin/logout');
             }
-    }
-
-
-    public function marcas()
-    {
-
-        $marcas = array("Acerbis","Agv","Airoh","Arai","Benelli","Beon","Cros Roads","Forma","Fox","Gaerne","Givi","Hjc","Joe rocket","Kawasaki","Ls2","Momo","Motorman","Nzi","Octane","Origine","Peels","Rpmcroos","Schuberth","Shift","Shiro","Shoei","Sidi","Suzuki","V-can","Yamaha","Otros");
-        return $marcas;
-    }
-
-    public function rubros()
-    {
-        $rubros = array("Motos", "Cascos", "Indumentaria", "Calzado", "Accesorios");
-        return $rubros;
     }
 
 

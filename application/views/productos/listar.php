@@ -1,8 +1,8 @@
 <div class="row contenido">
 
-    <div class="col-md-1"></div>
+    <!--div class="col-md-1"></div-->
 
-    <div class="col-md-2 contenido filtro">
+    <div class="col-md-3 contenido filtro text-center">
             <div style="padding: 10px 15px;">
                 <h2>Filtrar por</h2>
             </div>
