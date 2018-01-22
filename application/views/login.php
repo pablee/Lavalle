@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row text-center busqueda_rapida">
             <div class="col-xs-12 col-sm-12 col-md-3">
-                <a href="/">
+                <a href="http://viajandojuntos.com.ar/lavalle">
                     <img src="<?php echo base_url(); ?>assets/img/iconos/logo_md.png" alt="logo" height="75" width="auto">
                 </a>
             </div>

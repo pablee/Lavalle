@@ -20,7 +20,7 @@ class Suscripcion
         $i=0;
         while($datos = mysqli_fetch_assoc($resultado))
         {
-            $correos[$i]["id"]=$datos["id"];
+            //$correos[$i]["id"]=$datos["id"];
             $correos[$i]["correo"]=$datos["correo"];
             $i++;
         }

@@ -11,6 +11,7 @@
             <div class="collapse navbar-collapse" id="myNavbar">
 
                     <ul class="nav navbar-nav">
+                        <!--Motos-->
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Motos</a>
                             <ul class="dropdown-menu" role="menu">
@@ -19,17 +20,18 @@
                                     </div>
                                     <div class="col-xs-5 col-sm-2 col-md-2 margin-top">
                                         <li><b>Tipo</b></li>
-                                        <?php //foreach($motos_modelos AS $moto_modelo): ?>
-                                            <!--li><a href="filtrar?modelo=<?php //echo $moto_modelo["nombre"]; ?>&rubro=motos"><?php //echo ucwords($moto_modelo["nombre"]); ?></a></li-->
+                                        <?php //foreach($motos_tipos AS $moto_tipo): ?>
+                                            <!--li><a href="filtrar?tipo=<?php //echo $moto_tipo["nombre"]; ?>&rubro=motos"><?php //echo ucwords($moto_tipo["nombre"]); ?></a></li-->
                                         <?php //endforeach; ?>
-                                        <li><a href="filtrar?modelo=cuatriciclos&rubro=motos">Cuatriciclos</a></li>
-                                        <li><a href="filtrar?modelo=cubs&rubro=motos">Cubs</a></li>
-                                        <li><a href="filtrar?modelo=custom&rubro=motos">Custom</a></li>
-                                        <li><a href="filtrar?modelo=enduro&rubro=motos">Enduro</a></li>
-                                        <li><a href="filtrar?modelo=enduro-calle&rubro=motos">Enduro - Calle</a></li>
-                                        <li><a href="filtrar?modelo=scooters&rubro=motos">Scooters</a></li>
-                                        <li><a href="filtrar?modelo=streets&rubro=motos">Streets</a></li>
-                                        <li><a href="filtrar?modelo=utilitarios&rubro=motos">Utilitarios</a></li>
+                                        <li><a href="filtrar?tipo=cuatriciclos&rubro=motos">Cuatriciclos</a></li>
+                                        <li><a href="filtrar?tipo=cubs&rubro=motos">Cubs</a></li>
+                                        <li><a href="filtrar?tipo=custom&rubro=motos">Custom</a></li>
+                                        <li><a href="filtrar?tipo=enduro&rubro=motos">Enduro</a></li>
+                                        <li><a href="filtrar?tipo=enduro-calle&rubro=motos">Enduro - Calle</a></li>
+                                        <li><a href="filtrar?tipo=scooters&rubro=motos">Scooters</a></li>
+                                        <li><a href="filtrar?tipo=streets&rubro=motos">Streets</a></li>
+                                        <li><a href="filtrar?tipo=utilitarios&rubro=motos">Utilitarios</a></li>
+                                        <li style="margin-top: 5px;"><a href="categoria?rubro=motos">Ver todo</a></li>
                                     </div>
                                     <div class="col-xs-5 col-sm-2 col-md-2 margin-top">
                                         <li><b>Alta gama</b></li>
@@ -47,6 +49,7 @@
                                 </div>
                             </ul>
                         </li>
+                        <!--Cascos-->
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cascos</a>
                             <ul class="dropdown-menu" role="menu">
@@ -55,14 +58,15 @@
                                     </div>
                                     <div class="col-xs-12 col-sm-12 col-md-2 margin-top">
                                         <li><b>Tipo</b></li>
-                                        <?php //foreach($cascos_modelos AS $casco_modelo): ?>
-                                            <!--li><a href="filtrar?modelo=<?php //echo $casco_modelo["nombre"]; ?>&rubro=cascos"><?php //echo ucwords($casco_modelo["nombre"]); ?></a></li-->
+                                        <?php //foreach($cascos_tipos AS $casco_tipo): ?>
+                                            <!--li><a href="filtrar?tipo=<?php //echo $casco_tipo["nombre"]; ?>&rubro=cascos"><?php //echo ucwords($casco_tipo["nombre"]); ?></a></li-->
                                         <?php //endforeach; ?>
-                                        <li><a href="filtrar?modelo=abierto&rubro=cascos">Abiertos</a></li>
-                                        <li><a href="filtrar?modelo=motocross&rubro=motos">Motocross</a></li>
-                                        <li><a href="filtrar?modelo=integral&rubro=motos">Integrales</a></li>
-                                        <li><a href="filtrar?modelo=rebatible&rubro=motos">Rebatibles</a></li>
-                                        <li><a href="filtrar?modelo=modular&rubro=motos">Modulares</a></li>
+                                        <li><a href="filtrar?tipo=abierto&rubro=cascos">Abiertos</a></li>
+                                        <li><a href="filtrar?tipo=motocross&rubro=cascos">Motocross</a></li>
+                                        <li><a href="filtrar?tipo=integral&rubro=cascos">Integrales</a></li>
+                                        <li><a href="filtrar?tipo=rebatible&rubro=cascos">Rebatibles</a></li>
+                                        <li><a href="filtrar?tipo=modular&rubro=cascos">Modulares</a></li>
+                                        <li style="margin-top: 5px;"><a href="categoria?rubro=cascos">Ver todo</a></li>
                                     </div>
                                     <div class="col-xs-12 col-sm-12 col-md-1 margin-top">
                                         <li><b>Marcas</b></li>
@@ -101,6 +105,7 @@
                                 </div>
                             </ul>
                         </li>
+                        <!--Indumentaria-->
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Indumentaria</a>
                             <ul class="dropdown-menu" role="menu">
@@ -109,12 +114,13 @@
                                     </div>
                                     <div class="col-xs-12 col-sm-12 col-md-2 margin-top">
                                         <li><b>Tipo</b></li>
-                                        <?php //foreach($indumentaria_modelos AS $indumentaria_modelo): ?>
-                                            <!--li><a href="filtrar?modelo=<?php //echo $indumentaria_modelo["nombre"]; ?>&rubro=indumentaria"><?php //echo ucwords($indumentaria_modelo["nombre"]); ?></a></li-->
+                                        <?php //foreach($indumentaria_tipos AS $indumentaria_tipo): ?>
+                                            <!--li><a href="filtrar?tipo=<?php //echo $indumentaria_tipo["nombre"]; ?>&rubro=indumentaria"><?php //echo ucwords($indumentaria_tipo["nombre"]); ?></a></li-->
                                         <?php //endforeach; ?>
-                                        <li><a href="filtrar?modelo=pista&rubro=indumentaria">Pista</a></li>
-                                        <li><a href="filtrar?modelo=touring&rubro=indumentaria">Touring</a></li>
-                                        <li><a href="filtrar?modelo=enduro-cross&rubro=indumentaria">Enduro-cross</a></li>
+                                        <li><a href="filtrar?tipo=pista&rubro=indumentaria">Pista</a></li>
+                                        <li><a href="filtrar?tipo=touring&rubro=indumentaria">Touring</a></li>
+                                        <li><a href="filtrar?tipo=enduro-cross&rubro=indumentaria">Enduro-cross</a></li>
+                                        <li style="margin-top: 5px;"><a href="categoria?rubro=indumentaria">Ver todo</a></li>
                                     </div>
                                     <div class="col-xs-12 col-sm-12 col-md-2 margin-top">
                                         <li><b>Marcas</b></li>
@@ -137,6 +143,7 @@
                                 </div>
                             </ul>
                         </li>
+                        <!--Calzado-->
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Calzado</a>
                             <ul class="dropdown-menu" role="menu">
@@ -145,13 +152,14 @@
                                     </div>
                                     <div class="col-xs-12 col-sm-12 col-md-2 margin-top">
                                         <li><b>Tipo</b></li>
-                                        <?php //foreach($calzado_modelos AS $calzado_modelo): ?>
-                                            <!--li><a href="filtrar?modelo=<?php //echo $calzado_modelo["nombre"]; ?>&rubro=calzado"><?php //echo ucwords($calzado_modelo["nombre"]); ?></a></li-->
+                                        <?php //foreach($calzado_tipos AS $calzado_tipo): ?>
+                                            <!--li><a href="filtrar?tipo=<?php //echo $calzado_tipo["nombre"]; ?>&rubro=calzado"><?php //echo ucwords($calzado_tipo["nombre"]); ?></a></li-->
                                         <?php //endforeach; ?>
-                                        <li><a href="filtrar?modelo=pista&rubro=calzado">Pista</a></li>
-                                        <li><a href="filtrar?modelo=motocross&rubro=calzado">Motocross</a></li>
-                                        <li><a href="filtrar?modelo=touring&rubro=calzado">Touring</a></li>
-                                        <li><a href="filtrar?modelo=enduro-cross&rubro=calzado">Enduro-cross</a></li>
+                                        <li><a href="filtrar?tipo=pista&rubro=calzado">Pista</a></li>
+                                        <li><a href="filtrar?tipo=motocross&rubro=calzado">Motocross</a></li>
+                                        <li><a href="filtrar?tipo=touring&rubro=calzado">Touring</a></li>
+                                        <li><a href="filtrar?tipo=enduro-cross&rubro=calzado">Enduro-cross</a></li>
+                                        <li style="margin-top: 5px;"><a href="categoria?rubro=calzado">Ver todo</a></li>
                                         <br>
                                     </div>
                                     <div class="col-xs-12 col-sm-12 col-md-2 margin-top">
@@ -172,6 +180,7 @@
                                 </div>
                             </ul>
                         </li>
+                        <!--Accesorios-->
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Accesorios</a>
                             <ul class="dropdown-menu" role="menu">
@@ -180,42 +189,43 @@
 
                                     <div class="col-xs-12 col-sm-12 col-md-2 margin-top">
                                         <li><b>Accesorios</b></li>
-                                        <li><a href="filtrar?modelo=antiparras&rubro=motos">Antiparras</a></li>
-                                        <li><a href="filtrar?modelo=bauleras&rubro=motos">Bauleras</a></li>
-                                        <li><a href="filtrar?modelo=intercomunicadores&rubro=accesorios">Intercomunicadores</a></li>
+                                        <li><a href="filtrar?tipo=antiparras&rubro=accesorios">Antiparras</a></li>
+                                        <li><a href="filtrar?tipo=bauleras&rubro=accesorios">Bauleras</a></li>
+                                        <li><a href="filtrar?tipo=intercomunicadores&rubro=accesorios">Intercomunicadores</a></li>
+                                        <li style="margin-top: 5px;"><a href="categoria?rubro=accesorios">Ver todo</a></li>
                                     </div>
 
 
                                     <div class="col-xs-12 col-sm-12 col-md-2 margin-top">
                                         <li><b>Cubiertas</b></li>
-                                        <li><a href="filtrar?modelo=motocross&rubro=accesorios">Motocross</a></li>
-                                        <li><a href="filtrar?modelo=cuatri&rubro=accesorios">Cuatri</a></li>
-                                        <li><a href="filtrar?modelo=enduro calle&rubro=accesorios">Enduro calle</a></li>
+                                        <li><a href="filtrar?tipo=motocross&rubro=accesorios">Motocross</a></li>
+                                        <li><a href="filtrar?tipo=cuatri&rubro=accesorios">Cuatri</a></li>
+                                        <li><a href="filtrar?tipo=enduro calle&rubro=accesorios">Enduro calle</a></li>
                                     </div>
 
 
                                     <div class="col-xs-12 col-sm-12 col-md-2 margin-top">
                                         <li><b>Repuestos</b></li>
-                                        <li><a href="filtrar?modelo=baterias&rubro=accesorios">Baterias</a></li>
-                                        <li><a href="filtrar?modelo=escapes&rubro=accesorios">Escapes</a></li>
+                                        <li><a href="filtrar?tipo=baterias&rubro=accesorios">Baterias</a></li>
+                                        <li><a href="filtrar?tipo=escapes&rubro=accesorios">Escapes</a></li>
                                     </div>
 
 
                                     <div class="col-xs-12 col-sm-12 col-md-2 margin-top">
                                         <li><b>Seguridad</b></li>
-                                        <li><a href="filtrar?modelo=alarmas&rubro=accesorios">Alarmas</a></li>
-                                        <li><a href="filtrar?modelo=candados&rubro=accesorios">Candados</a></li>
-                                        <li><a href="filtrar?modelo=lingas&rubro=accesorios">Lingas</a></li>
-                                        <li><a href="filtrar?modelo=trabadiscos&rubro=accesorios">Trabadiscos</a></li>
+                                        <li><a href="filtrar?tipo=alarmas&rubro=accesorios">Alarmas</a></li>
+                                        <li><a href="filtrar?tipo=candados&rubro=accesorios">Candados</a></li>
+                                        <li><a href="filtrar?tipo=lingas&rubro=accesorios">Lingas</a></li>
+                                        <li><a href="filtrar?tipo=trabadiscos&rubro=accesorios">Trabadiscos</a></li>
                                     </div>
 
 
                                     <div class="col-xs-12 col-sm-12 col-md-2 margin-top">
                                         <li><b>Protecciones</b></li>
-                                        <li><a href="filtrar?modelo=coderas&rubro=accesorios">Coderas</a></li>
-                                        <li><a href="filtrar?modelo=integrales&rubro=accesorios">Integrales</a></li>
-                                        <li><a href="filtrar?modelo=pecheras&rubro=accesorios">Pecheras</a></li>
-                                        <li><a href="filtrar?modelo=rodilleras&rubro=accesorios">Rodilleras</a></li>
+                                        <li><a href="filtrar?tipo=coderas&rubro=accesorios">Coderas</a></li>
+                                        <li><a href="filtrar?tipo=integrales&rubro=accesorios">Integrales</a></li>
+                                        <li><a href="filtrar?tipo=pecheras&rubro=accesorios">Pecheras</a></li>
+                                        <li><a href="filtrar?tipo=rodilleras&rubro=accesorios">Rodilleras</a></li>
                                     </div>
                                 </div>
 

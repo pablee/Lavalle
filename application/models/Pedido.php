@@ -48,7 +48,7 @@ class Pedido
         or die ("No se pudo guardar el pedido.");
     }
 
-
+    //Exporta un archivo csv en la carpeta de descargas del usuario
     public function exportar()
     {
         $pedidos = $this->listar();
@@ -65,7 +65,7 @@ class Pedido
         fclose($file);
     }
 
-
+    //Exporta un archivo csv en la carpeta raiz de la pagina
     public function exportar_local()
     {
         $pedidos = $this->listar();

@@ -55,13 +55,23 @@ foreach ($productos as $producto)
     
         <td>		
             <!--input type="text"   class="form-control" id="" name="grilla['.$producto["sku"].'][marca]" value="'.$producto["marca"].'" onchange="campoModificado('.$producto["sku"].')"></input-->
-            <select class="form-control" id="" name="grilla['.$producto["sku"].'][marca]" onchange="campoModificado('.$producto["sku"].')">
-    
+            <select class="form-control" id="" name="grilla['.$producto["sku"].'][marca]" onchange="campoModificado('.$producto["sku"].')">    
                 <option value="'.$producto["marca"].'">'.$producto["marca"].'</option>';
                 foreach($marcas AS $marca)
                     {
                     echo '<option value="'.$marca.'"> '.$marca.' </option>';
                     }
+    echo'         
+            </select>                
+        </td>
+
+        <td>
+            <select class="form-control" id="" name="grilla['.$producto["sku"].'][tipo]" onchange="campoModificado('.$producto["sku"].')">
+                <option value="'.$producto["tipo"].'">'.$producto["tipo"].'</option>';
+                foreach($tipos AS $tipo)
+                {
+                    echo '<option value="'.$tipo.'"> '.$tipo.' </option>';
+                }
     echo'         
             </select>                
         </td>

@@ -193,10 +193,11 @@ class Home extends CI_Controller {
 
     public function filtrar()
     {
-        $filtrado=array("sku"=>"", "rubro"=>"", "marca"=>"", "modelo"=>"", "buscado"=>"");
+        $filtrado=array("sku"=>"", "rubro"=>"", "marca"=>"", "tipo"=>"", "modelo"=>"", "buscado"=>"");
         $filtrado["sku"]=$this->input->get('sku');
         $filtrado["rubro"]=$this->input->get('rubro');
         $filtrado["marca"]=$this->input->get('marca');
+        $filtrado["tipo"]=$this->input->get('tipo');
         $filtrado["modelo"]=$this->input->get('modelo');
         $filtrado["buscado"]=$this->input->post('buscado');
 
@@ -209,8 +210,10 @@ class Home extends CI_Controller {
 
         //Obtengo las marcas disponibles para la categoria.
         $data['marcas']=$this->productos->filtrar_marcas($filtrado["rubro"]);
-        //Obtengo las marcas disponibles para la categoria.
+        //Obtengo los modelos disponibles para la categoria.
         $data['modelos']=$this->productos->filtrar_modelos($filtrado["rubro"]);
+        //Obtengo los tipos disponibles para la categoria.
+        $data['tipos']=$this->productos->filtrar_tipos($filtrado["rubro"]);
 
         //Devuelvo los filtros usados para visualizar los mismos en la vista.
         $data['filtrado']=$filtrado;

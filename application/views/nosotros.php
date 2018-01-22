@@ -6,7 +6,7 @@
                 <div class="row">
                     <div class="col-xs-6 col-sm-6 col-md-6">
                         <ul class="list-unstyled">
-                            <li><a href="#" onclick="verMediosPago()">Medios de pago</a></li>
+                            <li><a href="medios_pago" target="_blank" onclick="verMediosPago()">Medios de pago</a></li>
                             <li><a href="#" data-toggle="modal" data-target="#garantia">Garant&iacute;a</a></li>
                             <li><a href="#" data-toggle="modal" data-target="#post_venta">Servicio post venta</a></li>
                             <li><a href="#" data-toggle="modal" data-target="#venta_corporativa"> Ventas corporativas</a></li>
@@ -28,11 +28,11 @@
             <div class="col-xs-12 col-sm-12 col-md-4">
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12" style="margin-left: 25%;">
-                            Seguinos!!
-                            <a href="https://www.facebook.com/lavalle.motos.oficial/" target="_blank">
-                                <img src="<?php echo base_url(); ?>assets/img/iconos/facebook.png" alt="facebook" height="35px" width="35px">
-                            </a>
-                            <img src="<?php echo base_url(); ?>assets/img/iconos/youtube.png" alt="facebook" height="35px" width="35px">
+                        Seguinos!!
+                        <a href="https://www.facebook.com/lavalle.motos.oficial/" target="_blank">
+                            <img src="<?php echo base_url(); ?>assets/img/iconos/facebook.png" alt="facebook" height="35px" width="35px">
+                        </a>
+                        <img src="<?php echo base_url(); ?>assets/img/iconos/youtube.png" alt="facebook" height="35px" width="35px">
                     </div>
                 </div>
 

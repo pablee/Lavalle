@@ -21,7 +21,7 @@ function mercadoshops()
 
 function verMediosPago()
 {
-    var url = 'https://www.mercadopago.com.ar/promociones';
+    var url = 'https://www.mercadopago.com.ar/cuotas';
     var myWindow = window.open(url, "MsgWindow", "width=500,height=600");
 }
 

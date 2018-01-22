@@ -26,6 +26,7 @@ foreach($productos as $producto)
 		<td>'.$producto["precio"].'</td>
 		<td>'.$producto["rubro"].'</td>
 		<td>'.$producto["marca"].'</td>
+		<td>'.$producto["tipo"].'</td>
 		<td>'.$producto["modelo"].'</td>
 		<td>'.$producto["talle"].'</td>
 		<td>'.$destacado.'</td>

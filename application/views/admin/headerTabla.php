@@ -9,6 +9,7 @@
 		<th>Precio</th>
         <th>Rubro</th>
 		<th>Marca</th>
+        <th>Tipo</th>
         <th>Modelo</th>
         <th>Talle</th>
         <th>Destacado</th>

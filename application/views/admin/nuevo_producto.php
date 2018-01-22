@@ -15,7 +15,9 @@
 
                     <div class="form-group">
                         <label for="titulo"> Titulo </label>
-                        <input type="text" class="form-control" id="titulo" name="grilla[titulo]"></input>
+                        <!--label style="color: red; font-size: 10px;">No puede contener ms de 24 caracteres</label-->
+                        <input type="text" class="form-control" id="titulo" name="grilla[titulo]" maxlength="25"></input>
+                        <h5 style="color: red; font-size: 10px;">No puede contener ms de 24 caracteres</h5>
                     </div>
 
                     <div class="form-group">
@@ -46,6 +48,17 @@
                             <option value=""></option>
                             <?php foreach($marcas AS $marca): ?>
                                 <option value="<?php echo $marca; ?>"> <?php echo $marca; ?> </option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tipo"> Tipo </label>
+                        <!--input type="text" class="form-control" id="marca" name="grilla[marca]"></input-->
+                        <select class="form-control" id="marca" name="grilla[tipo]" required>
+                            <option value=""></option>
+                            <?php foreach($tipos AS $tipo): ?>
+                                <option value="<?php echo $tipo; ?>"> <?php echo $tipo; ?> </option>
                             <?php endforeach; ?>
                         </select>
                     </div>

@@ -16,7 +16,7 @@ class Productos
         $resultado=mysqli_query($db->conexion, $consulta)
         or die ("No se pueden mostrar los productos.");
 
-        $productos = array(array("sku", "titulo", "stock", "precio", "rubro", "marca", "modelo", "talle", "destacado", "publicado", "img"));
+        $productos = array(array("sku", "titulo", "stock", "precio", "rubro", "marca", "tipo", "modelo", "talle", "destacado", "publicado", "img"));
         $i=0;
         while($producto = mysqli_fetch_assoc($resultado))
         {
@@ -26,6 +26,7 @@ class Productos
             $productos[$i]["precio"]=$producto["precio"];
             $productos[$i]["rubro"]=$producto["rubro"];
             $productos[$i]["marca"]=$producto["marca"];
+            $productos[$i]["tipo"]=$producto["tipo"];
             $productos[$i]["modelo"]=$producto["modelo"];
             $productos[$i]["talle"]=$producto["talle"];
             $productos[$i]["destacado"]=$producto["destacado"];
@@ -63,7 +64,7 @@ class Productos
         $resultado=mysqli_query($db->conexion, $consulta)
         or die ("No se pueden mostrar los productos por categoria.");
 
-        $productos = array(array("sku", "titulo", "stock", "precio", "rubro", "marca", "modelo", "talle", "destacado", "publicado", "img"));
+        $productos = array(array("sku", "titulo", "stock", "precio", "rubro", "marca", "tipo", "modelo", "talle", "destacado", "publicado", "img"));
         $i=0;
         while($producto = mysqli_fetch_assoc($resultado))
         {
@@ -77,11 +78,12 @@ class Productos
             }
             else
                 {
-                    $productos[$i]["precio"]=$producto["precio"];
+                    $productos[$i]["precio"]=round($producto["precio"], 0, PHP_ROUND_HALF_UP);
                 }
 
             $productos[$i]["rubro"]=$producto["rubro"];
             $productos[$i]["marca"]=$producto["marca"];
+            $productos[$i]["tipo"]=$producto["tipo"];
             $productos[$i]["modelo"]=$producto["modelo"];
             $productos[$i]["talle"]=$producto["talle"];
             $productos[$i]["destacado"]=$producto["destacado"];
@@ -149,6 +151,35 @@ class Productos
             }
     }
 
+    //Busca los tipos de una categoria
+    public function filtrar_tipos($categoria)
+    {
+        $db=new database();
+        $db->conectar();
+
+        $consulta="SELECT DISTINCT tipo
+			       FROM Productos
+			       WHERE rubro = '$categoria';";
+        $resultado=mysqli_query($db->conexion, $consulta)
+        or die ("No se pudo armar los filtros de tipo por categoria.");
+
+        if(mysqli_num_rows($resultado)==0)
+        {
+            $mensaje=false;
+            return $mensaje;
+        }
+        else{
+            $i=0;
+            while($producto = mysqli_fetch_assoc($resultado))
+            {
+                $tipos[$i]["nombre"]=$producto["tipo"];
+                $i++;
+            }
+            return $tipos;
+        }
+    }
+
+
     //Busca los productos de acuerdo a los filtros elegidos
     public function filtrar($filtrado)
     {
@@ -168,6 +199,16 @@ class Productos
                        FROM Productos
                        WHERE rubro = "'.$filtrado["rubro"].'"
                        AND marca = "'.$filtrado["marca"].'"
+                       AND publicado = true
+                       GROUP BY titulo;;';
+        }
+
+        if(isset($filtrado["tipo"]))
+        {
+            $consulta='SELECT *
+                       FROM Productos
+                       WHERE rubro = "'.$filtrado["rubro"].'"                     
+                       AND tipo LIKE "%'.$filtrado["tipo"].'%"
                        AND publicado = true
                        GROUP BY titulo;;';
         }
@@ -198,7 +239,7 @@ class Productos
         $resultado=mysqli_query($db->conexion, $consulta)
         or die ("No se puede filtrar.");
 
-        $productos = array(array("sku", "titulo", "stock", "precio", "rubro", "marca", "modelo", "talle", "destacado", "publicado", "img"));
+        $productos = array(array("sku", "titulo", "stock", "precio", "rubro", "marca", "tipo", "modelo", "talle", "destacado", "publicado", "img"));
 
         if(mysqli_num_rows($resultado)==0)
         {
@@ -206,23 +247,33 @@ class Productos
             return $mensaje;
         }
         else{
-                $i=0;
-                while($producto = mysqli_fetch_assoc($resultado))
+            $i=0;
+            while($producto = mysqli_fetch_assoc($resultado))
+            {
+                $productos[$i]["sku"]=$producto["sku"];
+                $productos[$i]["titulo"]=$producto["titulo"];
+                $productos[$i]["stock"]=$producto["stock"];
+
+                if($producto["rubro"]=="Motos")
                 {
-                    $productos[$i]["sku"]=$producto["sku"];
-                    $productos[$i]["titulo"]=$producto["titulo"];
-                    $productos[$i]["stock"]=$producto["stock"];
-                    $productos[$i]["precio"]=$producto["precio"];
-                    $productos[$i]["rubro"]=$producto["rubro"];
-                    $productos[$i]["marca"]=$producto["marca"];
-                    $productos[$i]["modelo"]=$producto["modelo"];
-                    $productos[$i]["talle"]=$producto["talle"];
-                    $productos[$i]["destacado"]=$producto["destacado"];
-                    $productos[$i]["publicado"]=$producto["publicado"];
-                    $productos[$i]["img"]=$producto["img"];
-                    $i++;
+                    $productos[$i]["precio"]="Consultar";
                 }
-                return $productos;
+                else
+                    {
+                    $productos[$i]["precio"]=round($producto["precio"], 0, PHP_ROUND_HALF_UP);
+                    }
+
+                $productos[$i]["rubro"]=$producto["rubro"];
+                $productos[$i]["marca"]=$producto["marca"];
+                $productos[$i]["tipo"]=$producto["tipo"];
+                $productos[$i]["modelo"]=$producto["modelo"];
+                $productos[$i]["talle"]=$producto["talle"];
+                $productos[$i]["destacado"]=$producto["destacado"];
+                $productos[$i]["publicado"]=$producto["publicado"];
+                $productos[$i]["img"]=$producto["img"];
+                $i++;
+            }
+            return $productos;
             }
 
     }
@@ -235,12 +286,13 @@ class Productos
 		
         $consulta="SELECT *
 			       FROM Productos
-			       WHERE destacado=1;";
+			       WHERE destacado=1
+			       GROUP BY titulo;";
 
         $resultado=mysqli_query($db->conexion, $consulta)
         or die ("No se pueden mostrar los productos destacados.");
 
-        $productos = array(array("sku", "titulo", "stock", "precio", "rubro", "marca", "destacado", "img"));
+        $productos = array(array("sku", "titulo", "stock", "precio", "rubro", "marca", "tipo", "destacado", "img"));
         $i=0;
 		
 		if(mysqli_num_rows($resultado)!=0)
@@ -253,6 +305,7 @@ class Productos
 				$productos[$i]["precio"]=$producto["precio"];
 				$productos[$i]["rubro"]=$producto["rubro"];
 				$productos[$i]["marca"]=$producto["marca"];
+                $productos[$i]["tipo"]=$producto["tipo"];
 				$productos[$i]["destacado"]=$producto["destacado"];
 				$productos[$i]["img"]=$producto["img"];
 				$i++;
@@ -267,6 +320,7 @@ class Productos
     }
 
 
+    //Guarda un producto cargado manualmente
     public function guardar($upload_data, $producto)
     {
         //echo $upload_data["file_name"];
@@ -279,6 +333,7 @@ class Productos
                                             precio,
                                             rubro,
                                             marca,
+                                            tipo,
                                             modelo,
                                             talle,
                                             destacado,
@@ -290,6 +345,7 @@ class Productos
                             "' . $producto["precio"] . '",
                             "' . $producto["rubro"] . '",
                             "' . $producto["marca"] . '",
+                            "' . $producto["tipo"] . '",
                             "' . $producto["modelo"] . '",
                             "' . $producto["talle"] . '",
                             "' . $producto["destacado"] . '",
@@ -320,6 +376,7 @@ class Productos
                                                     precio,
                                                     rubro,
                                                     marca,
+                                                    tipo,
                                                     modelo,
                                                     talle,
                                                     destacado,
@@ -335,6 +392,7 @@ class Productos
                                     "' . $datos["7"] . '",
                                     "' . $datos["8"] . '",
                                     "' . $datos["9"] . '",
+                                    "' . $datos["10"] . '",
                                     "' . $upload_data["file_name"] . '")';
                 $resultado = mysqli_query($db->conexion, $consulta) or die ("No se pueden guardar los productos.");
             }
@@ -355,6 +413,7 @@ class Productos
                             precio = "'.$producto['precio'].'",
                             rubro = "'.$producto['rubro'].'",
                             marca = "'.$producto['marca'].'",
+                            tipo = "'.$producto['tipo'].'",
                             modelo = "' . $producto["modelo"] . '",
                             talle = "' . $producto["talle"] . '",
                             publicado = "' . $producto["publicado"] . '",
@@ -384,7 +443,7 @@ class Productos
         $resultado=mysqli_query($db->conexion, $consulta)
         or die ("No se pudo encontrar el articulo por sku.");
 
-        $producto = array("sku", "titulo", "stock", "precio", "rubro", "marca", "modelo", "talles", "destacado", "publicado", "img");
+        $producto = array("sku", "titulo", "stock", "precio", "rubro", "marca", "tipo", "modelo", "talles", "destacado", "publicado", "img");
 
         while($encontrado = mysqli_fetch_assoc($resultado))
         {
@@ -398,11 +457,12 @@ class Productos
             }
             else
                 {
-                    $producto["precio"]=$encontrado["precio"];
+                    $producto["precio"]=round($encontrado["precio"], 0, PHP_ROUND_HALF_UP);
                 }
 
             $producto["rubro"]=$encontrado["rubro"];
             $producto["marca"]=$encontrado["marca"];
+            $producto["tipo"]=$encontrado["tipo"];
             $producto["modelo"]=$encontrado["modelo"];
             $producto["talles"]=$encontrado["talle"];
             $producto["destacado"]=$encontrado["destacado"];

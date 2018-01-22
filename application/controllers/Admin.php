@@ -1,4 +1,8 @@
 <?php
+//Corrige (oculta) el cartel de error en el final de la pagina hosteada.
+ini_set("display_errors", 0);
+ini_set("log_errors", 1);
+ini_set("error_log", "syslog");
 session_start();
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -25,12 +29,18 @@ class Admin extends CI_Controller
     }
 
 
+    public function tipos()
+    {
+        $tipos = array("Abierto","Alarmas","Antiparras","Baterias","Bauleras","Candados","Coderas","Cuatri","Cuatriciclos","Cubs","Custom","Enduro","Enduro - Calle","Enduro - Cross","Escapes","Integrales","Intercomunicadores","Lingas","Modulares","Motocross","Pecheras","Pista","Rebatibles","Rodilleras","Scooters","Streets","Touring","Trabadiscos","Utilitarios","Otros");
+        return $tipos;
+    }
+
+
     public function rubros()
     {
         $rubros = array("Motos", "Cascos", "Indumentaria", "Calzado", "Accesorios");
         return $rubros;
     }
-
 
 
     public function home()
@@ -151,6 +161,7 @@ class Admin extends CI_Controller
         {
         $data["rubros"]=$this->rubros();
         $data["marcas"]=$this->marcas();
+        $data["tipos"]=$this->tipos();
 
         $this->load->view('admin/header');
         $this->load->view('admin/navbar');
@@ -180,6 +191,7 @@ class Admin extends CI_Controller
         $data['productos']=$this->productos->listar();
         $data["rubros"]=$this->rubros();
         $data["marcas"]=$this->marcas();
+        $data["tipos"]=$this->tipos();
 
         $this->load->view('admin/header');
         $this->load->view('admin/navbar');
@@ -209,6 +221,7 @@ class Admin extends CI_Controller
                 $productos[$i]["precio"] = $producto["precio"];
                 $productos[$i]["rubro"] = $producto["rubro"];
                 $productos[$i]["marca"] = $producto["marca"];
+                $productos[$i]["tipo"] = $producto["tipo"];
                 $productos[$i]["modelo"] = $producto["modelo"];
                 $productos[$i]["talle"] = $producto["talle"];
                 $productos[$i]["publicado"] = $producto["publicado"];
@@ -225,8 +238,10 @@ class Admin extends CI_Controller
 
     public function exportar_pedidos()
     {
+        //Exporta un archivo csv en la carpeta raiz de la pagina
         $this->pedido->exportar_local();
         $this->download_send_headers("pedidos_" . date("Y-m-d") . ".csv");
+        //Exporta un archivo csv en la carpeta de descargas del usuario
         $this->pedido->exportar();
         die();
         $this->home();

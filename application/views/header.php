@@ -5,7 +5,7 @@
     <meta charset=ISO-8859-1>
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
     <title>Lavalle motos</title>
-
+    <link rel="icon" href="<?php echo base_url(); ?>assets/img/iconos/favicon.png" type="image/png" sizes="16x16">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/home.css">
 
@@ -15,7 +15,6 @@
     <script src="<?php echo base_url(); ?>assets/script/contenido.js"></script>
 
     <!--carousel zoom-->
-    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon"/>
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/cloud-zoom/cloud-zoom.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/fancybox/jquery.fancybox-1.3.4.css" />
 
