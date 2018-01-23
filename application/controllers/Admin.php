@@ -105,7 +105,7 @@ class Admin extends CI_Controller
         $this->home();
     }
 
-
+    //Guarda un producto cargado manualmente con su imagen
     public function upload_producto()
     {
 
@@ -125,12 +125,20 @@ class Admin extends CI_Controller
             $this->load->view('admin/error', $error);
         }
         else
-        {
+            {
             $upload_data=$this->upload->data();
-            $this->productos->guardar($upload_data, $grilla);
-            $data = array('upload_data' => $this->upload->data());
-            $this->load->view('admin/upload_success', $data);
-        }
+            //$data['img_error']=$this->productos->guardar($upload_data, $grilla);
+            $img_error=$this->productos->guardar($upload_data, $grilla);
+
+            if(isset($img_error))
+            {
+                echo $img_error;
+            }
+            else{
+                $data = array('upload_data' => $this->upload->data());
+                $this->load->view('admin/upload_success', $data);
+                }
+            }
 
         $this->listar();
     }
@@ -175,7 +183,6 @@ class Admin extends CI_Controller
 
     public function guardar()
     {
-
         $productos=$this->input->post('grilla[]');
 
         $this->productos->guardar($productos);

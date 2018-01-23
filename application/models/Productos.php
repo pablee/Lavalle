@@ -323,11 +323,20 @@ class Productos
     //Guarda un producto cargado manualmente
     public function guardar($upload_data, $producto)
     {
-        //echo $upload_data["file_name"];
-        $db=new database();
-        $db->conectar();
-        
-        $consulta = 'INSERT INTO Productos (sku,
+        $img=strlen($upload_data["file_name"]);
+        if($img>=50)
+        {
+            $img_error="El nombre de la imagen no puede ser superior a 50 caracteres.";
+            //$img_error=true;
+            return $img_error;
+        }
+        else
+            {
+                //echo $upload_data["file_name"];
+                $db=new database();
+                $db->conectar();
+
+                $consulta = 'INSERT INTO Productos (sku,
                                             titulo,
                                             stock,
                                             precio,
@@ -350,14 +359,14 @@ class Productos
                             "' . $producto["talle"] . '",
                             "' . $producto["destacado"] . '",
                             "' . $producto["publicado"] . '",
-                            "' . $upload_data["file_name"] . '")';		
-        		
-		if (!mysqli_query($db->conexion, $consulta))
-			  {
-			  echo("Error description: " . mysqli_error($db->conexion));
-			  $resultado=mysqli_query($db->conexion, $consulta) or die ("No se pudo guardar el producto.");
-			  }
-        
+                            "' . $upload_data["file_name"] . '")';
+
+                if (!mysqli_query($db->conexion, $consulta))
+                {
+                    echo("Error description: " . mysqli_error($db->conexion));
+                    $resultado=mysqli_query($db->conexion, $consulta) or die ("No se pudo guardar el producto.");
+                }
+            }
     }
 
 

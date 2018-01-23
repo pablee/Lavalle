@@ -1,1 +1,5 @@
-El archivo se subio correctamente.
+<?php
+
+    echo 'El archivo se subio correctamente.';
+
+
