@@ -79,7 +79,8 @@
                 </div>
             </div>
 
-            <div class="col-md-10 container contenido">
+
+            <div class="col-md-10 container contenido" >
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12 filtro-barra" id="filtro-barra">
                         <a href="categoria?rubro=<?php echo $filtrado["rubro"]; ?>"> <?php echo ucwords($filtrado["rubro"]);?> </a>

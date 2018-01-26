@@ -128,11 +128,13 @@ class Admin extends CI_Controller
             {
             $upload_data=$this->upload->data();
             //$data['img_error']=$this->productos->guardar($upload_data, $grilla);
-            $img_error=$this->productos->guardar($upload_data, $grilla);
+            $error=$this->productos->guardar($upload_data, $grilla);
 
-            if(isset($img_error))
+            if(isset($error))
             {
-                echo $img_error;
+                echo '<div class="alert alert-danger">';
+                echo $error;
+                echo '</div>';
             }
             else{
                 $data = array('upload_data' => $this->upload->data());

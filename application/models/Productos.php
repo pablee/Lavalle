@@ -231,6 +231,8 @@ class Productos
                        WHERE rubro LIKE "%'.$filtrado["buscado"].'%"
                        OR marca LIKE "%'.$filtrado["buscado"].'%"
                        OR modelo LIKE "%'.$filtrado["buscado"].'%"
+                       OR tipo LIKE "%'.$filtrado["buscado"].'%"
+                       OR titulo LIKE "%'.$filtrado["buscado"].'%"
                        AND publicado = true
                        GROUP BY titulo;;';
         }
@@ -300,7 +302,12 @@ class Productos
 			while($producto = mysqli_fetch_assoc($resultado))
 			{
 				$productos[$i]["sku"]=$producto["sku"];
-				$productos[$i]["titulo"]=$producto["titulo"];
+
+                $titulo = substr($producto["titulo"], 0, 24);
+                $titulo = strtolower($titulo);
+                $productos[$i]["titulo"]=ucwords($titulo);
+				//$productos[$i]["titulo"]=$producto["titulo"];
+
 				$productos[$i]["stock"]=$producto["stock"];
 				$productos[$i]["precio"]=$producto["precio"];
 				$productos[$i]["rubro"]=$producto["rubro"];
@@ -326,12 +333,20 @@ class Productos
         $img=strlen($upload_data["file_name"]);
         if($img>=50)
         {
-            $img_error="El nombre de la imagen no puede ser superior a 50 caracteres.";
-            //$img_error=true;
-            return $img_error;
+            $error="El nombre de la imagen no puede ser superior a 50 caracteres.";
+            return $error;
         }
         else
             {
+                $destacados=$this->destacados();
+                if(count($destacados)>=5)
+                {
+                    $error="La cantidad de productos destacados no puede ser mayor que 5.";
+                    return $error;
+                }
+
+                //Borra los 0 a la izquierda
+                $sku=ltrim($producto["sku"],"0");
                 //echo $upload_data["file_name"];
                 $db=new database();
                 $db->conectar();
@@ -348,7 +363,7 @@ class Productos
                                             destacado,
                                             publicado,
                                             img)
-                     VALUES("' . $producto["sku"] . '",
+                     VALUES("' . $sku . '",
                             "' . $producto["titulo"] . '",
                             "' . $producto["stock"] . '",
                             "' . $producto["precio"] . '",
@@ -364,7 +379,8 @@ class Productos
                 if (!mysqli_query($db->conexion, $consulta))
                 {
                     echo("Error description: " . mysqli_error($db->conexion));
-                    $resultado=mysqli_query($db->conexion, $consulta) or die ("No se pudo guardar el producto.");
+                    echo '<br>';
+                    $resultado=mysqli_query($db->conexion, $consulta) or die ("No se pudo guardar el producto, el sku ingresado ya existe.");
                 }
             }
     }

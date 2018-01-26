@@ -41,7 +41,9 @@ function verMediosPagoSucursales()
 //En editar articulos guarda solo los campos en los que se hicieron modificaciones.
 function campoModificado(id)
 {
-    document.getElementById(id+"-modificado").value=1;
+    //alert(id);
+    //document.getElementById(id+"-modificado").value=1;
+    document.getElementById("modificado-"+id).value=1;
 }
 
 

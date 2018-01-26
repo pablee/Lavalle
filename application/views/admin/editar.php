@@ -24,24 +24,24 @@ foreach ($productos as $producto)
     '	
     <tr>	  
         <td>
-            <input type="text" class="form-control" id="" name="grilla['.$producto["sku"].'][sku]" value="'.$producto["sku"].'" required></input>
+            <input type="text" class="form-control" id="" name="grilla['.$sku=ltrim($producto["sku"],"0").'][sku]" value="'.$sku=ltrim($producto["sku"],"0").'" required></input>
         </td>
     
         <td>	
-            <input type="text"   class="form-control" id="" name="grilla['.$producto["sku"].'][titulo]" value="'.$producto["titulo"].'" onchange="campoModificado('.$producto["sku"].')"></input>
+            <input type="text"   class="form-control" id="" name="grilla['.$sku=ltrim($producto["sku"],"0").'][titulo]" value="'.$producto["titulo"].'" onchange="campoModificado('.$sku=ltrim($producto["sku"],"0").')"></input>
         </td>
     
         <td style="width: 80px;">
-            <input type="text"   class="form-control" id="" name="grilla['.$producto["sku"].'][stock]" value="'.$producto["stock"].'" onchange="campoModificado('.$producto["sku"].')"></input>
+            <input type="text"   class="form-control" id="" name="grilla['.$sku=ltrim($producto["sku"],"0").'][stock]" value="'.$producto["stock"].'" onchange="campoModificado('.$sku=ltrim($producto["sku"],"0").')"></input>
         </td>
     
         <td class="col-xs-1">
-            <input type="text"   class="form-control" id="" name="grilla['.$producto["sku"].'][precio]" value="'.$producto["precio"].'" onchange="campoModificado('.$producto["sku"].')"></input>
+            <input type="text"   class="form-control" id="" name="grilla['.$sku=ltrim($producto["sku"],"0").'][precio]" value="'.$producto["precio"].'" onchange="campoModificado('.$sku=ltrim($producto["sku"],"0").')"></input>
         </td>
     
         <td>
-            <!--input type="text"   class="form-control" id="" name="grilla['.$producto["sku"].'][rubro]" value="'.$producto["rubro"].'" onchange="campoModificado('.$producto["sku"].')"></input-->
-            <select class="form-control" id="" name="grilla['.$producto["sku"].'][rubro]" onchange="campoModificado('.$producto["sku"].')">
+            <!--input type="text"   class="form-control" id="" name="grilla['.$sku=ltrim($producto["sku"],"0").'][rubro]" value="'.$producto["rubro"].'" onchange="campoModificado('.$sku=ltrim($producto["sku"],"0").')"></input-->
+            <select class="form-control" id="" name="grilla['.$sku=ltrim($producto["sku"],"0").'][rubro]" onchange="campoModificado('.$sku=ltrim($producto["sku"],"0").')">
     
                 <option value="'.$producto["rubro"].'">'.$producto["rubro"].'</option>';
                 foreach($rubros AS $rubro)
@@ -54,8 +54,8 @@ foreach ($productos as $producto)
         </td>
     
         <td>		
-            <!--input type="text"   class="form-control" id="" name="grilla['.$producto["sku"].'][marca]" value="'.$producto["marca"].'" onchange="campoModificado('.$producto["sku"].')"></input-->
-            <select class="form-control" id="" name="grilla['.$producto["sku"].'][marca]" onchange="campoModificado('.$producto["sku"].')">    
+            <!--input type="text"   class="form-control" id="" name="grilla['.$sku=ltrim($producto["sku"],"0").'][marca]" value="'.$producto["marca"].'" onchange="campoModificado('.$sku=ltrim($producto["sku"],"0").')"></input-->
+            <select class="form-control" id="" name="grilla['.$sku=ltrim($producto["sku"],"0").'][marca]" onchange="campoModificado('.$sku=ltrim($producto["sku"],"0").')">    
                 <option value="'.$producto["marca"].'">'.$producto["marca"].'</option>';
                 foreach($marcas AS $marca)
                     {
@@ -66,7 +66,7 @@ foreach ($productos as $producto)
         </td>
 
         <td>
-            <select class="form-control" id="" name="grilla['.$producto["sku"].'][tipo]" onchange="campoModificado('.$producto["sku"].')">
+            <select class="form-control" id="" name="grilla['.$sku=ltrim($producto["sku"],"0").'][tipo]" onchange="campoModificado('.$sku=ltrim($producto["sku"],"0").')">
                 <option value="'.$producto["tipo"].'">'.$producto["tipo"].'</option>';
                 foreach($tipos AS $tipo)
                 {
@@ -77,15 +77,15 @@ foreach ($productos as $producto)
         </td>
 
         <td>
-            <input type="text"   class="form-control" id="" name="grilla['.$producto["sku"].'][modelo]" value="'.$producto["modelo"].'" onchange="campoModificado('.$producto["sku"].')"></input>
+            <input type="text"   class="form-control" id="" name="grilla['.$sku=ltrim($producto["sku"],"0").'][modelo]" value="'.$producto["modelo"].'" onchange="campoModificado('.$sku=ltrim($producto["sku"],"0").')"></input>
         </td>
 
         <td style="width: 70px;">
-            <input type="text"   class="form-control" id="" name="grilla['.$producto["sku"].'][talle]" value="'.$producto["talle"].'" onchange="campoModificado('.$producto["sku"].')"></input>
+            <input type="text"   class="form-control" id="" name="grilla['.$sku=ltrim($producto["sku"],"0").'][talle]" value="'.$producto["talle"].'" onchange="campoModificado('.$sku=ltrim($producto["sku"],"0").')"></input>
         </td>
 
         <td>	    
-            <select class="form-control" id="" name="grilla['.$producto["sku"].'][destacado]" onchange="campoModificado('.$producto["sku"].')">
+            <select class="form-control" id="" name="grilla['.$sku=ltrim($producto["sku"],"0").'][destacado]" onchange="campoModificado('.$sku=ltrim($producto["sku"],"0").')">
                 '.$destacado.'
                 <option value="1"> Si </option>
                 <option value="0"> No </option>
@@ -93,7 +93,7 @@ foreach ($productos as $producto)
         </td>    
 
         <td>
-            <select class="form-control" id="" name="grilla['.$producto["sku"].'][publicado]" onchange="campoModificado('.$producto["sku"].')">
+            <select class="form-control" id="" name="grilla['.$sku=ltrim($producto["sku"],"0").'][publicado]" onchange="campoModificado('.$sku=ltrim($producto["sku"],"0").')">
                 '.$publicado.'
                 <option value="1"> Si </option>
                 <option value="0"> No </option>
@@ -101,10 +101,10 @@ foreach ($productos as $producto)
         </td>
 
         <td>
-            <input type="text"   class="form-control" id="" name="grilla['.$producto["sku"].'][img]" value="'.$producto["img"].'" onchange="campoModificado('.$producto["sku"].')"></input>
+            <input type="text"   class="form-control" id="" name="grilla['.$sku=ltrim($producto["sku"],"0").'][img]" value="'.$producto["img"].'" onchange="campoModificado('.$sku=ltrim($producto["sku"],"0").')"></input>
         </td>
 
-        <td><input type="hidden" class="form-control" id="'.$producto["sku"].'-modificado" name="grilla['.$producto["sku"].'][modificado]" value="0"></input></td>
+        <td><input type="hidden" class="form-control" id="modificado-'.$sku=ltrim($producto["sku"],"0").'" name="grilla['.$sku=ltrim($producto["sku"],"0").'][modificado]" value="0"></input></td>
     ';
 }
 

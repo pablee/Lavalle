@@ -15,9 +15,9 @@
 		<?php else: ?>
         <?php foreach($destacados AS $destacado): ?>
             <div class="col-md-2 thumbnail thumbnail-producto">
-                <img src="<?php echo base_url(); ?>uploads/img/productos/<?php echo $destacado["img"]; ?>" alt="baul" height="auto" width="auto">
+                <img src="<?php echo base_url(); ?>uploads/img/productos/<?php echo $destacado["img"]; ?>" alt="<?php echo $destacado["titulo"]; ?>" height="auto" width="auto">
                 <div class="caption">
-                    <div class="text-center">
+                    <div class="text-center" style="height: 60px;">
                         <?php echo $destacado["titulo"]?>
                     </div>
                     <a href="producto?sku=<?php echo $destacado["sku"]; ?>" class="btn btn-danger btn-xs">Ver m&aacutes</a>
