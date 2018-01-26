@@ -103,6 +103,17 @@ foreach ($productos as $producto)
         <td>
             <input type="text"   class="form-control" id="" name="grilla['.$sku=ltrim($producto["sku"],"0").'][img]" value="'.$producto["img"].'" onchange="campoModificado('.$sku=ltrim($producto["sku"],"0").')"></input>
         </td>
+        
+        <td>
+            <input type="text"   class="form-control" id="" name="grilla['.$sku=ltrim($producto["sku"],"0").'][img2]" value="'.$producto["img2"].'" onchange="campoModificado('.$sku=ltrim($producto["sku"],"0").')"></input>
+        </td>
+
+        <td>
+            <input type="text"   class="form-control" id="" name="grilla['.$sku=ltrim($producto["sku"],"0").'][img3]" value="'.$producto["img3"].'" onchange="campoModificado('.$sku=ltrim($producto["sku"],"0").')"></input>
+        </td>
+
+
+
 
         <td><input type="hidden" class="form-control" id="modificado-'.$sku=ltrim($producto["sku"],"0").'" name="grilla['.$sku=ltrim($producto["sku"],"0").'][modificado]" value="0"></input></td>
     ';

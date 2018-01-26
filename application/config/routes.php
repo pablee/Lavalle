@@ -60,5 +60,6 @@ $route['checkout'] = 'home/checkout';
 $route['adjuntar'] = 'home/adjuntar';
 $route['suscripcion'] = 'home/suscripcion';
 $route['medios_pago'] = 'home/medios_pago';
+$route['admin'] = 'admin/home';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

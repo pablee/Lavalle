@@ -119,27 +119,53 @@ class Admin extends CI_Controller
 
         $this->load->library('upload', $config);
 
+        //Subida de la primer imagen.
         if (!$this->upload->do_upload('archivo'))
         {
             $error = array('error' => $this->upload->display_errors());
             $this->load->view('admin/error', $error);
         }
-        else
-            {
-            $upload_data=$this->upload->data();
-            //$data['img_error']=$this->productos->guardar($upload_data, $grilla);
-            $error=$this->productos->guardar($upload_data, $grilla);
+        else{
+                $upload_data=$this->upload->data();
 
-            if(isset($error))
-            {
-                echo '<div class="alert alert-danger">';
-                echo $error;
-                echo '</div>';
-            }
-            else{
-                $data = array('upload_data' => $this->upload->data());
-                $this->load->view('admin/upload_success', $data);
+                //Subida de la segunda imagen.
+                if (!$this->upload->do_upload('archivo_2'))
+                {
+                    $error = array('error' => $this->upload->display_errors());
+                    $this->load->view('admin/error', $error);
                 }
+                else{
+                    $upload_data_2=$this->upload->data();
+                    //$data = array('upload_data' => $this->upload->data());
+                    //$this->load->view('admin/upload_success', $data);
+                    }
+
+                //Subida de la tercer imagen.
+                if (!$this->upload->do_upload('archivo_3'))
+                {
+                    $error = array('error' => $this->upload->display_errors());
+                    $this->load->view('admin/error', $error);
+                }
+                else{
+                    $upload_data_3=$this->upload->data();
+                    //$data = array('upload_data' => $this->upload->data());
+                    //$this->load->view('admin/upload_success', $data);
+                    }
+
+                //Guarda todos los datos relacionados al producto y el nombre de cada imagen.
+                $error=$this->productos->guardar($upload_data, $upload_data_2, $upload_data_3, $grilla);
+
+                //Si devuelve algun error lo muestra en pantalla.
+                if(isset($error))
+                {
+                    echo '<div class="alert alert-danger">';
+                    echo $error;
+                    echo '</div>';
+                }
+                else{
+                    $data = array('upload_data' => $this->upload->data());
+                    $this->load->view('admin/upload_success', $data);
+                    }
             }
 
         $this->listar();
@@ -236,6 +262,8 @@ class Admin extends CI_Controller
                 $productos[$i]["publicado"] = $producto["publicado"];
                 $productos[$i]["destacado"] = $producto["destacado"];
                 $productos[$i]["img"] = $producto["img"];
+                $productos[$i]["img2"] = $producto["img2"];
+                $productos[$i]["img3"] = $producto["img3"];
                 $i++;
             }
         }

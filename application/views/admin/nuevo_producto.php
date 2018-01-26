@@ -90,8 +90,18 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="archivo"> Seleccione la imagen del producto </label>
+                        <label for="archivo"> Seleccione la imagen principal del producto </label>
                         <input type="file" class="form-control" id="archivo" name="archivo"></input>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="archivo"> Seleccione la segunda imagen del producto </label>
+                        <input type="file" class="form-control" id="archivo" name="archivo_2"></input>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="archivo"> Seleccione la tercer imagen del producto </label>
+                        <input type="file" class="form-control" id="archivo" name="archivo_3"></input>
                     </div>
 
                     <div class="text-right">

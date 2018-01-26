@@ -15,5 +15,7 @@
         <th>Destacado</th>
         <th>Publicado</th>
         <th>Imagen</th>
+        <th>Imagen 2</th>
+        <th>Imagen 3</th>
       </tr>
     </thead>

@@ -22,11 +22,11 @@
                             </div>
 
                             <div class="item">
-                                <a rev="group1" rel="zoomHeight:400, zoomWidth:600, adjustX: 10, adjustY:-4, position:'body'" class='cloud-zoom' href="<?php echo base_url(); ?>uploads/img/productos/<?php echo $producto["img"]; ?>"><img src="<?php echo base_url(); ?>uploads/img/productos/<?php echo $producto["img"]; ?>" alt="<?php echo $producto["img"]; ?> 2" height="300" width="100%"/></a>
+                                <a rev="group1" rel="zoomHeight:400, zoomWidth:600, adjustX: 10, adjustY:-4, position:'body'" class='cloud-zoom' href="<?php echo base_url(); ?>uploads/img/productos/<?php echo $producto["img2"]; ?>"><img src="<?php echo base_url(); ?>uploads/img/productos/<?php echo $producto["img2"]; ?>" alt="<?php echo $producto["img"]; ?> 2" height="300" width="100%"/></a>
                             </div>
 
                             <div class="item">
-                                <a rev="group1" rel="zoomHeight:400, zoomWidth:600, adjustX: 10, adjustY:-4, position:'body'" class='cloud-zoom' href="<?php echo base_url(); ?>uploads/img/productos/<?php echo $producto["img"]; ?>"><img src="<?php echo base_url(); ?>uploads/img/productos/<?php echo $producto["img"]; ?>" alt="<?php echo $producto["img"]; ?> 3" height="300" width="100%"/></a>
+                                <a rev="group1" rel="zoomHeight:400, zoomWidth:600, adjustX: 10, adjustY:-4, position:'body'" class='cloud-zoom' href="<?php echo base_url(); ?>uploads/img/productos/<?php echo $producto["img3"]; ?>"><img src="<?php echo base_url(); ?>uploads/img/productos/<?php echo $producto["img3"]; ?>" alt="<?php echo $producto["img"]; ?> 3" height="300" width="100%"/></a>
                             </div>
                         </div>
 

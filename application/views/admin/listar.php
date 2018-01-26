@@ -32,6 +32,8 @@ foreach($productos as $producto)
 		<td>'.$destacado.'</td>
 		<td>'.$publicado.'</td>
 		<td>'.$producto["img"].'</td>
+		<td>'.$producto["img2"].'</td>
+		<td>'.$producto["img3"].'</td>
 	</tr>
 	';
 }
